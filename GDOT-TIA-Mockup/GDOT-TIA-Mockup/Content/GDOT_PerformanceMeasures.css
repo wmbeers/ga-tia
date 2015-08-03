@@ -1,0 +1,142 @@
+﻿/*****************LANDING PAGE*****************/
+/*Page layout*/
+.goal{
+	border:1px solid #a8c0d4;
+	margin-bottom:20px;
+	background-color:#f2f5f2;
+}
+.goal-header{
+	background-color:#256194;
+	padding:3px;
+	text-align:center;
+}
+.goal-header p{
+	color:white;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:20px;
+	font-weight:bold;
+	margin-bottom:0px;
+	margin:6px;
+}
+
+.div-gauge{
+	width:175px!important;
+	margin-left:auto;
+	margin-right:auto;
+}
+/*gauge*/
+.landing-gauge-container {
+    background: transparent url("/Style Library/Images/PM/dataviz/gauge/gauge-container.png") no-repeat;
+    background-size: 100% 100%;
+    width: 170px;
+    height: 170px;
+    text-align: center;
+    float: left;
+}
+
+.landing-gauge {
+    width: 80%;
+    height: 100%;
+    margin-left: 22px;
+    margin-top:-30px;
+}
+
+
+.landing-label {
+    width: 120px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 5px;
+    font: 9px Arial;
+    line-height: 13px;
+    color:#333;
+    /*background-color:lightgray;*/
+}
+
+.landing-metric {
+    position:absolute;
+    height:20px;
+    width: 50px;
+    margin-left: 20px;
+    margin-top: -65px;
+    font: bold 18px arial, helvetica, sans-serif;
+    color:#000000;
+    /*background-color:lightblue*/
+}
+
+.landing-submetric {
+    width: 80px;
+    margin-left: 10px;
+    margin-top: -45px;
+    font: bold 10px arial, helvetica, sans-serif;
+    color:#333;
+    /*background-color:lightcoral*/
+}
+
+ .landing-supermetric {
+    position:absolute;
+    height:15px;
+    width: 80px;
+    margin-left: 10px;
+    margin-top: -75px;
+    font: bold 11px arial, helvetica, sans-serif;
+    color:#333;
+    /*background-color:lightcyan;*/
+}
+ 
+ 
+/*****************DETAIL PAGE*****************/
+/*Page Layout*/
+.detail-heading h1 {
+  float: left;
+  height: 60px;
+  margin-left: 30px;
+}
+
+.pmdetailcontent{
+	padding:20px;
+}
+
+
+.detail-gauge-container {
+    background: transparent url("/Style Library/Images/PM/dataviz/gauge/gauge-container.png") no-repeat;
+    background-size: 100% 100%;
+    width: 240px;
+    height: 240px;
+    text-align: center;
+    float: left;
+}
+
+.detail-gauge {
+    width: 80%;
+    height: 80%;
+    margin-left: 30px;
+    margin-top:20px;
+}
+
+
+.detail-metric {
+    width: 80px;
+    margin-left: 20px;
+    margin-top: -100px;
+    font: bold 28px arial, helvetica, sans-serif;
+    
+}
+
+.detail-submetric {
+    width: 80px;
+    margin-left: 25px;
+    margin-top: 0px;
+    font: bold 12px arial, helvetica, sans-serif;
+    
+}
+
+.detail-label {
+  margin-top: 100px;
+  font: 12px arial, helvetica, sans-serif;
+}
+/*Kendo Default style override*/
+.k-widget.k-tooltip {
+    background-color:#f2f5f2 !important;
+    color:#333!important;
+}

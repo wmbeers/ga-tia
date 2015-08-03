@@ -1,0 +1,73 @@
+﻿.side-navigation
+{
+     border-top:1px solid #d7d4c3;
+                
+}
+
+.side-navigation ul li:hover{
+                background-color:#01a5ae;
+}
+
+.side-navigation ul ul li:hover{
+                background-color:#256193;
+}
+
+
+
+.side-navigation ul ul ul li:hover{
+                background-color:#256193;
+}
+
+.side-navigation ul ul
+{
+                background-color:#fff;
+                display:none;
+}
+
+.side-navigation ul ul ul 
+{
+                background-color:#f7f4ed;          
+}
+
+
+.side-navigation a.selected
+{
+font-weight:bold;
+background-color:#D0D3D3;
+}
+                
+.side-navigation ul li a
+{
+    color: #333;
+    text-decoration: none;
+    padding:5px 13px 5px 13px !important;
+    white-space: normal !important;
+    border-bottom:1px solid #d7d4c3;
+}
+
+.side-navigation .menu-item-text
+{
+    font-size:14px !important; 
+    font-family:'Open Sans', sans-serif;!important;            
+}
+
+.side-navigation ul li li a
+{
+    color:#333;
+}
+
+.side-navigation .min
+{
+     border:0px;
+}
+
+.side-navigation ul li.has-popup a
+{
+    padding: 10px 25px 10px 13px !important;
+}
+                
+
+.side-navigation ul li ul li
+{
+	border-bottom:1px solid #ddd;
+}

@@ -1,0 +1,154 @@
+﻿.header {
+	background: #EFF1F1;
+}
+
+.min-container {
+	padding: 0px;
+}
+
+.carousel {
+	max-width: 1500px;
+}
+
+.logo {
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: #125687;
+}
+
+	h4 img {
+		position: absolute;
+		left: -50px;
+		top: 10px;
+		width: 50px;
+	}
+
+.green {
+	color: #0cab0a;
+}
+
+.blue {
+	color: #2a6091;
+}
+
+.data-value {
+	color: #0cab0a;
+	font-weight: bold;
+}
+
+.data-name {
+	color: #2a6091;
+	font-weight: bold;
+}
+
+.navbar-brand {
+	padding: 0px;
+}
+
+.nav > li > a, .navbar-form {
+	padding: 0px 5px;
+}
+
+.navbar-form {
+	margin: 2px;
+}
+
+.navbar-blue {
+	background: #266294;
+	border-color: #266294;
+}
+
+.travelsmart {
+	position: relative;
+	left: -1px;
+}
+
+.navbar-blue, .navbar-blue a:link, .navbar-blue a:hover, .navbar-blue a:visited  {
+	color: white;
+}
+
+	.navbar-blue a:link, .navbar-blue a:hover, .navbar-blue a:visited {
+		padding: 15px 25px;
+	}
+
+	#navbar ul li a:hover, .active {
+		background: #DFA020;
+	}
+
+.navbar-blue > a.navbar-brand {
+	padding: 0px;
+}
+
+.subnav {
+	margin-left: 60px;
+}
+
+ul.nav-sidebar > li.active {
+	background: none;
+}
+
+ul.nav-sidebar > li > a, ul.nav-sidebar  li, ul.nav-sidebar  li  a  {
+	color: #111111;
+	list-style-type: none;
+	margin: 1.25em 0;
+}
+
+ul.collapse > li > ul > li{
+	color: #111111;
+	list-style-type: none;
+	margin: 1.25em 0;
+}
+
+#shortmenu
+{
+  font-size: small;
+}
+
+.carousel-caption
+{
+  position: absolute;
+  z-index: 10;
+  padding-top: 20px;
+  padding-left: 10px;
+  padding-bottom: 20px;
+  margin: 0px;
+  color: #ffffff;
+  text-align: left;
+  font-size: large;
+  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.6);
+}
+
+	.carousel-caption .description {
+		color: #dfa220;
+		font-size: small;
+	}
+
+/* Extra Small Devices, Phones */ 
+    @media only screen and (min-width : 480px) {
+		.min-container {
+			padding: 20px 100px;
+		}
+    }
+
+    /* Small Devices, Tablets */
+    @media only screen and (min-width : 768px) {
+		.min-container {
+			padding: 20px 100px;
+		}
+    }
+
+    /* Medium Devices, Desktops */
+    @media only screen and (min-width : 992px) {
+		.min-container {
+			padding: 20px 100px;
+		}
+    }
+
+    /* Large Devices, Wide Screens */
+    @media only screen and (min-width : 1200px) {
+		.min-container {
+			padding: 20px 100px;
+		}
+    }

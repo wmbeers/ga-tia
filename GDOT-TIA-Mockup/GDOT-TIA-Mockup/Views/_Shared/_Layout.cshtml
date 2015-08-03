@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+	<link href="/Content/bootstrap.min.css" rel="stylesheet">
+	<link href="/Content/site.css" rel="stylesheet">
+	<script type="text/javascript" src="/Scripts/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="/Scripts/bootstrap.v3.min.js"></script>
+	<script type="text/javascript" src="/Scripts/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/Scripts/jquery.thermometer.js"></script>
+</head>
+<body>
+    <div class="header">
+		<div class="min-container">
+			<div class="">
+				<div class="navbar-header">
+				  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				  </button>
+				  <a class="navbar-brand" href="http://www.dot.ga.gov"><img src="/Content/img/gdot_logo.gif" class="logo" alt="Georgia Department of Transportation" /></a>
+				</div>
+				<div id="navbar2" class="navbar-collapse collapse">
+				  <ul id="shortmenu" class="nav navbar-nav navbar-right">
+					<li><a href="http://www.dot.ga.gov">Home</a></li>
+					<li><a href="#">About GDOT</a></li>
+					<li><a href="#">Board</a></li>
+					<li><a href="#">Employment</a></li>
+					<li><a href="#">Contact Us</a></li>
+					<li><a href="#">Site Map</a></li>
+				  </ul><br style="clear: both" />
+				  <form class="navbar-form navbar-right">
+					<input type="text" class="form-control" placeholder="Search...">
+				  </form>
+				</div>
+			</div>
+		</div>
+    </div>
+	<div class="min-container">
+		<div class="row">
+			<div class="col-md-12">
+				<nav class="navbar navbar-blue">
+					<div class="container-fluid">
+					  <div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+						  <span class="sr-only">Toggle navigation</span>
+						  <span class="icon-bar"></span>
+						  <span class="icon-bar"></span>
+						  <span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" style="padding: 0px" href="http://www.dot.ga.gov/AboutGeorgia/Pages/TravelSmart.aspx"><img src="/Content/img/travelsmart_navlogo.png" alt="Travel Smart" class="travelsmart" /></a>
+					  </div>
+					 <div id="navbar" class="navbar-collapse collapse">
+						<ul class="subnav nav navbar-nav">
+						  <li><a href="#">Drive Smart</a></li>
+						  <li class="active"><a href="#">Partner Smart</a></li>
+						  <li><a href="#">Build Smart</a></li>
+						  <li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Invest Smart <span class="caret"></span></a>
+							<ul class="dropdown-menu">
+							  <li><a href="#">Action</a></li>
+							  <li><a href="#">Another action</a></li>
+							  <li><a href="#">Something else here</a></li>
+							  <li role="separator" class="divider"></li>
+							  <li class="dropdown-header">Nav header</li>
+							  <li><a href="#">Separated link</a></li>
+							  <li><a href="#">One more separated link</a></li>
+							</ul>
+						  </li>
+						</ul>
+					  </div><!--/.nav-collapse -->
+					</div><!--/.container-fluid -->
+			  </nav>
+			</div>
+		</div>
+		<br />
+
+		<div class="row">
+			<div class="col-md-12">
+				<a href="http://www.dot.ga.gov/">Home</a> -> <a href="http://www.dot.ga.gov/PS">Partner Smart</a> -> Local Government
+			</div>
+		</div>
+<br />
+
+		<div class="row">
+			<div class="col-md-3">
+				<ul class="nav nav-sidebar">
+					<li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
+					<li><a href="#">Local Administered Projects (LAP) Manual</a></li>
+					<li><a href="#">Local Maintenance & Improvement Grant (LMIG)</a></li>
+					<li><a href="#">Local Technical Assistance Program (LTAP)</a></li>
+					<li><a href="#tiaMenu" aria-expanded="true">Transportation Investment Act (TIA) <span class="caret"></span></a>
+					<ul id="tiaMenu" role="menu">
+						<!--<li>@Html.ActionLink("Active Applications", "Index", "Applicant")</li>-->
+						<li><a href="#">TIA Projects</a></li>
+						<li><a href="#">Program Info & Reports</a></li>
+						<li><a href="#">Press Room</a></li>
+						<li><a href="#">Procurement & Contracting</a></li>
+					  </ul>
+						</li>
+				  </ul>
+			</div>
+			<div class="col-md-9">
+				@RenderBody()
+			</div>
+		</div>
+	</div>
+</body>
+</html>
