@@ -188,6 +188,7 @@
     <Content Include="Views\_Shared\_LayoutGDOT.cshtml" />
     <Content Include="Scripts\ScriptResource.axd" />
     <Content Include="Scripts\WebResource.axd" />
+    <Content Include="Views\Home\Gallery.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

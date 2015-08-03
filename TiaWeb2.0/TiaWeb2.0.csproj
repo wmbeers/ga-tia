@@ -13,7 +13,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TiaWeb2._0</RootNamespace>
     <AssemblyName>TiaWeb2.0</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <UseIISExpress>false</UseIISExpress>
     <TargetFrameworkProfile />
     <FileUpgradeFlags>
@@ -34,6 +34,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -43,21 +44,62 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <FilesToIncludeForPublish>OnlyFilesToRunTheApp</FilesToIncludeForPublish>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AjaxControlToolkit">
-      <HintPath>C:\Users\csullivan\Downloads\AjaxControlToolkit.Binary.NET4\AjaxControlToolkit.dll</HintPath>
+      <HintPath>..\packages\AjaxControlToolkit.15.1.2.0\lib\net40\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="MeridianSystems.Proliance.Business.CostControl.ContractCalculator">
+      <HintPath>Proliance\MeridianSystems.Proliance.Business.CostControl.ContractCalculator.dll</HintPath>
     </Reference>
     <Reference Include="MeridianSystems.Solutions.Proliance.ServiceActivator">
-      <HintPath>..\..\..\lib\Proliance.ServiceActivator.5.10.0016-2\MeridianSystems.Solutions.Proliance.ServiceActivator.dll</HintPath>
+      <HintPath>Proliance\MeridianSystems.Solutions.Proliance.ServiceActivator.dll</HintPath>
+    </Reference>
+    <Reference Include="MeridianSystems.Solutions.Proliance.ServiceActivator.Controls">
+      <HintPath>Proliance\MeridianSystems.Solutions.Proliance.ServiceActivator.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="MeridianSystems.Solutions.Proliance.ServiceActivator.Parsers.Excel">
+      <HintPath>Proliance\MeridianSystems.Solutions.Proliance.ServiceActivator.Parsers.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="MeridianSystems.Solutions.Proliance.ServiceActivator.Parsers.PDF">
+      <HintPath>Proliance\MeridianSystems.Solutions.Proliance.ServiceActivator.Parsers.PDF.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Edm, Version=5.6.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Data.Edm.5.6.2\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.6.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Data.OData.5.6.2\lib\net40\Microsoft.Data.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Services.Client, Version=5.6.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Data.Services.Client.5.6.2\lib\net40\Microsoft.Data.Services.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Configuration">
+      <HintPath>..\packages\Microsoft.WindowsAzure.ConfigurationManager.1.8.0.0\lib\net35-full\Microsoft.WindowsAzure.Configuration.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.WindowsAzure.Storage">
-      <HintPath>C:\Users\csullivan\Downloads\AjaxControlToolkit.Binary.NET4\Microsoft.WindowsAzure.Storage.dll</HintPath>
+      <HintPath>..\packages\WindowsAzure.Storage.4.3.0\lib\net40\Microsoft.WindowsAzure.Storage.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.StorageClient">
+      <HintPath>..\packages\UnofficialAzure.StorageClient.1.0.0\lib\Microsoft.WindowsAzure.StorageClient.dll</HintPath>
+    </Reference>
+    <Reference Include="MPS.Proliance.Platform.Apps.Calendaring.Engine">
+      <HintPath>Proliance\MPS.Proliance.Platform.Apps.Calendaring.Engine.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.5.0.8\lib\net40\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Spatial, Version=5.6.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\System.Spatial.5.6.2\lib\net40\System.Spatial.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.Web.DynamicData" />
@@ -71,6 +113,9 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\css\bootstrap-theme.min.css" />
+    <Content Include="Content\css\bootstrap.min.css" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Default.aspx" />
     <Content Include="Images\bar.png" />
     <Content Include="Images\Body_1.jpg" />
@@ -285,7 +330,14 @@
     <Content Include="Images\FactSheets\RFQ Notice.pdf" />
     <Content Include="Images\FactSheets\Local Managed - Auth to Adv - Band 1 02Apr15.pdf" />
     <Content Include="Images\FactSheets\Local Managed - Auth to Adv - Band 1 30Apr15.pdf" />
+    <Content Include="packages.config" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Properties\PublishProfiles\Profile1.pubxml" />
+    <Content Include="Views\_Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Default.aspx.cs">
@@ -301,7 +353,6 @@
     <Compile Include="Model\ProjectStatus.cs" />
     <Compile Include="Model\ProjectTypes.cs" />
     <Compile Include="Model\RegionTotals.cs" />
-    <Compile Include="obj\Status.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TIA.Master.cs">
       <DependentUpon>TIA.Master</DependentUpon>
@@ -481,6 +532,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="obj\" />
     <Folder Include="Static\" />
   </ItemGroup>
   <ItemGroup>
@@ -780,6 +832,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Images\FactSheets\CSRA_TIASignOrder.pdf" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
