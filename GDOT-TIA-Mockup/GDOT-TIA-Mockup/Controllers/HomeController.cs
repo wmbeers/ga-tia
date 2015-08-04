@@ -16,6 +16,12 @@ namespace GDOT_TIA_Mockup.Controllers
         }
 
 		// GET: /Gallery/
+		public ActionResult FactSheet()
+		{
+			return View();
+		}
+
+		// GET: /Gallery/
 		public ActionResult Gallery()
 		{
 			return View();

@@ -189,6 +189,7 @@
     <Content Include="Scripts\ScriptResource.axd" />
     <Content Include="Scripts\WebResource.axd" />
     <Content Include="Views\Home\Gallery.cshtml" />
+    <Content Include="Views\Home\FactSheet.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
