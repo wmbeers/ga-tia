@@ -25,11 +25,23 @@ h1, h2, h3, h4, h5, h6 {
 	}
 
 .green {
-	color: #0cab0a;
+	color: #009600;
 }
 
 .blue {
 	color: #2a6091;
+}
+
+.csra {
+	color: #9bbb59;
+}
+
+.hoga {
+	color: #608bb4;
+}
+
+.rv {
+	color: #f79646;
 }
 
 .data-value {

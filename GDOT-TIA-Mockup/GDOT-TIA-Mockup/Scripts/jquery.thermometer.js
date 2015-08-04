@@ -246,7 +246,7 @@
 			unitsText: "(In Millions)",
 			textColour: '#333333',
 			tickColour: '#333333',
-			liquidColour: "#0ABE1C",
+			liquidColour: "#009600",
 			animationSpeed: 1000,
 			pathToSVG: "/Content/img/thermo-bottom.svg",
 			valueChanged: undefined,
