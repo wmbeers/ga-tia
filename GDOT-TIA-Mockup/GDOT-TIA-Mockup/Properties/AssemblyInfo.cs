@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("GDOT_TIA_Mockup")]
+[assembly: AssemblyTitle("GDOT_TIA")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("URS Corporation")]
-[assembly: AssemblyProduct("GDOT_TIA_Mockup")]
+[assembly: AssemblyProduct("GDOT_TIA_")]
 [assembly: AssemblyCopyright("Copyright © URS Corporation 2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

@@ -138,21 +138,21 @@ ul.collapse > li > ul > li{
 	}
 
 /* Extra Small Devices, Phones */ 
-    @media only screen and (min-width : 480px) {
+    @media only screen and (min-width : 480px) and (max-width: 765px) {
 		.min-container {
 			padding: 20px 100px;
 		}
     }
 
     /* Small Devices, Tablets */
-    @media only screen and (min-width : 768px) {
+    @media only screen and (min-width : 768px) and (max-width: 991px) {
 		.min-container {
 			padding: 20px 100px;
 		}
     }
 
     /* Medium Devices, Desktops */
-    @media only screen and (min-width : 992px) {
+    @media only screen and (min-width : 992px) and (max-width: 1199px) {
 		.min-container {
 			padding: 20px 100px;
 		}

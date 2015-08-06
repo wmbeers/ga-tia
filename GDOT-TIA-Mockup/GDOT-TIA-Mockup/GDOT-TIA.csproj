@@ -11,14 +11,15 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>GDOT_TIA_Mockup</RootNamespace>
+    <RootNamespace>GDOT_TIA</RootNamespace>
     <AssemblyName>GDOT-TIA-Mockup</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -38,23 +39,56 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MeridianSystems.Proliance.Business.CostControl.ContractCalculator">
+      <HintPath>..\..\TiaWeb2.0\Proliance\MeridianSystems.Proliance.Business.CostControl.ContractCalculator.dll</HintPath>
+    </Reference>
+    <Reference Include="MeridianSystems.Solutions.Proliance.ServiceActivator">
+      <HintPath>..\..\TiaWeb2.0\Proliance\MeridianSystems.Solutions.Proliance.ServiceActivator.dll</HintPath>
+    </Reference>
+    <Reference Include="MeridianSystems.Solutions.Proliance.ServiceActivator.Controls">
+      <HintPath>..\..\TiaWeb2.0\Proliance\MeridianSystems.Solutions.Proliance.ServiceActivator.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="MeridianSystems.Solutions.Proliance.ServiceActivator.Parsers.Excel">
+      <HintPath>..\..\TiaWeb2.0\Proliance\MeridianSystems.Solutions.Proliance.ServiceActivator.Parsers.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="MeridianSystems.Solutions.Proliance.ServiceActivator.Parsers.PDF">
+      <HintPath>..\..\TiaWeb2.0\Proliance\MeridianSystems.Solutions.Proliance.ServiceActivator.Parsers.PDF.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MPS.Proliance.Platform.Apps.Calendaring.Engine">
+      <HintPath>..\..\TiaWeb2.0\Proliance\MPS.Proliance.Platform.Apps.Calendaring.Engine.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\TiaWeb2.0\Proliance\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.IdentityModel.Tokens.Jwt">
+      <HintPath>..\..\TiaWeb2.0\Proliance\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\TiaWeb2.0\Proliance\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Extensions" />
-    <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Trimble.Proliance.Client.Common">
+      <HintPath>..\..\TiaWeb2.0\Proliance\Trimble.Proliance.Client.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.Toolkit">
+      <HintPath>..\..\TiaWeb2.0\Proliance\Xceed.Wpf.Toolkit.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -81,18 +115,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\bootstrap-custom.css" />
-    <Content Include="Content\bootstrap-responsive.min.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
-    <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.v3.min.css" />
-    <Content Include="Content\corev15.css" />
-    <Content Include="Content\GDOT_CSS.css" />
-    <Content Include="Content\GDOT_MEDIA.css" />
-    <Content Include="Content\GDOT_PerformanceMeasures.css" />
-    <Content Include="Content\GDOT_ResponsiveTables.css" />
     <Content Include="Content\img\Body_1-04.jpg" />
     <Content Include="Content\img\eNewsletter.png" />
     <Content Include="Content\img\Facebook.png" />
@@ -113,17 +139,10 @@
     <Content Include="Content\img\travelsmart_navlogo.png" />
     <Content Include="Content\img\Twitter.png" />
     <Content Include="Content\img\Youtube.png" />
-    <Content Include="Content\kendo.common.min.css" />
-    <Content Include="Content\kendo.dataviz.default.min.css" />
-    <Content Include="Content\kendo.dataviz.min.css" />
-    <Content Include="Content\kendo.default.min.css" />
     <Content Include="Content\photos\banner1.png" />
-    <Content Include="Content\responsive-tabs.css" />
+    <Content Include="Content\photos\banner2.png" />
+    <Content Include="Content\photos\banner3.png" />
     <Content Include="Content\site.css" />
-    <Content Include="Content\gallerific.css" />
-    <Content Include="Content\SP2013Accordion.css" />
-    <Content Include="Content\style.css" />
-    <Content Include="Content\temp.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -131,52 +150,33 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\bootstrap-theme.css.map" />
-    <Content Include="Content\bootstrap.css.map" />
-    <Content Include="Content\StyleSheet1.less" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
-    <Content Include="Scripts\blank.js" />
-    <Content Include="Scripts\bootstrap-custom.js" />
-    <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\bootstrap.v3.min.js" />
-    <Content Include="Scripts\core.js" />
-    <Content Include="Scripts\GDOT_Extensions.js" />
-    <Content Include="Scripts\GDOT_Media.js" />
-    <Content Include="Scripts\GDOT_PhotoGallery_thumbnail.js" />
-    <Content Include="Scripts\GDOT_PM_Config.js" />
-    <Content Include="Scripts\GDOT_ResponsiveTables.js" />
-    <Content Include="Scripts\GDOT_URL_Shortened.js" />
-    <Content Include="Scripts\init.js" />
-    <Content Include="Scripts\initstrings.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="Scripts\jquery-latest.min.js" />
     <Content Include="Scripts\jquery-ui.min.js" />
-    <Content Include="Scripts\jquery.galleriffic.js" />
-    <Content Include="Scripts\jquery.opacityrollover.js" />
-    <Content Include="Scripts\jquery.responsiveTabs.js" />
-    <Content Include="Scripts\jquery.SPServices.min.js" />
     <Content Include="Scripts\jquery.thermometer.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\kendo.all.min.js" />
-    <Content Include="Scripts\matchMedia.js" />
-    <Content Include="Scripts\paging.js" />
-    <Content Include="Scripts\sp.core.js" />
-    <Content Include="Scripts\sp.init.js" />
-    <Content Include="Scripts\SP2013Accordion.js" />
-    <Content Include="Scripts\strings.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProlianceController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Band.cs" />
+    <Compile Include="Models\County.cs" />
+    <Compile Include="Models\ProjectStatus.cs" />
+    <Compile Include="Models\ProjectTypes.cs" />
+    <Compile Include="Models\RegionModel.cs" />
+    <Compile Include="Models\RegionTotals.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -185,9 +185,6 @@
     <Content Include="Scripts\jquery-1.9.1.min.map" />
     <Content Include="Views\_Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\_Shared\_LayoutGDOT.cshtml" />
-    <Content Include="Scripts\ScriptResource.axd" />
-    <Content Include="Scripts\WebResource.axd" />
     <Content Include="Views\Home\Gallery.cshtml" />
     <Content Include="Views\Home\FactSheet.cshtml" />
     <None Include="Web.Debug.config">
@@ -199,7 +196,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
+    <Folder Include="Views\RegionModel\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

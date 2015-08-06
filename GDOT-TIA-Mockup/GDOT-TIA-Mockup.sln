@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GDOT-TIA-Mockup", "GDOT-TIA-Mockup\GDOT-TIA-Mockup.csproj", "{95487184-7EB6-4233-B784-FDCB071B37F6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GDOT-TIA", "GDOT-TIA-Mockup\GDOT-TIA.csproj", "{95487184-7EB6-4233-B784-FDCB071B37F6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

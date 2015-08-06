@@ -237,6 +237,7 @@
 		// Default options
 		options: {
 			height: 200,
+			width: 250,
 			minValue: 0,
 			maxValue: 1000000000,
 			startValue: 0,

@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace GDOT_TIA_Mockup
+namespace GDOT_TIA
 {
 	public class MvcApplication : System.Web.HttpApplication
 	{
