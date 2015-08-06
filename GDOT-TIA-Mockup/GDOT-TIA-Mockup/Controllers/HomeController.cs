@@ -17,7 +17,8 @@ namespace GDOT_TIA.Controllers
 			Region hoga = new Region(Region.HOGAId);
 			Region rv = new Region(Region.RVId);
 
-			ViewBag.totalTaxRevenueCollected = (csra.totalRevenueCollected + hoga.totalRevenueCollected + rv.totalRevenueCollected).ToString("C2");
+			ViewBag.totalTaxRevenueCollected = (csra.totalRevenueCollected + hoga.totalRevenueCollected + rv.totalRevenueCollected) / 1000000;
+			ViewBag.totalTaxRevenueCollectedString = (csra.totalRevenueCollected + hoga.totalRevenueCollected + rv.totalRevenueCollected).ToString("C2");
 			ViewBag.totalProjects = csra.totalProjects + hoga.totalProjects + rv.totalProjects;
 
             return View();
