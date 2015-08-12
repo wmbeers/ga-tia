@@ -12,8 +12,246 @@ using System.Data;
 namespace GDOT_TIA.Controllers
 {
     public class ProlianceController
-    {
+	{
 
+		private ProlianceConnection connection = new ProlianceConnection("https://na2.agpmis.com", "na", "admin", "?aecom");
+		private string account = "";
+
+		public const string CSRA_ACCOUNT= "pgmprj://na/tia/csra";
+		public const string RV_ACCOUNT = "pgmprj://na/tia/rvly";
+		public const string HOGA_ACCOUNT = "pgmprj://na/tia/hoga";
+
+		public ProlianceController(string prjAccount)
+		{
+			account = prjAccount;
+		}
+
+		public IQueryable<County> GetCounties(string attrib)
+		{
+			//CurrentUser = (ProlianceUser)CurrentContext.Session["user"];
+			using (var proliance = new LookupProxy(connection, account))
+			{
+				try
+				{
+					var ver = proliance.GetLookupVersionByType("ProjectOfficeUnitType");
+
+					var query = from item in ver.Items.AsEnumerable()
+								where item.Attributes[0].Value.ToString() == attrib
+								select new County
+								{
+									Code = item.Code,
+									FullCode = item.FullCode,
+									Description = item.Description,
+									level = item.Level,
+									Display = item.Code + " : " + item.Description,
+									SortValue = item.SortValue
+								};
+					return query.AsQueryable();
+				}
+				catch (Exception ex)
+				{
+					throw new Exception("Error occured reading lookup: ", ex);
+				}
+			}
+		}
+
+		public IQueryable<Band> GetBands()
+		{
+			//CurrentUser = (ProlianceUser)CurrentContext.Session["user"];
+			using (var proliance = new LookupProxy(connection, account))
+			{
+				try
+				{
+					var ver = proliance.GetLookupVersionByType("ProjectServiceType");
+
+					var query = from item in ver.Items.AsEnumerable()
+								where item.Level == 0
+								select new Band
+								{
+									Code = item.Code,
+									FullCode = item.FullCode,
+									Description = item.Description,
+									level = item.Level,
+									Display = item.Code + " : " + item.Description,
+									SortValue = item.SortValue
+								};
+					return query.AsQueryable();
+				}
+				catch (Exception ex)
+				{
+					throw new Exception("Error occured reading lookup: ", ex);
+				}
+			}
+		}
+
+		public IQueryable<ProjectTypes> GetProjectTypes()
+		{
+			//CurrentUser = (ProlianceUser)CurrentContext.Session["user"];
+			using (var proliance = new LookupProxy(connection, account))
+			{
+				try
+				{
+					var ver = proliance.GetLookupVersionByType("ProjectMarketSectorType");
+
+					var query = from item in ver.Items.AsEnumerable()
+								where item.Level == 0
+								select new ProjectTypes
+								{
+									Code = item.Code,
+									FullCode = item.FullCode,
+									Description = item.Description,
+									level = item.Level,
+									Display = item.Code + " : " + item.Description,
+									SortValue = item.SortValue
+								};
+					return query.AsQueryable();
+				}
+				catch (Exception ex)
+				{
+					throw new Exception("Error occured reading lookup: ", ex);
+				}
+			}
+		}
+
+		public IQueryable<ProjectStatus> GetProjectStatus()
+		{
+			//CurrentUser = (ProlianceUser)CurrentContext.Session["user"];
+			using (var proliance = new LookupProxy(connection, account))
+			{
+				try
+				{
+					var ver = proliance.GetLookupVersionByType("ProjectSecuredStatusType");
+
+					var query = from item in ver.Items.AsEnumerable()
+								where item.Level == 0
+								select new ProjectStatus
+								{
+									Code = item.Code,
+									FullCode = item.FullCode,
+									Description = item.Description,
+									level = item.Level,
+									Display = item.Code + " : " + item.Description,
+									SortValue = item.SortValue
+								};
+					return query.AsQueryable();
+				}
+				catch (Exception ex)
+				{
+					throw new Exception("Error occured reading lookup: ", ex);
+				}
+			}
+		}
+
+		public DataSet GetProjectApproxValues()
+		{
+			DataSet nData = new DataSet();
+
+			using (var proliance = new GatewayProxy(connection, account))
+			{
+				try
+				{
+					var pageInfo = new PageInfo();
+					pageInfo.SelectFields = new List<OutputField>
+					{
+						new OutputField("ProjectDocument_DocumentGuid"),
+					};
+
+					var ds = proliance.ListDocumentDataSet(DocumentTypeNames.ProjectDocument, pageInfo);
+
+					if (ds != null && ds.Tables[0].Rows.Count > 0)
+					{
+						nData = ds;
+					}
+				}
+				catch (Exception ex)
+				{
+					throw new Exception(ex.Message, ex.InnerException);
+				}
+				return nData;
+			}
+		}
+
+		public DataSet GetPreProjectList()
+		{
+			DataSet nData = new DataSet();
+			using (var proliance = new GatewayProxy(connection, account))
+			{
+				try
+				{
+					var pageInfo = new PageInfo();
+					pageInfo.SelectFields = new List<OutputField>
+					{
+                        new OutputField("SmallProjectDocument_DocumentGuid"),
+                        new OutputField("SmallProjectDocument_DocVisualId"),
+                        new OutputField("SmallProjectDocument_DocTitle"),
+                        new OutputField("SmallProjectDocument_DocSubTypeName"),
+                        new OutputField("SmallProjectDocument_WorkflowStateDisplayName"),
+                        new OutputField("SmallProjectDocument_MarketSector_FullCode"),
+                        new OutputField("SmallProjectDocument_ManagerCode_Description"),
+                        new OutputField("SmallProjectDocument_MarketSector_Description"),
+                        new OutputField("SmallProjectDocument_PlannedStartDate"),
+                        new OutputField("SmallProjectDocument_AlternateNumber1"),
+                        new OutputField("SmallProjectDocument_OfficeUnit_FullCode"),
+                        new OutputField("SmallProjectDocument_OfficeUnit_Description"),
+                        new OutputField("SmallProjectDocument_SecuredStatus_FullCode"),
+                        new OutputField("SmallProjectDocument_SecuredStatus_Description"),                                           
+                        new OutputField("SmallProjectDocument_ServiceType_FullCode"),
+                        new OutputField("SmallProjectDocument_ServiceType_Description"),
+                        new OutputField("SmallProjectDocument_Status_FullCode"),
+                        new OutputField("SmallProjectDocument_Status_Description"),  
+                        new OutputField("SmallProjectDocument_DocDescription"),
+                        new OutputField("SmallProjectDocument_DocDescriptionFull"),                                       
+                        new OutputField("SmallProjectDocument_ApproximateValueText"),
+                        new OutputField("SmallProjectDocument_WorkflowStateUID"),
+                        new OutputField("SmallProjectDocument_AddressInfoNote"),
+                        new OutputField("SmallProjectDocument_SiteFaxInfoNote"),
+                        new OutputField("SmallProjectDocument_PhoneInfoNote")
+					};
+
+					pageInfo.Filters.Add(new FilterField("SmallProjectDocument_WorkflowStateDisplayName", QueryFilterOperation.NotEqual, "Cancelled", QueryFieldType.DataField, false));
+					pageInfo.Filters.Add(new FilterField("SmallProjectDocument_DocTitle", QueryFilterOperation.NotEqual, "Program Administration", QueryFieldType.DataField, false));
+					pageInfo.Filters.FilterRelations = (" 0 & 1 ");
+					pageInfo.PagedOrderFields.Add(new OrderField("SmallProjectDocument_DocVisualId", QueryFieldType.DataField, QueryOrderAttribute.Ascending));
+					var ds = proliance.ListDocumentDataSet(DocumentTypeNames.SmallProjectDocument, pageInfo);
+
+					if (ds != null && ds.Tables[0].Rows.Count > 0)
+					{
+						nData = ds;
+						foreach (DataRow r in nData.Tables[0].Rows)
+						{
+							r["SmallProjectDocument_DocVisualId"] = r["SmallProjectDocument_DocVisualId"].ToString().Replace("PI-", "");
+							r["SmallProjectDocument_ServiceType_Description"] = r["SmallProjectDocument_ServiceType_Description"].ToString().Replace("Band", "");
+							r["SmallProjectDocument_ManagerCode_Description"] = r["SmallProjectDocument_ManagerCode_Description"].ToString().Replace("Congressional District", "");
+							r["SmallProjectDocument_OfficeUnit_Description"] = r["SmallProjectDocument_OfficeUnit_Description"].ToString().Replace("County", "");
+							r["SmallProjectDocument_SecuredStatus_Description"] = r["SmallProjectDocument_SecuredStatus_Description"].ToString().Replace("Status", "");
+
+						}
+					}
+				}
+				catch (Exception ex)
+				{
+					throw new Exception(ex.Message, ex.InnerException);
+				}
+				return nData;
+			}
+
+		}
+
+		private DataSet GetPrjCache()
+		{
+			string cacheKey = "PRjData";
+			object cacheItem = Cache[cacheKey] as DataSet;
+			if ((cacheItem == null))
+			{
+				cacheItem = GetPreProjectList(connection, account);
+			}
+			return (DataSet)cacheItem;
+		}
+
+
+		/* Older functions that require a connection and account string be passed to them */
+		/* Older functions that require a connection and account string be passed to them */
+		/* Older functions that require a connection and account string be passed to them */
         public IQueryable<County> GetCounties(ProlianceConnection conn, string prjAccount, string attrib)
         {
             //CurrentUser = (ProlianceUser)CurrentContext.Session["user"];
@@ -40,8 +278,8 @@ namespace GDOT_TIA.Controllers
                 {
                     throw new Exception("Error occured reading lookup: ", ex);
                 }
-            }
-        }
+			}
+		}
         
         public IQueryable<Band> GetBands(ProlianceConnection conn, string prjAccount)
         {

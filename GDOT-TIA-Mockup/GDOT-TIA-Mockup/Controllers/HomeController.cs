@@ -4,11 +4,18 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using GDOT_TIA.Models;
+using FlickrNet;
 
 namespace GDOT_TIA.Controllers
 {
     public class HomeController : Controller
     {
+		private const string _myAPIKey= "4838674b035d35b548f65a8e7a2622b1";
+		private const string _myId = "134938648@N06";
+		
+		private string myApiKey { get { return _myAPIKey; } }
+		private string myId { get { return _myId; } }
+
         //
         // GET: /Home/
         public ActionResult Index()
@@ -24,7 +31,7 @@ namespace GDOT_TIA.Controllers
             return View();
         }
 
-		// GET: /Gallery/
+		// GET: /FactSheet/
 		public ActionResult FactSheet()
 		{
 			return View();
@@ -33,6 +40,19 @@ namespace GDOT_TIA.Controllers
 		// GET: /Gallery/
 		public ActionResult Gallery()
 		{
+			Flickr flickr = new Flickr(myApiKey);
+
+			ViewBag.albumList = flickr.PhotosetsGetList(myId);
+
+			return View();
+		}
+
+
+		// GET: /SlideShow/
+		public ActionResult SlideShow(string id)
+		{
+			ViewBag.albumId = id;
+
 			return View();
 		}
 	}
