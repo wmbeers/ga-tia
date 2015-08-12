@@ -26,6 +26,8 @@ namespace GDOT_TIA.Controllers
 			account = prjAccount;
 		}
 
+		public ProlianceController() { }
+
 		public IQueryable<County> GetCounties(string attrib)
 		{
 			//CurrentUser = (ProlianceUser)CurrentContext.Session["user"];
@@ -237,7 +239,7 @@ namespace GDOT_TIA.Controllers
 
 		}
 
-		private DataSet GetPrjCache()
+		/*private DataSet GetPrjCache()
 		{
 			string cacheKey = "PRjData";
 			object cacheItem = Cache[cacheKey] as DataSet;
@@ -246,7 +248,7 @@ namespace GDOT_TIA.Controllers
 				cacheItem = GetPreProjectList(connection, account);
 			}
 			return (DataSet)cacheItem;
-		}
+		}*/
 
 
 		/* Older functions that require a connection and account string be passed to them */
