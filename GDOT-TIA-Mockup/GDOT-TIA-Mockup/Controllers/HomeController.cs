@@ -10,8 +10,8 @@ namespace GDOT_TIA.Controllers
 {
     public class HomeController : Controller
     {
-		private const string _myAPIKey= "4838674b035d35b548f65a8e7a2622b1";
-		private const string _myId = "134938648@N06";
+		private const string _myAPIKey = "8f69ca7e3ad465173e52b244198ec521";
+		private const string _myId = "135336406@N07";
 		
 		private string myApiKey { get { return _myAPIKey; } }
 		private string myId { get { return _myId; } }
@@ -42,7 +42,7 @@ namespace GDOT_TIA.Controllers
 		{
 			Flickr flickr = new Flickr(myApiKey);
 
-			ViewBag.albumList = flickr.PhotosetsGetList(myId);
+			ViewBag.albumList = flickr.PhotosetsGetList(myId).OrderByDescending(d => d.PrimaryPhoto.DateTaken);
 
 			return View();
 		}
@@ -51,6 +51,14 @@ namespace GDOT_TIA.Controllers
 		// GET: /SlideShow/
 		public ActionResult SlideShow(string id)
 		{
+			Flickr flickr = new Flickr(myApiKey);
+			Photoset ps= flickr.PhotosetsGetInfo(id);
+
+			if (ps != null)
+			{
+				ViewBag.Title = ps.Title + " Slideshow";
+			}
+
 			ViewBag.albumId = id;
 
 			return View();

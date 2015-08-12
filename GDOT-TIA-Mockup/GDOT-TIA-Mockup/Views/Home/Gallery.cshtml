@@ -1,13 +1,13 @@
 ﻿@{
     Layout = "~/Views/_Shared/_Layout.cshtml";
-	ViewBag.Title = "Slide Show";
+	ViewBag.Title = "Gallery";
 }
 
 <h2>Photo Albums</h2>
 
 @{ 
 	foreach (var album in ViewBag.albumList) {
-	   <p><a href="/Gallery/@album.PhotosetId">@album.Title</a><br />@album.Description</p>
+	   <p><a href="/Home/SlideShow/@album.PhotosetId">@album.Title</a><br />@album.Description</p>
 	
 	}
    
