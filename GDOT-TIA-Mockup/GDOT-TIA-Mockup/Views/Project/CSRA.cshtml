@@ -1,7 +1,14 @@
-﻿@{
+﻿@using GDOT_TIA.Models
+@{
     ViewBag.Title = "CSRA";
     Layout = "~/Views/_Shared/_Layout.cshtml";
 }
 
 <h2>CSRA</h2>
 
+@{
+
+foreach (ProjectStatus ps in ViewBag.allStatuses) {
+	<p>@ps.Code</p>
+}
+}

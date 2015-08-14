@@ -15,25 +15,44 @@ namespace GDOT_TIA.Controllers
 {
     public class ProjectController : Controller
     {
-		ProlianceController pcCSRA = new ProlianceController(ProlianceController.CSRA_ACCOUNT);
-		ProlianceController pcHOGA = new ProlianceController(ProlianceController.HOGA_ACCOUNT);
-		ProlianceController pcRV = new ProlianceController(ProlianceController.RV_ACCOUNT);
+		
         //
         // GET: /Project/
         public ActionResult Index()
-        {
+		{
+			ProlianceController pcCSRA = new ProlianceController(ProlianceController.CSRA_ACCOUNT);
+			ProlianceController pcHOGA = new ProlianceController(ProlianceController.HOGA_ACCOUNT);
+			ProlianceController pcRV = new ProlianceController(ProlianceController.RV_ACCOUNT);
+
+			int totalProjects = 0;
+			int finishedProjects = 0;
+
             return View();
         }
 
 		// GET: /CSRA/
 		public ActionResult CSRA()
 		{
+			ProlianceController pcCSRA = new ProlianceController(ProlianceController.CSRA_ACCOUNT);
+			int totalProjects = 0;
+			int finishedProjects = 0;
+
 			DataSet theData;
 
-			List<County> theCountites = pcCSRA.GetCounties("csra").ToList();
+			List<County> theCounties = pcCSRA.GetCounties("csra").ToList();
 			List<Band> theBands = pcCSRA.GetBands().ToList();
             List<ProjectTypes> theProjectTypes = pcCSRA.GetProjectTypes().ToList();
             List<ProjectStatus> theProjectStatus = pcCSRA.GetProjectStatus().ToList();
+
+			foreach (ProjectStatus ps in theProjectStatus)
+			{
+				if (ps.Code.Contains("Complete")) finishedProjects++;
+				totalProjects++;
+			}
+
+			ViewBag.totalProjects = totalProjects;
+			ViewBag.finishedProjects = finishedProjects;
+			ViewBag.allStatuses = theProjectStatus;
 
 			theData = pcCSRA.GetPreProjectList();
 			/*foreach (County cty in theCountites)

@@ -24,9 +24,11 @@ namespace GDOT_TIA.Controllers
 			Region hoga = new Region(Region.HOGAId);
 			Region rv = new Region(Region.RVId);
 
-			ViewBag.totalTaxRevenueCollected = (csra.totalRevenueCollected + hoga.totalRevenueCollected + rv.totalRevenueCollected) / 1000000;
-			ViewBag.totalTaxRevenueCollectedString = (csra.totalRevenueCollected + hoga.totalRevenueCollected + rv.totalRevenueCollected).ToString("C2");
-			ViewBag.totalProjects = csra.totalProjects + hoga.totalProjects + rv.totalProjects;
+			ViewBag.totalTaxRevenueCollected = (csra.totals.TotalRevenueCollected + hoga.totals.TotalRevenueCollected + rv.totals.TotalRevenueCollected) / 1000000;
+			ViewBag.totalTaxRevenueCollectedString = (csra.totals.TotalRevenueCollected + hoga.totals.TotalRevenueCollected + rv.totals.TotalRevenueCollected).ToString("C2");
+			ViewBag.totalProjects = csra.totals.TotalProjects + hoga.totals.TotalProjects + rv.totals.TotalProjects;
+			ViewBag.totalFinishedProjects = csra.totals.TotalFinishedProjects + hoga.totals.TotalFinishedProjects + rv.totals.TotalFinishedProjects;
+			ViewBag.totalConstructionProjects = csra.totals.TotalConstructionProjects + hoga.totals.TotalConstructionProjects + rv.totals.TotalConstructionProjects;
 
             return View();
         }
@@ -42,7 +44,7 @@ namespace GDOT_TIA.Controllers
 		{
 			Flickr flickr = new Flickr(myApiKey);
 
-			ViewBag.albumList = flickr.PhotosetsGetList(myId).OrderByDescending(d => d.PrimaryPhoto.DateTaken);
+			ViewBag.albumList = flickr.PhotosetsGetList(myId, PhotoSearchExtras.DateTaken).OrderByDescending(d => d.PrimaryPhoto.DateTaken);
 
 			return View();
 		}

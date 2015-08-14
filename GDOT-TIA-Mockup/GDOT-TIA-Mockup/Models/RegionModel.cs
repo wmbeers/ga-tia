@@ -20,17 +20,14 @@ namespace GDOT_TIA.Models
 		[Required]
 		public string url { get; set; }
 
-		public double totalRevenueCollected { get; set; }
-		public int totalProjects { get; set; }
+		public RegionTotals totals;
 
 		public Region(string s)
 		{
-			ProlianceController prj = new ProlianceController();
+			ProlianceController prj = new ProlianceController(s);
 			ProlianceConnection conn = new ProlianceConnection("https://na2.agpmis.com", "na", "admin", "?aecom");
 
-			RegionTotals tot = GetData(s, prj, conn);
-			totalRevenueCollected= tot.TotalRevenueCollected;
-			totalProjects= tot.TotalProjects;
+			totals = GetData(s, prj, conn);
 		}
 
 		#region Private Methods
@@ -38,7 +35,7 @@ namespace GDOT_TIA.Models
 		{
 			RegionTotals rtrn = null;
 
-			rtrn = HttpContext.Current.Cache.Get(prjAccount + "cacheKey") as RegionTotals;
+			//rtrn = HttpContext.Current.Cache.Get(prjAccount + "cacheKey") as RegionTotals;
 			if (rtrn == null)
 			{
 				rtrn = new RegionTotals();
@@ -85,6 +82,15 @@ namespace GDOT_TIA.Models
 					rtrn.ApproximateRevenueCollected = appVal;
 					rtrn.TotalProjects = data.Tables[0].Rows.Count;
 					rtrn.ProjectAccount = prjAccount;
+					rtrn.TotalFinishedProjects = 0;
+					rtrn.TotalConstructionProjects = 0;
+
+					// count projects whose status are Complete and Construction
+					foreach (DataRow dr in data.Tables[0].Rows)
+					{
+						if (dr["SmallProjectDocument_SecuredStatus_FullCode"].ToString().Contains("Complete")) rtrn.TotalFinishedProjects++;
+						if (dr["SmallProjectDocument_SecuredStatus_FullCode"].ToString().Contains("Construction")) rtrn.TotalConstructionProjects++;
+					}
 				}
 
 				HttpContext.Current.Cache.Add(prjAccount + "cacheKey", rtrn, null, DateTime.Now.AddMinutes(5), System.Web.Caching.Cache.NoSlidingExpiration, System.Web.Caching.CacheItemPriority.Default, null);
