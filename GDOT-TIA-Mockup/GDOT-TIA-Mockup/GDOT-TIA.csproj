@@ -215,6 +215,7 @@
     <Content Include="Views\Home\News.cshtml" />
     <Content Include="Views\Home\Procurement.cshtml" />
     <Content Include="Views\Home\FAQ.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
