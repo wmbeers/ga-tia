@@ -109,7 +109,16 @@
 						<li>@Html.ActionLink("TIA Projects", "Index", "Project")</li>
 						<li>@Html.ActionLink("TIA Program Fact Sheet", "FactSheet", "Home")</li>
 						<li>@Html.ActionLink("TIA Project Photos", "Gallery", "Home")</li>
-						<li><a href="#">Program Info & Reports</a></li>
+						<li class="dropdown">
+							<a href="#infoMenu" data-toggle="collapse" aria-expanded="false" aria-controls="infoMenu">Program Info & Reports <span class="caret"></span></a>
+							<ul id="infoMenu" role="menu" class="dropdown-menu">
+								<li>@Html.ActionLink("TIA Program Annual Reports", "AnnualReport", "Home")</li>
+								<li>@Html.ActionLink("Citizens Review Panels", "CitizenReview", "Home")</li>
+								<li>@Html.ActionLink("Final Investment Reports by Region", "Investment", "Home")</li>
+								<li><a href="http://gsfic.georgia.gov/transportation-investment-act">TIA Collections Reports</a></li>
+								<li>@Html.ActionLink("Regional Discretionary Funding Estimates", "Discretionary", "Home")</li>
+							</ul>
+						</li>
 						<li>@Html.ActionLink("Press Room", "News", "Home")</li>
 						<li>@Html.ActionLink("Meeting Presentations", "MeetingPresentations", "Home")</li>
 						<li>@Html.ActionLink("Manuals", "Manuals", "Home")</li>

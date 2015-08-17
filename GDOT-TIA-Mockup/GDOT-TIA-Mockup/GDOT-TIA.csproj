@@ -534,6 +534,8 @@
     <Content Include="Views\Home\AnnualReport.cshtml" />
     <Content Include="Views\Home\CitizenReview.cshtml" />
     <Content Include="Views\Home\Manuals.cshtml" />
+    <Content Include="Views\Home\Discretionary.cshtml" />
+    <Content Include="Views\Home\Investment.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

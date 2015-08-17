@@ -102,6 +102,18 @@ namespace GDOT_TIA.Controllers
 			return View();
 		}
 
+		// GET: /Regional Discretionary Funding Estimates /
+		public ActionResult Discretionary()
+		{
+			return View();
+		}
+
+		// GET: /Final Investment Reports by Region/
+		public ActionResult Investment()
+		{
+			return View();
+		}
+
 		// GET: /Gallery/
 		public ActionResult Gallery()
 		{
