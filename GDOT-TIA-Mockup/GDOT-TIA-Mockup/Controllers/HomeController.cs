@@ -24,6 +24,13 @@ namespace GDOT_TIA.Controllers
 			Region hoga = new Region(Region.HOGAId);
 			Region rv = new Region(Region.RVId);
 
+			ViewBag.csraTaxCollected = csra.totals.TotalRevenueCollected.ToString("C2");
+			ViewBag.hogaTaxCollected = hoga.totals.TotalRevenueCollected.ToString("C2");
+			ViewBag.rvTaxCollected = rv.totals.TotalRevenueCollected.ToString("C2");
+			ViewBag.csraTotalProjects = csra.totals.TotalProjects;
+			ViewBag.hogaTotalProjects = hoga.totals.TotalProjects;
+			ViewBag.rvTotalProjects = rv.totals.TotalProjects;
+
 			ViewBag.totalTaxRevenueCollected = (csra.totals.TotalRevenueCollected + hoga.totals.TotalRevenueCollected + rv.totals.TotalRevenueCollected) / 1000000;
 			ViewBag.totalTaxRevenueCollectedString = (csra.totals.TotalRevenueCollected + hoga.totals.TotalRevenueCollected + rv.totals.TotalRevenueCollected).ToString("C2");
 			ViewBag.totalProjects = csra.totals.TotalProjects + hoga.totals.TotalProjects + rv.totals.TotalProjects;
@@ -49,6 +56,12 @@ namespace GDOT_TIA.Controllers
 			return View();
 		}
 
+		// GET: /FAQ/
+		public ActionResult FAQ()
+		{
+			return View();
+		}
+
 		// GET: /News/
 		public ActionResult News()
 		{
@@ -59,6 +72,11 @@ namespace GDOT_TIA.Controllers
         {
             return View();
         }
+		// GET: /Contact Us/
+		public ActionResult Contact()
+		{
+			return View();
+		}
 
 		// GET: /Gallery/
 		public ActionResult Gallery()

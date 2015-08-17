@@ -16,15 +16,6 @@ namespace GDOT_TIA.Controllers
 
     public class ProjectController : Controller
     {		
-		protected global::System.Web.UI.UpdatePanel MyUpdatePanel;
-        protected global::System.Web.UI.WebControls.Panel Panel1;
-        protected global::System.Web.UI.WebControls.DropDownList DropDownListCounty;     
-        protected global::System.Web.UI.WebControls.DropDownList DropDownListBand;
-        protected global::System.Web.UI.WebControls.DropDownList DropDownListProjectType;
-        protected global::System.Web.UI.WebControls.DropDownList DropDownListProjectStatus;
-        protected global::System.Web.UI.WebControls.Label LabelNoProjects;
-        protected global::System.Web.UI.WebControls.Repeater RepeaterProjectList;
-		
 		private DataSet theData;
 		private ProjectPage ppm;
 
@@ -36,12 +27,19 @@ namespace GDOT_TIA.Controllers
         // GET: /Project/
         public ActionResult Index()
 		{
-			ProlianceController pcCSRA = new ProlianceController(ProlianceController.CSRA_ACCOUNT);
-			ProlianceController pcHOGA = new ProlianceController(ProlianceController.HOGA_ACCOUNT);
-			ProlianceController pcRV = new ProlianceController(ProlianceController.RV_ACCOUNT);
+			Region csra = new Region(Region.CSRAId);
+			Region hoga = new Region(Region.HOGAId);
+			Region rv = new Region(Region.RVId);
 
-			//int totalProjects = 0;
-			//int finishedProjects = 0;
+			ViewBag.csraTaxCollected = csra.totals.TotalRevenueCollected.ToString("C2");
+			ViewBag.hogaTaxCollected = hoga.totals.TotalRevenueCollected.ToString("C2");
+			ViewBag.rvTaxCollected = rv.totals.TotalRevenueCollected.ToString("C2");
+			//ViewBag.csraFundsBudgeted = csra.totals.;
+			//ViewBag.hogaFundsBudgeted = hoga.totals.TotalRevenueCollected;
+			//ViewBag.rvFundsBudgeted = rv.totals.TotalRevenueCollected;
+			ViewBag.csraTotalProjects = csra.totals.TotalProjects;
+			ViewBag.hogaTotalProjects = hoga.totals.TotalProjects;
+			ViewBag.rvTotalProjects = rv.totals.TotalProjects;
 
             return View();
         }
@@ -343,43 +341,6 @@ namespace GDOT_TIA.Controllers
 					ppm.AllProjects.Add(p);
 				}
 			}
-		}
-
-		private void ApplyAllFilters()
-		{
-			string filterExp = string.Empty;
-			if (this.DropDownListCounty.SelectedIndex != 0)
-				if (!string.IsNullOrEmpty(filterExp))
-					filterExp = filterExp + "and SmallProjectDocument_OfficeUnit_FullCode = '" + this.DropDownListCounty.SelectedValue + "'";
-				else
-					filterExp = filterExp + "SmallProjectDocument_OfficeUnit_FullCode = '" + this.DropDownListCounty.SelectedValue + "'";
-			if (this.DropDownListBand.SelectedIndex != 0)
-				if (!string.IsNullOrEmpty(filterExp))
-					filterExp = filterExp + "and SmallProjectDocument_ServiceType_FullCode = '" + this.DropDownListBand.SelectedValue + "'";
-				else
-					filterExp = filterExp + "SmallProjectDocument_ServiceType_FullCode = '" + this.DropDownListBand.SelectedValue + "'";
-			if (this.DropDownListProjectType.SelectedIndex != 0)
-				if (!string.IsNullOrEmpty(filterExp))
-					filterExp = filterExp + "and SmallProjectDocument_MarketSector_FullCode = '" + this.DropDownListProjectType.SelectedValue + "'";
-				else
-					filterExp = filterExp + "SmallProjectDocument_MarketSector_FullCode = '" + this.DropDownListProjectType.SelectedValue + "'";
-			if (this.DropDownListProjectStatus.SelectedIndex != 0)
-				if (!string.IsNullOrEmpty(filterExp))
-					filterExp = filterExp + "and SmallProjectDocument_SecuredStatus_FullCode = '" + this.DropDownListProjectStatus.SelectedValue + "'";
-				else
-					filterExp = filterExp + "SmallProjectDocument_SecuredStatus_FullCode = '" + this.DropDownListProjectStatus.SelectedValue + "'";
-
-			//theData = GetPrjCache();
-			LabelNoProjects.Visible = false;
-			var dv = theData.Tables[0].DefaultView;
-			dv.RowFilter = filterExp;
-			var FilteredView = new DataSet();
-			var newDT = dv.ToTable();
-			FilteredView.Tables.Add(newDT);
-			this.RepeaterProjectList.DataSource = FilteredView;
-			this.RepeaterProjectList.DataBind();
-			if (!(FilteredView.Tables[0].Rows.Count > 0))
-				LabelNoProjects.Visible = true;
 		}
 	}
 }
