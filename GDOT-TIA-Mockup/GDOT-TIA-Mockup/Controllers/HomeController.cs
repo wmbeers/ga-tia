@@ -56,6 +56,12 @@ namespace GDOT_TIA.Controllers
 			return View();
 		}
 
+		// GET: /FAQ/
+		public ActionResult FAQ()
+		{
+			return View();
+		}
+
 		// GET: /News/
 		public ActionResult News()
 		{
