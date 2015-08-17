@@ -32,7 +32,6 @@ namespace GDOT_TIA.Controllers
 		private const int HOGARegion = 1;
 		private const int RVRegion = 2;
 
-		private int currentRegion;
         //
         // GET: /Project/
         public ActionResult Index()

@@ -73,8 +73,8 @@ namespace GDOT_TIA.Models
 						MatchCollection mc = Regex.Matches(appVal, "\\d+");
 						if (mc.Count > 0)
 						{
-							int val = int.MinValue;
-							if (int.TryParse(mc[0].Value, out val))
+							Double val = 0d;
+							if (Double.TryParse(mc[0].Value, out val))
 								rtrn.TotalRevenueCollected = val;
 						}
 					}
@@ -84,13 +84,23 @@ namespace GDOT_TIA.Models
 					rtrn.ProjectAccount = prjAccount;
 					rtrn.TotalFinishedProjects = 0;
 					rtrn.TotalConstructionProjects = 0;
+                    rtrn.TotalFundsBudgeted = 0;
 
+                    Regex noNumbers = new Regex("[^0-9]");
 					// count projects whose status are Complete and Construction
+                    // and summarize budged amount from SmallProjectDocument_AddressInfoNote 
+                    // (which contains text, such as "$1,868,002 (Blended Project - Total Budget)" or "$11,585,960 ")
 					foreach (DataRow dr in data.Tables[0].Rows)
 					{
 						if (dr["SmallProjectDocument_SecuredStatus_FullCode"].ToString().Contains("Complete")) rtrn.TotalFinishedProjects++;
 						if (dr["SmallProjectDocument_SecuredStatus_FullCode"].ToString().Contains("Construction")) rtrn.TotalConstructionProjects++;
-					}
+                        String budgeted = dr.IsNull("SmallProjectDocument_AddressInfoNote") ? "" : dr["SmallProjectDocument_AddressInfoNote"].ToString();
+                        budgeted = noNumbers.Replace(budgeted,""); //strip out everything except numbers
+                        if (budgeted.Length > 0)
+                        {
+                            rtrn.TotalFundsBudgeted += Double.Parse(budgeted);
+                        }
+                    }
 				}
 
 				HttpContext.Current.Cache.Add(prjAccount + "cacheKey", rtrn, null, DateTime.Now.AddMinutes(5), System.Web.Caching.Cache.NoSlidingExpiration, System.Web.Caching.CacheItemPriority.Default, null);

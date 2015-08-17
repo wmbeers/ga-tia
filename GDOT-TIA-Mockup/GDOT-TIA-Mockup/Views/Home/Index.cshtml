@@ -3,6 +3,38 @@
 	ViewBag.Title = "Transportation Investment Act of 2010";
 }
 
+@section css {
+    <style type="text/css">
+        .callout {
+            font-size: 0.8em;
+            float: left;
+            position: absolute;
+            border: 1px solid gray;
+            width: 220px;
+            height: 130px;
+            background: rgba(255,255,255,0.5);
+            -moz-border-radius: 15px;
+            -webkit-border-radius: 15px;
+            border-radius: 15px;
+            padding: 0 10px 0 10px;
+            cursor: pointer;
+        }
+            .callout h4 {
+                font-size: 1.1em;
+            }
+
+            p.withI {
+                margin-bottom: 4px;
+                background-image: url('/Content/img/i.png');
+                background-repeat: no-repeat;
+                padding-left: 22px;
+
+            }
+
+
+    </style>
+}
+
 	<div class="row">
 		<div class="col-md-8">
 			<h1 style="margin-top: 0">Transportation Investment Act (TIA)</h1>
@@ -60,12 +92,38 @@
 
 	<div class="row">
 		<div class="col-md-6">
-			<p><img src="/Content/img/Body_4a.jpg" usemap="#regions" /></p>
+			<div style="position: relative">
+                <div class="callout" style="left: 3px; top: 130px;" onclick="window.open('Project/rv', '_self')">
+                    <h4>River Valley</h4>
+                    <p class="withI">TIA Funds Budgeted (2011 Dollars):<br />
+                    @ViewBag.rv.totals.TotalFundsBudgeted.ToString("C")</p>
+                    <p class="withI">TIA Revenue Collected to Date:<br />
+                    @ViewBag.rv.totals.TotalRevenueCollected.ToString("C")</p>
+                    <p>Total Number of TIA Projects = @ViewBag.rv.totals.TotalProjects</p>
+                </div>
+                 <div class="callout" style="left: 300px; top: 10px;" onclick="window.open('Project/csra', '_self')">
+                    <h4>Central Savannah River Area</h4>
+                    <p class="withI">TIA Funds Budgeted (2011 Dollars):<br />
+                    @ViewBag.csra.totals.TotalFundsBudgeted.ToString("C")</p>
+                    <p class="withI">TIA Revenue Collected to Date:<br />
+                    @ViewBag.csra.totals.TotalRevenueCollected.ToString("C")</p>
+                    <p>Total Number of TIA Projects = @ViewBag.csra.totals.TotalProjects</p>
+                </div>
+                <div class="callout" style="left: 190px; top: 510px;" onclick="window.open('Project/hoga', '_self')">
+                    <h4>Heart of Georgia Altamaha</h4>
+                    <p class="withI">TIA Funds Budgeted (2011 Dollars):<br />
+                    @ViewBag.hoga.totals.TotalFundsBudgeted.ToString("C")</p>
+                    <p class="withI">TIA Revenue Collected to Date:<br />
+                    @ViewBag.hoga.totals.TotalRevenueCollected.ToString("C")</p>
+                    <p>Total Number of TIA Projects = @ViewBag.hoga.totals.TotalProjects</p>
+                </div>
+                <img src="/Content/img/tiacounties.png" usemap="#regions" />
+			</div>
 
 			<map name="regions" id="regions">
-				<area id="rv" alt="River Valley" title="River Valley" href="Project/rv" shape="poly" coords="11,112,206,112,211,191,281,244,285,301,261,302,243,329,214,342,160,338,157,290,173,251,162,216,163,205,11,206" target="_self" />
-				<area id="hoga" alt="Heart of Georgia Altamaha" title="Heart of Georgia Altamaha" href="Project/hoga" shape="poly" coords="85,444,89,350,284,351,326,308,297,302,304,278,324,278,314,247,388,217,413,218,437,251,447,290,433,318,457,350,452,364,426,363,362,320,336,312,299,351,319,352,318,443" target="_self" />
-				<area id="csra" alt="Central Savannah River Area" title="Central Savannah River Area" href="Project/csra" shape="poly" coords="340,18,571,20,572,111,418,115,399,141,453,194,448,228,438,230,412,209,369,206,341,164,361,129,365,112,340,113" target="_self" />
+                <area alt="River Valley" title="River Valley" href="Project/rv" shape="poly" coords="19,290,88,283,101,276,162,300,158,308,173,321,184,327,184,356,220,356,220,454,187,456,178,447,158,446,162,431,115,438,111,447,107,447,97,435,90,437,77,439,76,458,85,477,77,495,42,495,40,516,5,515,5,448,19,423,20,400,38,377" />
+                <area alt="Central Savannah River Area" title="Central Savannah River Area" href="Project/csra" shape="poly" coords="314,227,317,216,340,203,341,165,359,149,397,159,509,282,494,296,498,330,480,338,454,300,436,295,364,297" />
+                <area alt="Heart of Georgia Altamaha" title="Heart of Georgia Altamaha" href="Project/hoga" shape="poly" coords="244,461,248,416,286,420,292,411,269,365,272,359,373,308,423,309,454,318,500,436,468,481,513,539,501,563,460,557,377,507,351,480" />
             </map>
 		</div>
 

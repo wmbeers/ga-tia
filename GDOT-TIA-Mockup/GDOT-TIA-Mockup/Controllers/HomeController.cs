@@ -30,6 +30,10 @@ namespace GDOT_TIA.Controllers
 			ViewBag.totalFinishedProjects = csra.totals.TotalFinishedProjects + hoga.totals.TotalFinishedProjects + rv.totals.TotalFinishedProjects;
 			ViewBag.totalConstructionProjects = csra.totals.TotalConstructionProjects + hoga.totals.TotalConstructionProjects + rv.totals.TotalConstructionProjects;
 
+            ViewBag.csra = csra;
+            ViewBag.hoga = hoga;
+            ViewBag.rv = rv;
+
             return View();
         }
 
