@@ -190,6 +190,8 @@
     </Compile>
     <Compile Include="Models\Band.cs" />
     <Compile Include="Models\County.cs" />
+    <Compile Include="Models\ProjectModel.cs" />
+    <Compile Include="Models\ProjectPageModel.cs" />
     <Compile Include="Models\ProjectStatus.cs" />
     <Compile Include="Models\ProjectTypes.cs" />
     <Compile Include="Models\RegionModel.cs" />
@@ -207,6 +209,11 @@
     <Content Include="Views\Home\SlideShow.cshtml" />
     <Content Include="Views\Project\Index.cshtml" />
     <Content Include="Views\Project\CSRA.cshtml" />
+    <Content Include="Views\Project\_ProjectList.cshtml" />
+    <Content Include="Views\Project\HOGA.cshtml" />
+    <Content Include="Views\Project\RV.cshtml" />
+    <Content Include="Views\Home\News.cshtml" />
+    <Content Include="Views\Home\Procurement.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -216,6 +223,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\ProjectModel\" />
     <Folder Include="Views\Projects\" />
     <Folder Include="Views\RegionModel\" />
   </ItemGroup>

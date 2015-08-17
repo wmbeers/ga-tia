@@ -1,0 +1,97 @@
+﻿@using GDOT_TIA.Models
+@model GDOT_TIA.Models.ProjectPage
+@{
+    ViewBag.Title = "River Valley Project List";
+    Layout = "~/Views/_Shared/_Layout.cshtml";
+}
+@section scripts {
+	<script type="text/javascript">
+		$(function () {
+			$("select").change(function () {
+				var c= $('#countyList option:selected').val();
+				var b= $('#bandList option:selected').val();
+				var s= $('#statusList option:selected').val();
+				var t= $('#typeList option:selected').val();
+				$.ajax({
+					url: "/Project/Filter?bandString=" + b + "&countyString=" + c + "&statusString=" +s + "&typeString=" + t + "&region=" + 2,
+					type: "GET",
+					/**/error: function (response) {
+						alert("error " + response.toString());
+					},
+					success: function(partialView) {
+						$('#plist').html('');
+						$('#plist').html(partialView);
+					}
+				});
+			});
+		});
+
+	</script>
+}
+
+<h2>CSRA Project List</h2>
+
+<p>Filter projects by:</p>
+
+<div class="row">
+	<div class="col-md-2">
+		<label for="countyList">County</label>
+		<select id="countyList">
+			<option value="">All</option>
+			@{
+				foreach (County c in Model.AllCounties)
+				{
+					<option value="@c.Description">@c.Description</option>
+				}
+				
+			}
+		</select>
+	</div>
+	<div class="col-md-2">
+		<label for="bandList">Band</label>
+		<select id="bandList" onchange="test(); FilterSelectionChanged($('#countyList option:selected').val(), $('#bandList option:selected').val(), $('#statusList option:selected').val(), $('#typeList option:selected').val())">
+			<option value="">All</option>
+			@{
+
+				foreach (Band b in Model.AllBands)
+				{
+					<option value="@b.Description">@b.Description</option>
+				}
+			}
+
+		</select>
+
+	</div>
+	<div class="col-md-2">
+		<label for="typeList">Project Type</label>
+		<select id="typeList" onchange="FilterSelectionChanged($('#countyList option:selected').val(), $('#bandList option:selected').val(), $('#statusList option:selected').val(), $('#typeList option:selected').val())">
+			
+			<option value="">All</option>
+			@{
+
+				foreach (ProjectTypes t in Model.AllProjectTypes)
+				{
+					<option value="@t.Description">@t.Description</option>
+				}
+			}
+		</select>
+
+	</div>
+	<div class="col-md-2">
+		<label for="statusList">Status</label>
+		<select id="statusList" onchange="FilterSelectionChanged($('#countyList option:selected').val(), $('#bandList option:selected').val(), $('#statusList option:selected').val(), $('#typeList option:selected').val())">
+			
+			<option value="">All</option>
+			@{
+
+				foreach (ProjectStatus s in Model.AllProjectStatuses)
+				{
+					<option value="@s.Description">@s.Description</option>
+				}
+			}
+		</select>
+
+	</div>
+</div>
+<br />
+<div id="plist">@Html.Partial("_ProjectList", Model)</div>

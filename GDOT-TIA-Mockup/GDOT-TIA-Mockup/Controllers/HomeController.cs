@@ -33,8 +33,20 @@ namespace GDOT_TIA.Controllers
             return View();
         }
 
+		// GET: /Procurement/
+		public ActionResult Procurement()
+		{
+			return View();
+		}
+
 		// GET: /FactSheet/
 		public ActionResult FactSheet()
+		{
+			return View();
+		}
+
+		// GET: /News/
+		public ActionResult News()
 		{
 			return View();
 		}

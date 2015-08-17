@@ -6,6 +6,14 @@
 	padding: 0px;
 }
 
+.row-eq-height {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+
 .carousel {
 	max-width: 1500px;
 }
@@ -117,6 +125,12 @@ ul.collapse > li > ul > li{
   font-size: small;
 }
 
+#project-container section {
+	padding: 10px;
+	border-radius: 10px;
+}
+#project-container section:nth-child(even) {background: #EEE}
+
 .carousel-caption
 {
   position: absolute;
@@ -140,6 +154,10 @@ ul.collapse > li > ul > li{
 	#slideshow{
 		height: 40vh;
 	}
+
+.indent {
+	text-indent: 2em;
+}
 
 /* Extra Small Devices, Phones */ 
     @media only screen and (min-width : 480px) and (max-width: 765px) {
