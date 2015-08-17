@@ -55,6 +55,11 @@ namespace GDOT_TIA.Controllers
 			return View();
 		}
 
+        public ActionResult MeetingPresentations()
+        {
+            return View();
+        }
+
 		// GET: /Gallery/
 		public ActionResult Gallery()
 		{

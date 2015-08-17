@@ -1,0 +1,105 @@
+﻿@{
+    Layout = "~/Views/_Shared/_Layout.cshtml";
+    ViewBag.Title = "TIA Meeting Presentations";
+}
+
+@section css {
+    <style type="text/css">
+    #accordion h3 {
+        cursor: pointer;
+    }
+    </style>
+}
+
+@section scripts {
+    <script type="text/javascript">
+        $(function () {
+            $("#accordion h3").click(function () {
+                $(this).next().toggle('slide', { 'direction': 'up' });
+                return false;
+            });
+        });
+    </script>
+
+}
+<h2>Meeting Presentations</h2>
+
+
+<div id="accordion">
+    <h3>2015 Presentation</h3>
+    <div>
+        <a target="_blank" href="/Content/pdf/CSRA%20CRP%20Augusta-Richmond%20TIA%20UPDATE%205-6-2015.pdf">5/6/2015 – CSRA Citizen’s Review Panel Update by Augusta-Richmond County </a>
+    </div>
+    <h3 title="Click to toggle 2014 Presentations">2014 Presentations</h3>
+    <div style="display:none">
+        <ul>
+
+            <li><a target="_blank" href="/Content/pdf/12-9-2014%20Transportation%20Summit%20-%20Athens.pdf">12/9/2014 – 2014 Transportation Summit </a></li>
+
+            <li><a target="_blank" href="/Content/pdf/FINAL%20DRAFT%20-%2025Sep2014%20-%20TIA%20-%20Local%20and%20Small%20Business%20Outreach%20-%20Jekyll.pdf">9/25/2014 - Jekyll Island DBE Conference </a></li>
+
+            <li><a target="_blank" href="/Content/pdf/9-2-2014%20Rotary%20in%20Columbia%20County%20GA.pdf">9/2/2014 - Columbia County Rotary </a></li>
+
+            <li><a target="_blank" href="/Content/pdf/Batch%203%20Industry%20Forum%20Mtg%20FINAL.pdf">8/22/14 - Industry Forum for Batch 3 Design Advertisement  </a>
+
+                <ul>
+                    <li><a target="_blank" href="/Content/pdf/08-22-2014%20TIA%20Industry%20Forum%20QA%20Session%20-%20Final.pdf">Meeting Q&A </a></li>
+                </ul>
+            </li>
+
+            <li><a target="_blank" href="/Content/pdf/September 2014 Letting Final.pdf">8/21/2014 – TIA Project Lettings, State Transportation Board Meeting  </a></li>
+
+            <li><a target="_blank" href="/Content/pdf/Columbus%20TSPLOST%20Update%20April%2024,%202014%20-%20River%20Valley.pdf">4/24/2014 – Update on Columbus TIA Projects  </a></li>
+
+            <li><a target="_blank" href="/Content/pdf/Local%20and%20Small%20Business%20Outreach%20-%20Statewide%20-%20Macon%20-%2009Apr2014.pdf">4/9/2014 – Local and Small Business Update, Macon Georgia  </a></li>
+
+            <li><a target="_blank" href="/Content/pdf/Meeting%20Presentation.pdf">2/25/2014 – Industry Forum Informational Meeting for Band 2 Design Projects, Atlanta, GA    </a>
+
+
+                <ul>
+                    <li><a href="/Content/pdf/Meeting%20Q-A.pdf"
+                        target="_blank">Meeting Q&A </a></li>
+                </ul>
+
+                <li><a
+                    target="_blank" href="/Content/pdf/21Feb2014%20-%20Presentation%20-%20Local%20and%20Small%20Business%20Outreach%20-%20CSRA%20-%20Augusta.pdf">2/21/2014 - Local and Small Business Outreach in Augusta </a>
+
+                    <ul>
+                        <li><a href="/Content/pdf/21Feb2014%20-%20Agenda%20-%20Local%20and%20Small%20Business%20Outreach%20-%20CSRA%20-%20Augusta.pdf"
+                            target="_blank">Agenda - CSRA     </a></li>
+                    </ul>
+
+                    <ul>
+                        <li><a href="/Content/pdf/21Feb2014%20-%20Handout%20-%20CSRA%20Projects%20-%20Local%20and%20Small%20Business%20Outreach%20-%20CSRA%20-%20Augusta.pdf"
+                            target="_blank">Handout - CSRA Projects </a></li>
+                    </ul>
+
+                    <ul>
+                        <li><a href="/Content/pdf/21Feb2014%20-%20Handout%20-%20HOGA%20Projects%20-%20Local%20and%20Small%20Business%20Outreach%20-%20CSRA%20-%20Augusta.pdf"
+                            target="_blank">Handout - HOGA Projects  </a></li>
+                    </ul>
+
+                    <ul>
+                        <li><a href="/Content/pdf/21Feb2014%20-%20Handout%20from%20Augusta%20Richmond%20County%20-%20Local%20Small%20Business%20Outreach.pdf"
+                            target="_blank">Handout - Augusta Richmond County  </a></li>
+                    </ul>
+        </ul>
+    </div>
+    <h3 title="Click to toggle 2013 Presentations">2013 Presentations</h3>
+    <div style="display:none">
+        <ul class="EditToolbarCustom-ListofLinks">
+            <li><a href="/Content/pdf/11-20-2013%20committee%20of%20the%20whole.pdf" target="_blank">11/20/2013 – Presentation to the GDOT Board Committee of the Whole </a></li>
+
+            <li><a href="/Content/pdf/Laurens%200000833%20PHOH%20handouts%20-%2011.2013.pdf" target="_blank">11/7/2013 – Public Hearing Open House Materials, New Oconee River Crossing,  Laurens County, PI No. 0000833 </a></li>
+
+            <li><a href="/Content/pdf/Transportation%20Summit%202013.pdf" target="_blank">11/7/2013 – Transportation Summit, Atlanta, GA </a></li>
+
+            <li><a href="/Content/pdf/10-31-2013%20Regional%20Transportation%20Summit%20v2.pdf" target="_blank">10/13/2013 - Regional Transportation Summit Presentation, Columbus, GA</a></li>
+
+            <li><a href="http://www.southgatech.edu/index.cfm?PageID=207&NewsID=3075" target="_blank">8/8/2013 - TIA River Valley Region Citizen’s Review Panel, Americus, GA</a></li>
+
+            <li><a href="/Content/pdf/CRPMeeting-3-15-13.pdf" target="_blank">3/15/2013 - Citizen’s Review Panel Presentation, Macon, GA</a> </li>
+        </ul>
+
+    </div>
+</div>
