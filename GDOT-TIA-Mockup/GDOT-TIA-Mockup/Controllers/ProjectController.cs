@@ -155,7 +155,7 @@ namespace GDOT_TIA.Controllers
 			List<ProjectStatus> theProjectStatus = pcHOGA.GetProjectStatus().ToList();
 
 			ppm.AllBands = pcHOGA.GetBands().ToList();
-			ppm.AllCounties = pcHOGA.GetCounties("csra").ToList();
+			ppm.AllCounties = pcHOGA.GetCounties("hoga").ToList();
 			ppm.AllProjectTypes = pcHOGA.GetProjectTypes().ToList();
 			ppm.AllProjectStatuses = pcHOGA.GetProjectStatus().ToList();
 
@@ -207,7 +207,7 @@ namespace GDOT_TIA.Controllers
 			List<ProjectStatus> theProjectStatus = pcRV.GetProjectStatus().ToList();
 
 			ppm.AllBands = pcRV.GetBands().ToList();
-			ppm.AllCounties = pcRV.GetCounties("csra").ToList();
+            ppm.AllCounties = pcRV.GetCounties("rvly").ToList();
 			ppm.AllProjectTypes = pcRV.GetProjectTypes().ToList();
 			ppm.AllProjectStatuses = pcRV.GetProjectStatus().ToList();
 
@@ -240,7 +240,7 @@ namespace GDOT_TIA.Controllers
 					p.description = r["SmallProjectDocument_DocTitle"].ToString();
 					p.projectStatus = r["SmallProjectDocument_SecuredStatus_FullCode"].ToString();
 					p.projectPage = r["SmallProjectDocument_SiteFaxInfoNote"].ToString();
-					p.regionalCommission = "Central Savannah";
+					p.regionalCommission = "River Valley";
 
 					ppm.AllProjects.Add(p);
 				}
@@ -269,16 +269,16 @@ namespace GDOT_TIA.Controllers
 					filterExp = filterExp + "and SmallProjectDocument_ServiceType_FullCode = '" + bandString + "'";
 				else
 					filterExp = filterExp + "SmallProjectDocument_ServiceType_FullCode = '" + bandString + "'";
-			if (!string.IsNullOrEmpty(statusString))
+            if (!string.IsNullOrEmpty(typeString))
 				if (!string.IsNullOrEmpty(filterExp))
-					filterExp = filterExp + "and SmallProjectDocument_MarketSector_FullCode = '" + statusString + "'";
+                    filterExp = filterExp + "and SmallProjectDocument_MarketSector_FullCode = '" + typeString + "'";
 				else
-					filterExp = filterExp + "SmallProjectDocument_MarketSector_FullCode = '" + statusString + "'";
-			if (!string.IsNullOrEmpty(typeString))
+                    filterExp = filterExp + "SmallProjectDocument_MarketSector_FullCode = '" + typeString + "'";
+            if (!string.IsNullOrEmpty(statusString))
 				if (!string.IsNullOrEmpty(filterExp))
-					filterExp = filterExp + "and SmallProjectDocument_SecuredStatus_FullCode = '" + typeString + "'";
+                    filterExp = filterExp + "and SmallProjectDocument_SecuredStatus_FullCode = '" + statusString + "'";
 				else
-					filterExp = filterExp + "SmallProjectDocument_SecuredStatus_FullCode = '" + typeString + "'";
+                    filterExp = filterExp + "SmallProjectDocument_SecuredStatus_FullCode = '" + statusString + "'";
 
 			//theData = GetPrjCache();
 			//LabelNoProjects.Visible = false;
@@ -298,8 +298,11 @@ namespace GDOT_TIA.Controllers
 					theData = pcRV.GetPreProjectList();
 					break;
 			}
+
+
 			var dv = theData.Tables[0].DefaultView;
-			dv.RowFilter = filterExp;
+			
+            dv.RowFilter = filterExp;
 			var FilteredView = new DataSet();
 			var newDT = dv.ToTable();
 			FilteredView.Tables.Add(newDT);

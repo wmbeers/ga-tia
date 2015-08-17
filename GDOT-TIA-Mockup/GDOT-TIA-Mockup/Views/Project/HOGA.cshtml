@@ -41,7 +41,7 @@
 			@{
 				foreach (County c in Model.AllCounties)
 				{
-					<option value="@c.Description">@c.Description</option>
+					<option value="@c.Code">@c.Description</option>
 				}
 				
 			}
@@ -55,7 +55,7 @@
 
 				foreach (Band b in Model.AllBands)
 				{
-					<option value="@b.Description">@b.Description</option>
+					<option value="@b.Code">@b.Description</option>
 				}
 			}
 
@@ -71,7 +71,7 @@
 
 				foreach (ProjectTypes t in Model.AllProjectTypes)
 				{
-					<option value="@t.Description">@t.Description</option>
+					<option value="@t.FullCode">@t.Description</option>
 				}
 			}
 		</select>
@@ -86,7 +86,7 @@
 
 				foreach (ProjectStatus s in Model.AllProjectStatuses)
 				{
-					<option value="@s.Description">@s.Description</option>
+					<option value="@s.Code">@s.Description</option>
 				}
 			}
 		</select>
