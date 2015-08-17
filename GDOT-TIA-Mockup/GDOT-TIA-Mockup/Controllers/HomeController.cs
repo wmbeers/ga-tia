@@ -72,6 +72,13 @@ namespace GDOT_TIA.Controllers
         {
             return View();
         }
+
+        public ActionResult Manuals()
+        {
+            return View();
+        }
+
+
 		// GET: /Contact Us/
 		public ActionResult Contact()
 		{
