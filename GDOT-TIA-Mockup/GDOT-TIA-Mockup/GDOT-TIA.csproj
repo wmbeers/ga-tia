@@ -152,6 +152,9 @@
     <Content Include="Content\img\travelsmart_navlogo.png" />
     <Content Include="Content\img\Twitter.png" />
     <Content Include="Content\img\Youtube.png" />
+    <Content Include="Content\jquery-ui.min.css" />
+    <Content Include="Content\jquery-ui.structure.min.css" />
+    <Content Include="Content\jquery-ui.theme.min.css" />
     <Content Include="Content\photos\banner1.png" />
     <Content Include="Content\photos\banner2.png" />
     <Content Include="Content\photos\banner3.png" />
@@ -473,6 +476,7 @@
     <Content Include="Content\pdf\Windsor Spring Rd Groundbreaking Invitation.pdf" />
     <Content Include="Content\pdf\Windsor Spring Road Augusta 9-30-2014.pdf" />
     <Content Include="Content\pdf\CSRA CRP Augusta-Richmond TIA UPDATE 5-6-2015.pdf" />
+    <None Include="Properties\PublishProfiles\PublishToC-Temp.pubxml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\bootstrap.v3.min.js" />
