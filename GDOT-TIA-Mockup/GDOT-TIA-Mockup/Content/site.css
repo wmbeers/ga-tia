@@ -250,6 +250,16 @@ ul.collapse > li > ul > li{
 	text-indent: 2em;
 }
 
+div.indent {
+	text-indent: 0em;
+	margin-left: 2em;
+}
+
+.danger {
+	color: red;
+	font-weight: bold;
+}
+
 /* Extra Small Devices, Phones */ 
     @media only screen and (min-width : 480px) and (max-width: 765px) {
 		.min-container {

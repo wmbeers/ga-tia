@@ -68,6 +68,24 @@ namespace GDOT_TIA.Controllers
 			return View();
 		}
 
+		// GET: /Calendar/
+		public ActionResult Calendar()
+		{
+			return View();
+		}
+
+		// GET: /Annual Report/
+		public ActionResult AnnualReport()
+		{
+			return View();
+		}
+
+		// GET: /Citizen Review Panel/
+		public ActionResult CitizenReview()
+		{
+			return View();
+		}
+
 		// GET: /Contact Us/
 		public ActionResult Contact()
 		{
