@@ -44,7 +44,9 @@
 					<div class="col-md-4">
 						<p><strong>Regional Commission:</strong> @p.regionalCommission</p>
 						<p><strong>Project Type:</strong> @p.projectType</p>
-						<p><strong>Project Progress Photos:</strong> @p.progressPhotos</p>
+						@if(!p.progressPhotos.IsEmpty()) {
+							<p><strong><a href="@p.progressPhotos">Project Progress Photos</a></strong></p>
+						}
 						<p><strong>Band:</strong> @p.band</p>
 					</div>
 					<div class="col-md-4">
