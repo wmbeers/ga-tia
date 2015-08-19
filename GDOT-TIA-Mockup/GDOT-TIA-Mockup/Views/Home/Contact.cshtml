@@ -1,7 +1,17 @@
 ﻿
 @{
-    ViewBag.Title = "Contact";
+    ViewBag.Title = "TIA Contacts";
     Layout = "~/Views/_Shared/_Layout.cshtml";
+}
+
+@section css {
+    <style type="text/css">
+    div.contact {
+        padding-top: 0.75em;
+        padding-bottom: 0.75em;
+    }
+
+    </style>
 }
 
 <h1>Contact Us</h1>
@@ -9,41 +19,37 @@
 <p>For more information, please e-mail <a href="mailto:TIA@dot.ga.gov">TIA@dot.ga.gov</a> or contact one of the following</p>
 
 <div class="row">
-	<div class="col-md-4">
+	<!--
+    <div class="col-md-4 contact">
 		Mike Dover<br />
 		TIA Administrator<br />
 		(404) 631-1733<br />
 		<a href="mailto:">mdover@dot.ga.gov</a>
 	</div>
-	<div class="col-md-4">
+    -->
+	<div class="col-md-6 contact">
 		Kenneth Franks<br />
 		TIA Regional Coordinator<br />
 		CSRA & HOGA<br />
+        (404) 631-1568<br />
 		<a href="mailto:">kfranks@dot.ga.gov</a>
 	</div>
-	<div class="col-md-4">
+	<div class="col-md-6 contact">
 		Kelvin Mullins<br />
 		TIA Regional Coordinator<br />
 		River Valley & HOGA<br />
 		(404) 631-1675<br />
 		<a href="mailto:">kemullins@dot.ga.gov</a>
 	</div>
-</div>
-
-<div class="row">
-	<div class="col-md-4">
+	<div class="col-md-6 contact">
 		Shrujal Amin<br />
 		TIA Program Manager<br />
 		(404) 631-1697<br />
 		<a href="mailto:">samin@dot.ga.gov</a>
 	</div>
-	<div class="col-md-4">
-		Jill Goldberg<br />
-		Communications/Media Manager<br />
-		(404) 631-1828<br />
-		<a href="mailto:">jgoldberg@dot.ga.gov</a>
-	</div>
-	<div class="col-md-4">
-
+	<div class="col-md-4 contact">
+		Karen Judd<br />
+		Communications Specialist/ Media Contact<br />
+		<a href="mailto:">kjudd@dot.ga.gov</a>
 	</div>
 </div>
