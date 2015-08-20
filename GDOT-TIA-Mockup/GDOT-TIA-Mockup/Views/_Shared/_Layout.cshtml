@@ -97,8 +97,16 @@
 		</div>
 <br />
 
+
 		<div class="row">
-			<div class="col-md-3">
+			<div class="col-md-9 col-md-push-3 col-lg-9 col-push-lg-3">
+				<div class="row">
+				<!-- Main content column -->
+				@RenderBody()
+
+				</div>
+			</div>
+			<div class="col-sm-12 col-md-3 col-md-pull-9 col-lg-3 col-lg-pull-9">
 				<!-- Side nav column-->
 				<ul class="nav nav-sidebar">
 					<li><a href="#">Local Administered Projects (LAP) Manual</a></li>
@@ -130,25 +138,21 @@
 						</li>
 				  </ul>
 				
-				<div style="width: 90%">
-					<!-- Twitter Embed Code -->
-					<a class="twitter-timeline"  href="https://twitter.com/GADeptofTrans" data-widget-id="628058046166470657">Tweets by GADeptofTrans</a>
-					<script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + "://platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); } }(document, "script", "twitter-wjs");</script>
-					<!-- Twitter Embed Code End-->
-					<br />
-					
-					<!-- Facebook Embed Code -->
-					<div class="fb-page" data-href="https://www.facebook.com/transportationinvestmentact" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/transportationinvestmentact"><a href="https://www.facebook.com/transportationinvestmentact">Georgia Transportation Investment Act - TIA</a></blockquote></div></div>
-					<!-- Facebook Embed Code End -->
+				<div class="row">
+					<div class="col-sm-6 col-md-12">
+						<!-- Twitter Embed Code -->
+						<a class="twitter-timeline"  href="https://twitter.com/GADeptofTrans" data-widget-id="628058046166470657">Tweets by GADeptofTrans</a>
+						<script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + "://platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); } }(document, "script", "twitter-wjs");</script>
+						<!-- Twitter Embed Code End-->
+					</div>
+
+					<div class="col-sm-6 col-md-12">
+						<!-- Facebook Embed Code -->
+						<div class="fb-page" data-href="https://www.facebook.com/transportationinvestmentact" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/transportationinvestmentact"><a href="https://www.facebook.com/transportationinvestmentact">Georgia Transportation Investment Act - TIA</a></blockquote></div></div>
+						<!-- Facebook Embed Code End -->
+					</div>
 				</div>
 				<!-- Side nav column End-->
-			</div>
-			<div class="col-md-9">
-				<div class="row">
-				<!-- Main content column -->
-				@RenderBody()
-
-				</div>
 			</div>
 		</div>
 	</div>
