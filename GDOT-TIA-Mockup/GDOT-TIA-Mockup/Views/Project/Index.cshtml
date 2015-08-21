@@ -1,15 +1,47 @@
 ﻿@section scripts {
 	<script type="text/javascript">
-	function showInfo(divId) {
-		hideAll();
-		$("#" + divId).show();
-	}
-	function hideAll() {
-		$("#csrainfo").hide();
-		$("#hogainfo").hide();
-		$("#rvinfo").hide();
-	}
-	$("area").mouseover(hideAll());
+		function showInfo(divId) {
+			hideAll();
+			$("#" + divId).show();
+		}
+		function hideAll() {
+			$("#csrainfo").hide();
+			$("#hogainfo").hide();
+			$("#rvinfo").hide();
+		}
+		$("area").mouseover(hideAll());
+
+		$(function () {
+			$('#hogaThermo').thermometer({
+				startValue: '@ViewBag.hogaTaxCollectedNum',
+				minValue: 0,
+				maxValue: 300,
+				topText: "$300",
+				middleText: "$150",
+				bottomText: 0,
+				liquidColour: '#608bb4'
+			});
+
+			$('#csraThermo').thermometer({
+				startValue: '@ViewBag.csraTaxCollectedNum',
+				minValue: 0,
+				maxValue: 600,
+				topText: "$600",
+				middleText: "$300",
+				bottomText: 0,
+				liquidColour: '#9bbb59'
+			});
+			$('#rvThermo').thermometer({
+				startValue: '@ViewBag.rvTaxCollectedNum',
+				minValue: 0,
+				maxValue: 600,
+				topText: "$600",
+				middleText: "$300",
+				bottomText: 0,
+				liquidColour: '#f79646'
+			});
+		});
+
 	</script>
 }
 @{
@@ -21,7 +53,7 @@
 <br />
 <div class="row">
 	<div class="col-md-6">
-		<p><img id="tiaregions" src="/Content/img/tia_regions.png" border="0" width="589" height="695" usemap="#regionmap" alt="" onmouseout="hideAll()" /></p>
+		<p><img id="tiaregions" src="/Content/img/tia_regions.png" border="0" width="500" height="590" usemap="#regionmap" alt="" onmouseout="hideAll()" /></p>
 
 		<map name="regionmap" id="regionmap">
 			<area id="rv" alt="River Valley" title="River Valley" data-toggle="tooltip" data-placement="left" href="/Project/RV"  shape="rect" coords="2,229,201,449" onmouseover="showInfo('rvinfo');" onmouseout="hideAll()" />
@@ -30,6 +62,21 @@
 		</map>
 	</div>
 	<div class="col-md-6">
+		<div id="hogainfo">
+			<div class="panel panel-hoga">
+				<div class="panel-heading">
+					<h2 class="panel-title">Heart of Georgia Altamaha</h2>
+				</div>
+				<div class="panel-body">
+					<!--<p>Tax Revenue Collected to date:@ViewBag.</p>-->
+					<div style="text-align: center; width: 100%;">
+						<div id="hogaThermo" style="width: 80px; margin: auto"></div>
+					</div>
+					<p>TIA Funds Bugedted (2011 Dollars): @ViewBag.hogaTaxCollected</p>
+					<p>Total Number of TIA Projects: @ViewBag.hogaTotalProjects</p>
+				</div>
+			</div>
+		</div>
 		<div id="csrainfo">
 			<div class="panel panel-csra">
 				<div class="panel-heading">
@@ -37,25 +84,17 @@
 
 				</div>
 				<div class="panel-body">
-					<p>TIA Funds Bugedted (2011 Dollars):@ViewBag.csraTaxCollected</p>
-					<!--<p>Tax Revenue Collected to date:@ViewBag.</p>-->
-					<p>Total Number of TIA Projects:@ViewBag.csraTotalProjects</p>
+					<!--
+					<p>Tax Revenue Collected to date:@ViewBag.</p>-->
+					<div style="text-align: center; width: 100%;">
+						<div id="csraThermo" style="width: 80px; margin: auto"></div>
+					</div>
+					<p>TIA Funds Bugedted (2011 Dollars): @ViewBag.csraTaxCollected</p>
+					<p>Total Number of TIA Projects: @ViewBag.csraTotalProjects</p>
 			  </div>
 			</div>
 
 			
-		</div>
-		<div id="hogainfo">
-			<div class="panel panel-hoga">
-				<div class="panel-heading">
-					<h2 class="panel-title">Heart of Georgia Altamaha</h2>
-				</div>
-				<div class="panel-body">
-					<p>TIA Funds Bugedted (2011 Dollars):@ViewBag.hogaTaxCollected</p>
-					<!--<p>Tax Revenue Collected to date:@ViewBag.</p>-->
-					<p>Total Number of TIA Projects:@ViewBag.hogaTotalProjects</p>
-				</div>
-			</div>
 		</div>
 		<div id="rvinfo">
 			<div class="panel panel-rv">
@@ -63,9 +102,12 @@
 					<h2 class="panel-title">River Valley</h2>
 				</div>
 				<div class="panel-body">
-					<p>TIA Funds Bugedted (2011 Dollars):@ViewBag.rvTaxCollected</p>
 					<!--<p>Tax Revenue Collected to date:@ViewBag.</p>-->
-					<p>Total Number of TIA Projects:@ViewBag.rvTotalProjects</p>
+					<div style="text-align: center; width: 100%;">
+						<div id="rvThermo" style="width: 80px; margin: auto"></div>
+					</div>
+					<p>TIA Funds Bugedted (2011 Dollars) :@ViewBag.rvTaxCollected</p>
+					<p>Total Number of TIA Projects: @ViewBag.rvTotalProjects</p>
 				</div>
 			</div>
 		</div>

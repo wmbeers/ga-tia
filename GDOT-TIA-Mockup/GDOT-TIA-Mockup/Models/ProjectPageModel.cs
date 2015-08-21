@@ -12,8 +12,7 @@ namespace GDOT_TIA.Models
 		public List<Band> AllBands { get; set; }
 		public List<ProjectTypes> AllProjectTypes { get; set; }
 		public List<ProjectStatus> AllProjectStatuses { get; set; }
-		public int totalProjects { get; set; }
-		public int finishedProjects { get; set; }
+		public RegionTotals totals { get; set; }
 
 		public ProjectPage()
 		{

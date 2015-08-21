@@ -85,6 +85,7 @@ namespace GDOT_TIA.Models
 					rtrn.TotalFinishedProjects = 0;
 					rtrn.TotalConstructionProjects = 0;
                     rtrn.TotalFundsBudgeted = 0;
+					rtrn.TotalFundsSpent = 0;
 
                     Regex noNumbers = new Regex("[^0-9]");
 					// count projects whose status are Complete and Construction
@@ -100,6 +101,11 @@ namespace GDOT_TIA.Models
                         {
                             rtrn.TotalFundsBudgeted += Double.Parse(budgeted);
                         }
+						String invoiced = dr.IsNull("SmallProjectDocument_ApproximateValueText") ? "" : dr["SmallProjectDocument_ApproximateValueText"].ToString();
+						invoiced = noNumbers.Replace(invoiced, ""); //strip out everything except numbersif (budgeted.Length > 0)
+						{
+							rtrn.TotalFundsSpent += Double.Parse(invoiced);
+						}
                     }
 				}
 

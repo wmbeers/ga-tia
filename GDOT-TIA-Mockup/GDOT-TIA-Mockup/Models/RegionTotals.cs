@@ -14,7 +14,8 @@ namespace GDOT_TIA.Models
 		public int TotalFinishedProjects { get; set; }
 		public int TotalConstructionProjects { get; set; }
         public Double TotalRevenueCollected { get; set; }
-        public Double TotalFundsBudgeted { get; set; }
+		public Double TotalFundsBudgeted { get; set; }
+		public Double TotalFundsSpent { get; set; }
         #endregion End Properties
     }
 }

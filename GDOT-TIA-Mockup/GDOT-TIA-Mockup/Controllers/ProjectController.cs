@@ -34,6 +34,9 @@ namespace GDOT_TIA.Controllers
 			ViewBag.csraTaxCollected = csra.totals.TotalRevenueCollected.ToString("C2");
 			ViewBag.hogaTaxCollected = hoga.totals.TotalRevenueCollected.ToString("C2");
 			ViewBag.rvTaxCollected = rv.totals.TotalRevenueCollected.ToString("C2");
+			ViewBag.csraTaxCollectedNum = csra.totals.TotalRevenueCollected / 1000000;
+			ViewBag.hogaTaxCollectedNum = hoga.totals.TotalRevenueCollected / 1000000;
+			ViewBag.rvTaxCollectedNum = rv.totals.TotalRevenueCollected / 1000000;
 			//ViewBag.csraFundsBudgeted = csra.totals.;
 			//ViewBag.hogaFundsBudgeted = hoga.totals.TotalRevenueCollected;
 			//ViewBag.rvFundsBudgeted = rv.totals.TotalRevenueCollected;
@@ -49,8 +52,9 @@ namespace GDOT_TIA.Controllers
 		{
 			ProlianceController pcCSRA = new ProlianceController(ProlianceController.CSRA_ACCOUNT);
 			ppm = new ProjectPage();
-			int totalProjects = 0;
-			int finishedProjects = 0;
+
+			Region csra = new Region(Region.CSRAId);
+			ppm.totals = csra.totals;
 
 			List<County> theCounties = pcCSRA.GetCounties("csra").ToList();
 			List<Band> theBands = pcCSRA.GetBands().ToList();
@@ -61,17 +65,6 @@ namespace GDOT_TIA.Controllers
 			ppm.AllCounties = pcCSRA.GetCounties("csra").ToList();
 			ppm.AllProjectTypes = pcCSRA.GetProjectTypes().ToList();
 			ppm.AllProjectStatuses = pcCSRA.GetProjectStatus().ToList();
-
-			foreach (ProjectStatus ps in theProjectStatus)
-			{
-				if (ps.Code.Contains("Complete")) finishedProjects++;
-				totalProjects++;
-			}
-
-			ViewBag.totalProjects = totalProjects;
-			ViewBag.finishedProjects = finishedProjects;
-			ppm.totalProjects = totalProjects;
-			ppm.finishedProjects = finishedProjects;
 
 			/*ViewBag.counties = theCounties;
 			ViewBag.bands = theBands;
@@ -129,6 +122,11 @@ namespace GDOT_TIA.Controllers
 					p.regionalCommission = "Central Savannah";
 
 					ppm.AllProjects.Add(p);
+					/*totalProjects++;
+					originalBudget += p.originalBudget;
+					if (p.projectStatus == "Construction") constructionProjects++;
+					if (p.projectStatus == "Project Complete") finishedProjects++;*/
+
 				}
 			}
 
@@ -138,6 +136,7 @@ namespace GDOT_TIA.Controllers
             if (!(theData.Tables[0].Rows.Count > 0))
                 LabelNoProjects.Visible = true;
 			*/
+
 			return View(ppm);
 		}
 
@@ -146,8 +145,8 @@ namespace GDOT_TIA.Controllers
 		{
 			ProlianceController pcHOGA = new ProlianceController(ProlianceController.HOGA_ACCOUNT);
 			ppm = new ProjectPage();
-			int totalProjects = 0;
-			int finishedProjects = 0;
+			Region hoga = new Region(Region.HOGAId);
+			ppm.totals = hoga.totals;
 
 			List<ProjectStatus> theProjectStatus = pcHOGA.GetProjectStatus().ToList();
 
@@ -156,13 +155,6 @@ namespace GDOT_TIA.Controllers
 			ppm.AllProjectTypes = pcHOGA.GetProjectTypes().ToList();
 			ppm.AllProjectStatuses = pcHOGA.GetProjectStatus().ToList();
 
-			foreach (ProjectStatus ps in theProjectStatus)
-			{
-				if (ps.Code.Contains("Complete")) finishedProjects++;
-				totalProjects++;
-			}
-			ppm.totalProjects = totalProjects;
-			ppm.finishedProjects = finishedProjects;
 
 			theData = pcHOGA.GetPreProjectList();
 
@@ -198,24 +190,16 @@ namespace GDOT_TIA.Controllers
 		{
 			ProlianceController pcRV = new ProlianceController(ProlianceController.RV_ACCOUNT);
 			ppm = new ProjectPage();
-			int totalProjects = 0;
-			int finishedProjects = 0;
-
+			Region rv = new Region(Region.RVId);
+			ppm.totals = rv.totals;
+			
 			List<ProjectStatus> theProjectStatus = pcRV.GetProjectStatus().ToList();
 
 			ppm.AllBands = pcRV.GetBands().ToList();
             ppm.AllCounties = pcRV.GetCounties("rvly").ToList();
 			ppm.AllProjectTypes = pcRV.GetProjectTypes().ToList();
 			ppm.AllProjectStatuses = pcRV.GetProjectStatus().ToList();
-
-			foreach (ProjectStatus ps in theProjectStatus)
-			{
-				if (ps.Code.Contains("Complete")) finishedProjects++;
-				totalProjects++;
-			}
-			ppm.totalProjects = totalProjects;
-			ppm.finishedProjects = finishedProjects;
-
+			
 			theData = pcRV.GetPreProjectList();
 
 			if (theData != null && theData.Tables[0].Rows.Count > 0)
