@@ -540,6 +540,7 @@
     <Content Include="Views\Home\Manuals.cshtml" />
     <Content Include="Views\Home\Discretionary.cshtml" />
     <Content Include="Views\Home\Investment.cshtml" />
+    <Content Include="Views\_Shared\_Old_Layout.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
