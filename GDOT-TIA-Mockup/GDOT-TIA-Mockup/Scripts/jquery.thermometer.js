@@ -19,6 +19,21 @@
 			this._update();
 		},
 
+		/** 
+		 *  Set the max value to show in the thermometer. If the value
+		 *  is less than the startValue it shall be clipped.
+		 */
+		setMaxValue: function (max) {
+			if (max < this.options.startValue) {
+				this.options.maxValue = this.options.startValue;
+			} 
+			else {
+				this.options.maxValue = max;
+			}
+
+			//this._update();
+		},
+
 		/**
 		 * Set the text colour
 		 */

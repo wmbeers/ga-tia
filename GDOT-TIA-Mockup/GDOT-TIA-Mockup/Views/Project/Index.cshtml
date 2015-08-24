@@ -3,42 +3,64 @@
 		function showInfo(divId) {
 			hideAll();
 			$("#" + divId).show();
+
+			if (divId == "hogainfo") {
+				$('#thermo').thermometer('setValue', parseInt('@ViewBag.hogaTaxCollectedNum'));
+				$('#thermo').thermometer('setMaxValue', parseInt('@ViewBag.hogaTotalFundsBudgetedNum'));
+				$('#thermo').thermometer('setTopText', '$' + '@ViewBag.hogaTotalFundsBudgetedNum');
+				$('#thermo').thermometer('setMiddleText', '$' + parseInt('@ViewBag.hogaTotalFundsBudgetedNum' / 2));
+				$('#thermo').thermometer('setLiquidColour', '#608bb4');
+				$('#datapanel').attr('class','panel panel-hoga');
+				$("#hogatitle").show();
+				console.log("----------------");
+				console.log($('#thermo').thermometer.startValue);
+				console.log($('#thermo').thermometer.maxValue);
+			}
+			else if (divId == "csrainfo") {
+				$('#thermo').thermometer('setValue', parseInt('@ViewBag.csraTaxCollectedNum'));
+				$('#thermo').thermometer('setMaxValue', parseInt('@ViewBag.csraTotalFundsBudgetedNum'));
+				$('#thermo').thermometer('setTopText', '$' + '@ViewBag.csraTotalFundsBudgetedNum');
+				$('#thermo').thermometer('setMiddleText', '$' + parseInt('@ViewBag.csraTotalFundsBudgetedNum' / 2));
+				$('#thermo').thermometer('setLiquidColour', '#9bbb59');
+				$('#datapanel').attr('class', 'panel panel-csra');
+				$("#csratitle").show();
+				console.log("----------------");
+				console.log($('#thermo').thermometer.startValue);
+				console.log($('#thermo').thermometer.maxValue);
+			}
+			else {
+				$('#thermo').thermometer('setValue', parseInt('@ViewBag.rvTaxCollectedNum'));
+				$('#thermo').thermometer('setMaxValue', parseInt('@ViewBag.rvTotalFundsBudgetedNum'));
+				$('#thermo').thermometer('setTopText', '$' + '@ViewBag.rvTotalFundsBudgetedNum');
+				$('#thermo').thermometer('setMiddleText', '$' + parseInt('@ViewBag.rvTotalFundsBudgetedNum' / 2));
+				$('#thermo').thermometer('setLiquidColour', '#f79646');
+				$('#datapanel').attr('class', 'panel panel-rv');
+				$("#rvtitle").show();
+				console.log("----------------");
+				console.log($('#thermo').thermometer.startValue);
+				console.log($('#thermo').thermometer.maxValue);
+			}
+
 		}
 		function hideAll() {
 			$("#csrainfo").hide();
 			$("#hogainfo").hide();
 			$("#rvinfo").hide();
+			$("#csratitle").hide();
+			$("#hogatitle").hide();
+			$("#rvtitle").hide();
 		}
-		$("area").mouseover(hideAll());
-
+		//$("area").mouseover(hideAll());
+		
 		$(function () {
-			$('#hogaThermo').thermometer({
-				startValue: '@ViewBag.hogaTaxCollectedNum',
+			$('#thermo').thermometer({
+				startValue: parseInt('@ViewBag.hogaTaxCollectedNum'),
 				minValue: 0,
-				maxValue: 300,
-				topText: "$300",
-				middleText: "$150",
+				maxValue: parseInt('@ViewBag.hogaTotalFundsBudgetedNum'),
+				topText: '$' + '@ViewBag.hogaTotalFundsBudgetedNum',
+				middleText: '$' + parseInt('@ViewBag.hogaTotalFundsBudgetedNum' / 2),
 				bottomText: 0,
 				liquidColour: '#608bb4'
-			});
-
-			$('#csraThermo').thermometer({
-				startValue: '@ViewBag.csraTaxCollectedNum',
-				minValue: 0,
-				maxValue: 600,
-				topText: "$600",
-				middleText: "$300",
-				bottomText: 0,
-				liquidColour: '#9bbb59'
-			});
-			$('#rvThermo').thermometer({
-				startValue: '@ViewBag.rvTaxCollectedNum',
-				minValue: 0,
-				maxValue: 600,
-				topText: "$600",
-				middleText: "$300",
-				bottomText: 0,
-				liquidColour: '#f79646'
 			});
 		});
 
@@ -53,66 +75,51 @@
 <br />
 <div class="row">
 	<div class="col-md-6">
-		<p><img id="tiaregions" src="/Content/img/tia_regions.png" border="0" width="500" height="590" usemap="#regionmap" alt="" onmouseout="hideAll()" /></p>
+		<p><img id="tiaregions" src="/Content/img/tia_regions.png" border="0" width="500" height="590" usemap="#regionmap" alt="" /></p>
 
 		<map name="regionmap" id="regionmap">
-			<area id="rv" alt="River Valley" title="River Valley" data-toggle="tooltip" data-placement="left" href="/Project/RV"  shape="rect" coords="2,229,201,449" onmouseover="showInfo('rvinfo');" onmouseout="hideAll()" />
+			<area id="rv" alt="River Valley" title="River Valley" data-toggle="tooltip" data-placement="left" href="/Project/RV"  shape="rect" coords="2,229,201,449" onmouseover="showInfo('rvinfo');" />
 			<area id="csra" alt="Central Savannah River Area" title="Central Savannah River Area" href="/Project/CSRA" shape="poly" coords="302,256,288,261,274,275,236,226,283,129,331,122,440,241,427,295,407,297,384,261" onmouseover="showInfo('csrainfo');" onmouseout="hideAll()" />
-			<area  alt="Heart of Georgia Altamaha" title="Heart of Georgia Altamaha" href="/Project/HOGA" shape="poly" coords="201,346,203,412,294,420,384,479,440,480,439,355,409,297,389,266,362,260,292,258,227,292" onmouseover="showInfo('hogainfo');" onmouseout="hideAll()" />
+			<area  alt="Heart of Georgia Altamaha" title="Heart of Georgia Altamaha" href="/Project/HOGA" shape="poly" coords="201,346,203,412,294,420,384,479,440,480,439,355,409,297,389,266,362,260,292,258,227,292" onmouseover="showInfo('hogainfo');" />
 		</map>
 	</div>
 	<div class="col-md-6">
-		<div id="hogainfo">
-			<div class="panel panel-hoga">
-				<div class="panel-heading">
+		<div id="datapanel" class="panel panel-hoga">
+			<div class="panel-heading">
+				<div id="hogatitle">
 					<h2 class="panel-title">Heart of Georgia Altamaha</h2>
 				</div>
-				<div class="panel-body">
-					<!--<p>Tax Revenue Collected to date:@ViewBag.</p>-->
-					<div style="text-align: center; width: 100%;">
-						<div id="hogaThermo" style="width: 80px; margin: auto"></div>
-					</div>
-					<p>TIA Funds Bugedted (2011 Dollars): @ViewBag.hogaTaxCollected</p>
-					<p>Total Number of TIA Projects: @ViewBag.hogaTotalProjects</p>
-				</div>
-			</div>
-		</div>
-		<div id="csrainfo">
-			<div class="panel panel-csra">
-				<div class="panel-heading">
+				<div id="csratitle">
 					<h2 class="panel-title">Central Savannah River Area</h2>
-
 				</div>
-				<div class="panel-body">
-					<!--
-					<p>Tax Revenue Collected to date:@ViewBag.</p>-->
-					<div style="text-align: center; width: 100%;">
-						<div id="csraThermo" style="width: 80px; margin: auto"></div>
-					</div>
-					<p>TIA Funds Bugedted (2011 Dollars): @ViewBag.csraTaxCollected</p>
-					<p>Total Number of TIA Projects: @ViewBag.csraTotalProjects</p>
-			  </div>
-			</div>
-
-			
-		</div>
-		<div id="rvinfo">
-			<div class="panel panel-rv">
-				<div class="panel-heading">
+				<div id="rvtitle">
 					<h2 class="panel-title">River Valley</h2>
 				</div>
-				<div class="panel-body">
-					<!--<p>Tax Revenue Collected to date:@ViewBag.</p>-->
-					<div style="text-align: center; width: 100%;">
-						<div id="rvThermo" style="width: 80px; margin: auto"></div>
-					</div>
-					<p>TIA Funds Bugedted (2011 Dollars) :@ViewBag.rvTaxCollected</p>
+			</div>
+			<div class="panel-body">
+				<div style="text-align: center; width: 100%;">
+					<div id="thermo" style="width: 80px; margin: auto"></div>
+				</div>
+				
+				<div id="hogainfo">
+					<p>TIA Tax Revenue Collected to Date: @ViewBag.hogaTaxCollected</p>
+					<p>TIA Funds Budgeted (2011 Dollars): @ViewBag.hogaTotalFundsBudgeted</p>
+					<p>Total Number of TIA Projects: @ViewBag.hogaTotalProjects</p>
+				</div>
+				<div id="csrainfo">
+					<p>TIA Tax Revenue Collected to Date: @ViewBag.csraTaxCollected</p>
+					<p>TIA Funds Budgeted (2011 Dollars): @ViewBag.csraTotalFundsBudgeted</p>
+					<p>Total Number of TIA Projects: @ViewBag.csraTotalProjects</p>
+				</div>
+				<div id="rvinfo">
+					<p>TIA Tax Revenue Collected to Date: @ViewBag.rvTaxCollected</p>
+					<p>TIA Funds Budgeted (2011 Dollars): @ViewBag.rvTotalFundsBudgeted</p>
 					<p>Total Number of TIA Projects: @ViewBag.rvTotalProjects</p>
 				</div>
-			</div>
-		</div>
-	</div>
-</div>
+			</div> <!-- panel body -->
+		</div> <!-- panel container -->
+	</div> <!-- column -->
+</div> <!-- row -->
 
 
 
