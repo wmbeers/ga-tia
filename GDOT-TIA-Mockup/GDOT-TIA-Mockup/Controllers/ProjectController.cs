@@ -37,18 +37,18 @@ namespace GDOT_TIA.Controllers
 			ViewBag.csraTaxCollectedNum = (int)(csra.totals.TotalRevenueCollected / 1000000);
 			ViewBag.hogaTaxCollectedNum = (int)(hoga.totals.TotalRevenueCollected / 1000000);
 			ViewBag.rvTaxCollectedNum = (int)(rv.totals.TotalRevenueCollected / 1000000);
-			//ViewBag.csraFundsBudgeted = csra.totals.;
-			//ViewBag.hogaFundsBudgeted = hoga.totals.TotalRevenueCollected;
-			//ViewBag.rvFundsBudgeted = rv.totals.TotalRevenueCollected;
-			ViewBag.csraTotalProjects = csra.totals.TotalProjects;
-			ViewBag.hogaTotalProjects = hoga.totals.TotalProjects;
-			ViewBag.rvTotalProjects = rv.totals.TotalProjects;
 			ViewBag.rvTotalFundsBudgeted = rv.totals.TotalFundsBudgeted.ToString("C2");
 			ViewBag.hogaTotalFundsBudgeted = hoga.totals.TotalFundsBudgeted.ToString("C2");
 			ViewBag.csraTotalFundsBudgeted = csra.totals.TotalFundsBudgeted.ToString("C2");
 			ViewBag.rvTotalFundsBudgetedNum = (int)(rv.totals.TotalFundsBudgeted / 1000000);
 			ViewBag.hogaTotalFundsBudgetedNum = (int)(hoga.totals.TotalFundsBudgeted / 1000000);
 			ViewBag.csraTotalFundsBudgetedNum = (int)(csra.totals.TotalFundsBudgeted / 1000000);
+			ViewBag.csraFundsSpent = csra.totals.TotalFundsSpent.ToString("C2");
+			ViewBag.hogaFundsSpent = hoga.totals.TotalFundsSpent.ToString("C2");
+			ViewBag.rvFundsSpent = rv.totals.TotalFundsSpent.ToString("C2");
+			ViewBag.csraTotalProjects = csra.totals.TotalProjects;
+			ViewBag.hogaTotalProjects = hoga.totals.TotalProjects;
+			ViewBag.rvTotalProjects = rv.totals.TotalProjects;
 
             return View();
         }

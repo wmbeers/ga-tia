@@ -41,6 +41,8 @@ namespace GDOT_TIA.Controllers
             ViewBag.hoga = hoga;
             ViewBag.rv = rv;
 
+			ViewBag.totalExpenditure = ((csra.totals.TotalFundsSpent + hoga.totals.TotalFundsSpent + rv.totals.TotalFundsSpent) / 1000000).ToString("C2");
+
             return View();
         }
 
