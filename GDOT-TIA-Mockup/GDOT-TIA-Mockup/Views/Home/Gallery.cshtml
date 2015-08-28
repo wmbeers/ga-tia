@@ -7,7 +7,7 @@
 
 @{ 
 	foreach (var album in ViewBag.albumList) {
-	   <p><a href="/Home/SlideShow/@album.PhotosetId">@album.Title</a><br />@album.Description</p>
+	   <p><a href="/Home/SlideShow/@album.PhotosetId"><img src="@album.PhotosetThumbnailUrl" alt="Primary photo for @album.Title" /></a><br /><a href="/Home/SlideShow/@album.PhotosetId">@album.Title</a><br />@album.Description</p>
 	
 	}
    
