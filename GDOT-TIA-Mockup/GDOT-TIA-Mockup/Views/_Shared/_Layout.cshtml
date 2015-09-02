@@ -14,16 +14,7 @@
 	@RenderSection("scripts", required: false)
 </head>
 <body>
-	<!-- Facebook script -->
-	<div id="fb-root"></div>
-	<script>(function (d, s, id) {
-	var js, fjs = d.getElementsByTagName(s)[0];
-	if (d.getElementById(id)) return;
-	js = d.createElement(s); js.id = id;
-	js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4";
-	fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-	<!-- Facebook script end -->
+	@RenderSection("facebook", required: false)
 
     <div class="min-container">
 		<br />
@@ -63,21 +54,6 @@
 					  </ul>
 						</li>
 				  </ul>
-				
-				<div class="row">
-					<div class="col-sm-6 col-md-12">
-						<!-- Twitter Embed Code -->
-						<div style="width: 90%"><a class="twitter-timeline"  href="https://twitter.com/GADeptofTrans" data-widget-id="628058046166470657">Tweets by GADeptofTrans</a>
-						<script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + "://platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); } }(document, "script", "twitter-wjs");</script></div>
-						<!-- Twitter Embed Code End-->
-					</div>
-
-					<div class="col-sm-6 col-md-12">
-						<!-- Facebook Embed Code -->
-						<div class="fb-page" data-href="https://www.facebook.com/transportationinvestmentact" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/transportationinvestmentact"><a href="https://www.facebook.com/transportationinvestmentact">Georgia Transportation Investment Act - TIA</a></blockquote></div></div>
-						<!-- Facebook Embed Code End -->
-					</div>
-				</div>
 				<!-- Side nav column End-->
 			</div>
 		</div>
