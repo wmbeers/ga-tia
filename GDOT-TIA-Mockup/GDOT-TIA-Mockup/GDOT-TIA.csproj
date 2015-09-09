@@ -148,6 +148,7 @@
     <Content Include="Content\img\spcommon.png" />
     <Content Include="Content\img\thermo-bottom.svg" />
     <Content Include="Content\img\tiacounties.png" />
+    <Content Include="Content\img\tia_regions_sm.png" />
     <Content Include="Content\img\TransportationPartners.png" />
     <Content Include="Content\img\travelsmart_navlogo.png" />
     <Content Include="Content\img\Twitter.png" />

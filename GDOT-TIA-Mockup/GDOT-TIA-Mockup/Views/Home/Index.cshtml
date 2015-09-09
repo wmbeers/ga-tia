@@ -104,9 +104,9 @@
 	</div>
 
 	<div class="row">
-		<div class="col-xlg-6" style="padding-left: 50px">
+		<div class="col-lg-6" style="padding-left: 20px"><!---->
 			<div style="position: relative">
-                <div class="callout" style="left: 3px; top: 110px;" onclick="window.open('Project/rv', '_self')">
+                <div class="callout" style="left: -40px; top: 60px;" onclick="window.open('Project/rv', '_self')">
                     <h4>River Valley</h4>
                     <p class="withI">TIA Funds Budgeted (2011 Dollars):<br />
                     @ViewBag.rv.totals.TotalFundsBudgeted.ToString("C")</p>
@@ -114,7 +114,7 @@
                     @ViewBag.rv.totals.TotalRevenueCollected.ToString("C")</p>
                     <p>Total Number of TIA Projects = @ViewBag.rv.totals.TotalProjects</p>
                 </div>
-                 <div class="callout" style="left: 300px; top: 10px;" onclick="window.open('Project/csra', '_self')">
+                 <div class="callout" style="left: 180px; top: 0px;" onclick="window.open('Project/csra', '_self')">
                     <h4>Central Savannah River Area</h4>
                     <p class="withI">TIA Funds Budgeted (2011 Dollars):<br />
                     @ViewBag.csra.totals.TotalFundsBudgeted.ToString("C")</p>
@@ -122,7 +122,7 @@
                     @ViewBag.csra.totals.TotalRevenueCollected.ToString("C")</p>
                     <p>Total Number of TIA Projects = @ViewBag.csra.totals.TotalProjects</p>
                 </div>
-                <div class="callout" style="left: 190px; top: 480px;" onclick="window.open('Project/hoga', '_self')">
+                <div class="callout" style="left: 190px; top: 355px;" onclick="window.open('Project/hoga', '_self')">
                     <h4>Heart of Georgia Altamaha</h4>
                     <p class="withI">TIA Funds Budgeted (2011 Dollars):<br />
                     @ViewBag.hoga.totals.TotalFundsBudgeted.ToString("C")</p>
@@ -130,17 +130,17 @@
                     @ViewBag.hoga.totals.TotalRevenueCollected.ToString("C")</p>
                     <p>Total Number of TIA Projects = @ViewBag.hoga.totals.TotalProjects</p>
                 </div>
-                <img id="tia-regions" src="/Content/img/tia_regions.png" alt="State map of Georgia highlighting three regions: River Valley, Central Savannah River Area, and Heart of Georgia Altamaha" usemap="#regions" />
-			</div>
+                <img id="tia-regions" src="/Content/img/tia_regions_sm.png" alt="State map of Georgia highlighting three regions: River Valley, Central Savannah River Area, and Heart of Georgia Altamaha" usemap="#regions" />
+			<!----></div>
 
 			<map name="regions" id="regions">
-                <area alt="Link to River Valley project page" title="River Valley" href="/Project/rv" shape="rect" coords="2,229,201,449" />
-                <area alt="Link to Central Savannah River Area project page" title="Central Savannah River Area" href="/Project/csra" shape="poly" coords="302,256,288,261,274,275,236,226,283,129,331,122,440,241,427,295,407,297,384,261" />
-                <area alt="Link to Heart of Georgia Altamaha project page" title="Heart of Georgia Altamaha" href="/Project/hoga" shape="poly" coords="201,346,203,412,294,420,384,479,440,480,439,355,409,297,389,266,362,260,292,258,227,292" />
+                <area alt="Link to River Valley project page" title="River Valley" href="/Project/rv" shape="rect" coords="0,175,152,342" />
+                <area alt="Link to Central Savannah River Area project page" title="Central Savannah River Area" href="/Project/csra" shape="poly" coords="247,90,346,184,315,227,287,198,264,197,228,195,206,210,173,164,204,105" />
+                <area alt="Link to Heart of Georgia Altamaha project page" title="Heart of Georgia Altamaha" href="/Project/hoga" shape="poly" coords="154,312,312,372,347,346,322,309,340,280,299,206,284,196,222,196,162,222" />
             </map>
 		</div>
 
-		<div class="col-xlg-6"><br />
+		<div class="col-lg-6"><br />
 			<p style="font-size: 0.85em; font-weight: bold; max-width: 25em; margin: auto"><span class="blue">Total Projects:</span> <span class="green">@ViewBag.totalProjects</span><br />
 			<span class="blue">Projects Under Construction:</span> <span class="green">#@ViewBag.totalConstructionProjects</span><br />
 			<span class="blue">Projects Completed:</span> <span class="green">#@ViewBag.totalFinishedProjects</span><br />
@@ -152,7 +152,7 @@
 			<script>
 				$('#thermo1').thermometer({
 					height: 300,
-					width: 350,
+					width: 250,
 					startValue: '@ViewBag.totalTaxRevenueCollected',
 					minValue: 0,
 					maxValue: 1200,
