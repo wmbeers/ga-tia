@@ -224,23 +224,34 @@ ul.collapse > li > ul > li{
 }
 #project-container section:nth-child(even) {background: #EEE}
 
+
+
+.carousel {
+	max-width: 1135px;
+	max-height: 350px;
+}
+
 .carousel-caption
 {
   position: absolute;
   z-index: 10;
-  padding-top: 20px;
+  padding-top: 5px;
   padding-left: 10px;
-  padding-bottom: 20px;
+  padding-bottom: 5px;
   margin: 0px;
   color: #ffffff;
   text-align: left;
   font-size: large;
   text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.6);
-  background: rgba(0, 0, 0, 0.6);
+  background-color: rgba(80, 80, 80, 0.75);
+  right: 1px;
+  bottom: 1px;
+  width: 35em;
+  left:auto;
 }
 
 	.carousel-caption .description {
-		color: #dfa220;
+		color: #f1d54d;
 		font-size: small;
 	}
 
@@ -270,28 +281,28 @@ div.indent {
 /* Extra Small Devices, Phones */ 
     @media only screen and (min-width : 480px) and (max-width: 765px) {
 		.min-container {
-			padding: 20px 100px;
+			padding: 10px 50px;
 		}
     }
 
     /* Small Devices, Tablets */
     @media only screen and (min-width : 768px) and (max-width: 991px) {
 		.min-container {
-			padding: 20px 100px;
+			padding: 10px 50px;
 		}
     }
 
     /* Medium Devices, Desktops */
     @media only screen and (min-width : 992px) and (max-width: 1199px) {
 		.min-container {
-			padding: 20px 100px;
+			padding: 10px 50px;
 		}
     }
 
     /* Large Devices, Wide Screens */
     @media only screen and (min-width : 1200px) {
 		.min-container {
-			padding: 20px 100px;
+			padding: 10px 50px;
 		}
     }
 
