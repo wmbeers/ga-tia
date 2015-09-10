@@ -147,6 +147,7 @@
     <Content Include="Content\img\Services.png" />
     <Content Include="Content\img\spcommon.png" />
     <Content Include="Content\img\thermo-bottom.svg" />
+    <Content Include="Content\img\tia.svg" />
     <Content Include="Content\img\tiacounties.png" />
     <Content Include="Content\img\tia_regions_sm.png" />
     <Content Include="Content\img\TransportationPartners.png" />
