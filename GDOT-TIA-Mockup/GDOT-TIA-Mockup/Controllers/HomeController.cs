@@ -71,10 +71,10 @@ namespace GDOT_TIA.Controllers
 		}
 
 		// GET: /Calendar/
-		public ActionResult Calendar()
+		/*public ActionResult Calendar()
 		{
 			return View();
-		}
+		}*/
 
 		// GET: /Annual Report/
 		public ActionResult AnnualReport()

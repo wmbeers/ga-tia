@@ -143,12 +143,9 @@
     <Content Include="Content\img\Projects.png" />
     <Content Include="Content\img\River-Valley-sm.png" />
     <Content Include="Content\img\RSSFeeds.png" />
-    <Content Include="Content\img\searchresultui.png" />
-    <Content Include="Content\img\Services.png" />
-    <Content Include="Content\img\spcommon.png" />
     <Content Include="Content\img\thermo-bottom.svg" />
     <Content Include="Content\img\tia.svg" />
-    <Content Include="Content\img\tiacounties.png" />
+    <Content Include="Content\img\tia_regions.png" />
     <Content Include="Content\img\tia_regions_sm.png" />
     <Content Include="Content\img\TransportationPartners.png" />
     <Content Include="Content\img\travelsmart_navlogo.png" />
@@ -478,6 +475,8 @@
     <Content Include="Content\pdf\Windsor Spring Rd Groundbreaking Invitation.pdf" />
     <Content Include="Content\pdf\Windsor Spring Road Augusta 9-30-2014.pdf" />
     <Content Include="Content\pdf\CSRA CRP Augusta-Richmond TIA UPDATE 5-6-2015.pdf" />
+    <Content Include="Content\TIAFactSheet.pdf" />
+    <None Include="Properties\PublishProfiles\Default.pubxml" />
     <None Include="Properties\PublishProfiles\PublishToC-Temp.pubxml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.min.js" />
