@@ -121,7 +121,15 @@ namespace GDOT_TIA.Controllers
 		{
 			Flickr flickr = new Flickr(myApiKey);
 
-			ViewBag.albumList = flickr.PhotosetsGetList(myId, PhotoSearchExtras.DateTaken).OrderByDescending(d => d.PrimaryPhoto.DateTaken);
+			/*IOrderedEnumerable<FlickrNet.Photoset> photoCollection = flickr.PhotosetsGetList(myId, PhotoSearchExtras.DateTaken).OrderByDescending(d => d.PrimaryPhoto.DateTaken);
+			IOrderedEnumerable<FlickrNet.Photo> photoList;
+
+			foreach (Photoset ps in photoCollection)
+			{
+				ps.PrimaryPhoto.
+			}*/
+
+			ViewBag.albumList = flickr.PhotosetsGetList(myId, PhotoSearchExtras.DateTaken | PhotoSearchExtras.MediumUrl).OrderByDescending(d => d.PrimaryPhoto.DateTaken);
 
 			return View();
 		}
