@@ -80,3 +80,28 @@
 		@:</div>
 	}
 }
+
+<h3>Miscellaneous</h3>
+@{ 
+	i= 1;
+	foreach (var album in ViewBag.albumList) {
+		string title= album.Title;
+		
+		if (title.Contains("TIA")) {
+			if (i == 1) {
+				@:<div class="row">
+			}
+			<div class="col-xlg-3 col-lg-6 col-md-6" style="margin: 5px 0px"><a href="/Home/SlideShow/@album.PhotosetId"><div class="album-cover" style="background-image: url(@album.PrimaryPhoto.Medium800Url);"></div></a><div class="album-caption"><a href="/Home/SlideShow/@album.PhotosetId">@album.Title</a><br />@album.Description</div></div>
+			if (i == 4) {
+				@:</div><br />
+				i = 1;
+			}
+			else {
+				i++;	
+			}
+		}
+	}
+	if (i != 1) {
+		@:</div>
+	}
+}
