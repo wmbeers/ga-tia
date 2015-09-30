@@ -1,40 +1,76 @@
 ﻿<!DOCTYPE html>
+
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
-    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
-    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+	<link href="/Content/bootstrap.min.css" rel="stylesheet">
+	<link href="/Content/site.css" rel="stylesheet">
+	@RenderSection("css", required: false)
+	<script type="text/javascript" src="/Scripts/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="/Scripts/bootstrap.v3.min.js"></script>
+	<script type="text/javascript" src="/Scripts/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/Scripts/jquery.thermometer.js"></script>
+	@RenderSection("scripts", required: false)
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", null, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                </ul>
-            </div>
-        </div>
-    </div>
+	@RenderSection("facebook", required: false)
 
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
+	<div class="header">
+		<div class="min-container">
+				<div class="navbar-header">
+				  <!----><button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				  </button>
+				  <a class="navbar-brand" href="/Home/"><img src="/Content/img/tia.png" class="logo" alt="Transportation Investment Act" /></a>
+				</div>
+		</div>
     </div>
+    <div class="min-container">
+		<br />
+		<div class="row">
+			<div class="col-sm-12 col-md-3 col-lg-3">
+				<!-- Side nav column-->
+				<br />
+				<div id="navbar" class="nav nav-sidebar navbar-collapse collapse">
+				<p><a href="/Home" aria-expanded="true" class="menu-header">Transportation Investment Act (TIA)</a></p>
+					<ul class="menu-blue" id="tiaMenu" role="menu">
+						<li>@Html.ActionLink("TIA Projects", "Index", "Project")</li>
+						<li>@Html.ActionLink("TIA Program Fact Sheet", "FactSheet", "Home")</li>
+						<li>@Html.ActionLink("TIA Project Photos", "Gallery", "Home")</li>
+						<li class="dropdown">
+							<a href="#infoMenu" data-toggle="collapse" aria-expanded="false" aria-controls="infoMenu">Program Info & Reports <span class="caret"></span></a>
+							<ul id="infoMenu" role="menu" class="dropdown-menu">
+								<li>@Html.ActionLink("TIA Program Annual Reports", "AnnualReport", "Home")</li>
+								<li>@Html.ActionLink("Citizens Review Panels", "CitizenReview", "Home")</li>
+								<li>@Html.ActionLink("Final Investment Reports by Region", "Investment", "Home")</li>
+								<li><a href="http://gsfic.georgia.gov/transportation-investment-act" target="_blank">TIA Collections Reports</a></li>
+								<li>@Html.ActionLink("Regional Discretionary Funding Estimates", "Discretionary", "Home")</li>
+								<li>@Html.ActionLink("Meeting Presentations", "MeetingPresentations", "Home")</li>
+							</ul>
+						</li>
+						<li>@Html.ActionLink("Press Room", "News", "Home")</li>
+						<li>@Html.ActionLink("Manuals", "Manuals", "Home")</li>
+						<li>@Html.ActionLink("Procurement & Contracting", "Procurement", "Home")</li>
+						<li>@Html.ActionLink("Frequently Asked Questions", "FAQ", "Home")</li>
+						<li><a href="/Content/pdf/TIAFactSheet.pdf" target="_blank">Printable Fact Sheet</a></li>
+						<li>@Html.ActionLink("Contact Us", "Contact", "Home")</li>
+					  </ul>
+				  </div>
+				<!-- Side nav column End-->
+				<br />
+			</div>
+			<div class="col-md-9 col-lg-9">
+				<div class="row">
+				<!-- Main content column -->
+				@RenderBody()
 
-    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
-    <script src="~/Scripts/bootstrap.min.js"></script>
+				</div>
+			</div>
+		</div>
+	</div>
 </body>
 </html>
