@@ -15,15 +15,7 @@
 	<!-- Facebook script end -->
 }
 
-	<div class="row">
-		<div class="col-md-8">
-			<h1 style="margin-top: 0">Transportation Investment Act (TIA)</h1>
-		</div>
-
-		<div class="col-md-3">
-			<div class="subtitle" style="color:#246092; font-size: 1.5em; font-style:italic; text-align: right; margin-right: -25px">Your Penny, Your Progress</div>
-		</div>
-	</div>
+	
 	<br />
 
 	<div class="row">
@@ -66,7 +58,9 @@
 			  </a>
 			</div>
 
-			<p class="well description">The Transportation Investment Act (TIA) Referendum was passed by Georgia voters in the regions of Central Savannah River Area, Heart of Georgia - Altamaha and River Valley. These three regions will implement a one percent regional sales tax over a ten year period to fund transportation improvements. Georgia DOT is responsible for the management of the budget, schedule, execution and delivery of all Projects contained in the Approved Investment Lists.</p>
+			<div class="well" style="text-align: center">
+                <h2>Program Overview</h2>
+                The Transportation Investment Act (TIA) Referendum was passed by Georgia voters in the regions of Central Savannah River Area, Heart of Georgia - Altamaha and River Valley. These three regions will implement a one percent regional sales tax over a ten year period to fund transportation improvements. Georgia DOT is responsible for the management of the budget, schedule, execution and delivery of all Projects contained in the Approved Investment Lists.</div>
 		</div>
 	</div>
 
@@ -108,7 +102,9 @@
 		</div>
 
 		<div class="col-lg-6"><br />
-			<p style="font-size: 0.85em; font-weight: bold; max-width: 25em; margin: auto"><span class="blue">Total Projects:</span> <span class="green">@ViewBag.totalProjects</span><br />
+			<p style="text-align: center; font-weight: bold; font-size: 1.2em;"><span class="blue">Tax Revenue Collected to Date</span><br />
+				<span class="green">@ViewBag.totalTaxRevenueCollectedString</span>
+			</p><p style="font-size: 1em; font-weight: bold; max-width: 25em; margin: auto"><span class="blue">Total Projects:</span> <span class="green">@ViewBag.totalProjects</span><br />
 			<span class="blue">Projects Under Construction:</span> <span class="green">#@ViewBag.totalConstructionProjects</span><br />
 			<span class="blue">Projects Completed:</span> <span class="green">#@ViewBag.totalFinishedProjects</span><br />
 			<span class="blue">TIA Funds Budgeted (2011 Dollars):</span> <span class="green">$1,175,318,463</span><br />
@@ -128,9 +124,7 @@
 					bottomText: "$0"
 				});
 				</script>
-			<p style="text-align: center; font-weight: bold"><span class="blue">Tax Revenue Collected to Date</span><br />
-				<span class="green">@ViewBag.totalTaxRevenueCollectedString</span>
-			</p>
+			
 		</div>
 	</div>
 	<br /><br />

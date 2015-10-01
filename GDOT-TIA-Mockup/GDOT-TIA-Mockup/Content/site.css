@@ -1,6 +1,19 @@
-﻿.header {
+﻿body {
+    font-family: 'Fira Sans', sans-serif;
+}
+
+.header {
 	background: #EFF1F1;
-	min-height: 85px;
+	min-height: 120px;
+}
+
+.headeraccent {
+    background-color: #125687;
+    min-height: 35px;
+    text-align: right; 
+    padding-top: 7px; 
+    padding-right: 3em; 
+    color: lightblue;
 }
 
 .min-container {

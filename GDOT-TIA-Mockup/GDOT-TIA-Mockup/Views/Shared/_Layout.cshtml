@@ -6,6 +6,7 @@
     <title>@ViewBag.Title</title>
 	<link href="/Content/bootstrap.min.css" rel="stylesheet">
 	<link href="/Content/site.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Fira+Sans' rel='stylesheet' type='text/css'>
 	@RenderSection("css", required: false)
 	<script type="text/javascript" src="/Scripts/jquery-1.9.1.min.js"></script>
 	<script type="text/javascript" src="/Scripts/bootstrap.v3.min.js"></script>
@@ -17,6 +18,10 @@
 	@RenderSection("facebook", required: false)
 
 	<div class="header">
+        <div class="headeraccent">
+<!--TODO: need "mail" icon before email address, and proper Facebook and Twitter icons and links in place of the "F T" below-->
+            TIA@dot.ga.gov  F T
+        </div>
 		<div class="min-container">
 				<div class="navbar-header">
 				  <!----><button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -26,8 +31,13 @@
 					<span class="icon-bar"></span>
 				  </button>
 				  <a class="navbar-brand" href="/Home/"><img src="/Content/img/tia.png" class="logo" alt="Transportation Investment Act" /></a>
-				</div>
-		</div>
+<!--TODO: this padding-left style is just a quick-and-dirty hack for demo purposes. This header text needs to be handled better and be responsive.-->
+                    <span style="padding-left: 200px; float: right; text-align: center; color: #125687; font-weight: bold; font-size: 2em;">
+                    Transportation Investment Act (TIA)<br />
+                    <span class="subtitle" style="color:#246092; font-size: 0.75em; font-style:italic; text-align: right; margin-right: -25px">Your Penny, Your Progress</span>
+				</span>
+                </div>
+        </div>
     </div>
     <div class="min-container">
 		<br />
@@ -36,7 +46,6 @@
 				<!-- Side nav column-->
 				<br />
 				<div id="navbar" class="nav nav-sidebar navbar-collapse collapse">
-				<p><a href="/Home" aria-expanded="true" class="menu-header">Transportation Investment Act (TIA)</a></p>
 					<ul class="menu-blue" id="tiaMenu" role="menu">
 						<li>@Html.ActionLink("TIA Projects", "Index", "Project")</li>
 						<li>@Html.ActionLink("TIA Program Fact Sheet", "FactSheet", "Home")</li>
