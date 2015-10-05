@@ -133,6 +133,8 @@
     <Content Include="Content\img\gdot_logo.gif" />
     <Content Include="Content\img\Heart-of-Georgia-Altamaha-sm.png" />
     <Content Include="Content\img\i.png" />
+    <Content Include="Content\img\icon_facebook.png" />
+    <Content Include="Content\img\icon_twitter.png" />
     <Content Include="Content\img\Intermodal.png" />
     <Content Include="Content\img\loader.gif" />
     <Content Include="Content\img\MapLocator.png" />
@@ -555,6 +557,7 @@
     <Content Include="Views\Home\Discretionary.cshtml" />
     <Content Include="Views\Home\Investment.cshtml" />
     <Content Include="Views\_Shared\_Old_Layout.cshtml" />
+    <Content Include="Views\Shared\_Layout_Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
