@@ -40,7 +40,7 @@
 	</script>
 }
 
-<h2>Heart of Georgia Altamaha<br />Project List</h2>
+<h2>Heart of Georgia Altamaha Project List</h2>
 <div class="row">
 	<div class="col-md-4">
 		<p style="font-size: 0.85em; font-weight: bold; margin: auto; width: auto">
@@ -66,63 +66,68 @@
 <p>Filter projects by:</p>
 
 <div class="row">
-	<div class="col-md-2">
-		<label for="countyList">County</label>
-		<select id="countyList">
-			<option value="">All</option>
-			@{
-				foreach (County c in Model.AllCounties)
-				{
-					<option value="@c.Code">@c.Description</option>
-				}
+	<div class="col-md-3 col-sm-6">
+		<div class="form-group">
+			<label for="countyList">County</label><br />
+			<select id="countyList" class="form-control">
+				<option value="">All</option>
+				@{
+					foreach (County c in Model.AllCounties)
+					{
+						<option value="@c.Code">@c.Description</option>
+					}
 				
-			}
-		</select>
-	</div>
-	<div class="col-md-2">
-		<label for="bandList">Band</label>
-		<select id="bandList" onchange="test(); FilterSelectionChanged($('#countyList option:selected').val(), $('#bandList option:selected').val(), $('#statusList option:selected').val(), $('#typeList option:selected').val())">
-			<option value="">All</option>
-			@{
-
-				foreach (Band b in Model.AllBands)
-				{
-					<option value="@b.Code">@b.Description</option>
 				}
-			}
-
-		</select>
-
+			</select>
+		</div>
 	</div>
-	<div class="col-md-3">
-		<label for="typeList">Project Type</label>
-		<select id="typeList" onchange="FilterSelectionChanged($('#countyList option:selected').val(), $('#bandList option:selected').val(), $('#statusList option:selected').val(), $('#typeList option:selected').val())">
+	<div class="col-md-3 col-sm-6">
+		<div class="form-group">
+			<label for="bandList">Band</label><br />
+			<select id="bandList" class="form-control" onchange="test(); FilterSelectionChanged($('#countyList option:selected').val(), $('#bandList option:selected').val(), $('#statusList option:selected').val(), $('#typeList option:selected').val())">
+				<option value="">All</option>
+				@{
+
+					foreach (Band b in Model.AllBands)
+					{
+						<option value="@b.Code">@b.Description</option>
+					}
+				}
+
+			</select>
+		</div>
+	</div>
+	<div class="col-md-3 col-sm-6">
+		<div class="form-group">
+			<label for="typeList">Project Type</label><br />
+			<select id="typeList" class="form-control" onchange="FilterSelectionChanged($('#countyList option:selected').val(), $('#bandList option:selected').val(), $('#statusList option:selected').val(), $('#typeList option:selected').val())">
 			
-			<option value="">All</option>
-			@{
+				<option value="">All</option>
+				@{
 
-				foreach (ProjectTypes t in Model.AllProjectTypes)
-				{
-					<option value="@t.FullCode">@t.Description</option>
+					foreach (ProjectTypes t in Model.AllProjectTypes)
+					{
+						<option value="@t.FullCode">@t.Description</option>
+					}
 				}
-			}
-		</select>
-
+			</select>
+		</div>
 	</div>
-	<div class="col-md-3">
-		<label for="statusList">Status</label>
-		<select id="statusList" onchange="FilterSelectionChanged($('#countyList option:selected').val(), $('#bandList option:selected').val(), $('#statusList option:selected').val(), $('#typeList option:selected').val())">
+	<div class="col-md-3 col-sm-6">
+		<div class="form-group">
+			<label for="statusList">Status</label><br />
+			<select id="statusList" class="form-control" onchange="FilterSelectionChanged($('#countyList option:selected').val(), $('#bandList option:selected').val(), $('#statusList option:selected').val(), $('#typeList option:selected').val())">
 			
-			<option value="">All</option>
-			@{
+				<option value="">All</option>
+				@{
 
-				foreach (ProjectStatus s in Model.AllProjectStatuses)
-				{
-					<option value="@s.Code">@s.Description</option>
+					foreach (ProjectStatus s in Model.AllProjectStatuses)
+					{
+						<option value="@s.Code">@s.Description</option>
+					}
 				}
-			}
-		</select>
-
+			</select>
+		</div>
 	</div>
 </div>
 <br />
