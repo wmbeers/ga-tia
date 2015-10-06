@@ -500,6 +500,14 @@ ul.menu-blue > li {
 		cursor: pointer;
 	}
 
+.carousel-caption a, .carousel-caption a:link, .carousel-caption a:visited {
+	color: #ffffff;
+}
+
+.carousel-caption .description a, .carousel-caption .description a:link,  .carousel-caption .description a:visited {
+	color: #f1d54d;
+}
+
 	#slideshow{
 		height: 60vh;
 	}
