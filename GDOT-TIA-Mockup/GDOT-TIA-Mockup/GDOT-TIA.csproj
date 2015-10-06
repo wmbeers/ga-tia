@@ -533,7 +533,6 @@
     <Content Include="Views\web.config" />
     <Content Include="packages.config" />
     <Content Include="Scripts\jquery-1.9.1.min.map" />
-    <Content Include="Views\_Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Gallery.cshtml" />
     <Content Include="Views\Home\FactSheet.cshtml" />
@@ -556,7 +555,6 @@
     <Content Include="Views\Home\Manuals.cshtml" />
     <Content Include="Views\Home\Discretionary.cshtml" />
     <Content Include="Views\Home\Investment.cshtml" />
-    <Content Include="Views\_Shared\_Old_Layout.cshtml" />
     <Content Include="Views\Shared\_Layout_Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
