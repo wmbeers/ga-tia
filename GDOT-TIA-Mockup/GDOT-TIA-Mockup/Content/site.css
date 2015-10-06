@@ -6,9 +6,7 @@ body {
   /* Margin bottom by footer height */
   margin-bottom: 600px;
 	background: white;
-    /* Temporarily changing back to Arial
-		font-family: 'Fira Sans', sans-serif;*/
-	font-family: Arial, sans-serif;
+	font-family: fira_sansregular, Arial, sans-serif;
 }
 
 .header {
@@ -371,10 +369,10 @@ ul.collapse > li > ul > li{
 
 .menu li{
 	list-style: none;
-	line-height: 2em;
+	line-height: 1em;
+    padding-bottom: 0.5em;
 	font-size: 1.5em;
 	font-weight: bold;
-	margin-left: 3em;
 }
 
 .menu a, .menu a:link, .menu a:visited {
