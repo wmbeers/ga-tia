@@ -6,9 +6,7 @@ body {
   /* Margin bottom by footer height */
   margin-bottom: 600px;
 	background: white;
-    /* Temporarily changing back to Arial
-		font-family: 'Fira Sans', sans-serif;*/
-	font-family: Arial, sans-serif;
+	font-family: fira_sansregular, Arial, sans-serif;
 }
 
 .header {
