@@ -121,7 +121,6 @@
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\bootstrap.v3.min.css" />
     <Content Include="Content\favicon\android-chrome-144x144.png" />
     <Content Include="Content\favicon\android-chrome-192x192.png" />
     <Content Include="Content\favicon\android-chrome-36x36.png" />
@@ -150,6 +149,12 @@
     <Content Include="Content\favicon\mstile-310x150.png" />
     <Content Include="Content\favicon\mstile-310x310.png" />
     <Content Include="Content\favicon\mstile-70x70.png" />
+    <Content Include="Content\firasans\firasans-regular-demo.html" />
+    <Content Include="Content\firasans\firasans-regular-webfont.svg" />
+    <Content Include="Content\firasans\generator_config.txt" />
+    <Content Include="Content\firasans\specimen_files\grid_12-825-55-15.css" />
+    <Content Include="Content\firasans\specimen_files\specimen_stylesheet.css" />
+    <Content Include="Content\firasans\stylesheet.css" />
     <Content Include="Content\galleria.classic.css" />
     <Content Include="Content\img\Body_1-04.jpg" />
     <Content Include="Content\img\Central-Savannah-River-sm.png" />
@@ -520,6 +525,10 @@
     <Content Include="Content\pdf\TIAFactSheet.pdf" />
     <Content Include="Content\pdf\Press Release_TIA HOGA 7_30_15.pdf" />
     <Content Include="Content\favicon\manifest.json" />
+    <Content Include="Content\firasans\firasans-regular-webfont.eot" />
+    <Content Include="Content\firasans\firasans-regular-webfont.ttf" />
+    <Content Include="Content\firasans\firasans-regular-webfont.woff" />
+    <Content Include="Content\firasans\firasans-regular-webfont.woff2" />
     <None Include="Properties\PublishProfiles\Default.pubxml" />
     <None Include="Properties\PublishProfiles\PublishToC-Temp.pubxml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
