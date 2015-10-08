@@ -563,6 +563,7 @@
     <Content Include="Scripts\galleria-1.4.2.min.js" />
     <Content Include="Scripts\galleria.classic.min.js" />
     <Content Include="Scripts\galleria.flickr.min.js" />
+    <Content Include="Scripts\site.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
