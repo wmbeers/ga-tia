@@ -12,6 +12,7 @@
 	<script type="text/javascript" src="/Scripts/bootstrap.min.js"></script>
 	<script type="text/javascript" src="/Scripts/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="/Scripts/jquery.thermometer.js"></script>
+	<script type="text/javascript" src="/Scripts/site.js"></script>
 	@RenderSection("scripts", required: false)
 	<link rel="apple-touch-icon" sizes="57x57" href="/Content/favicon/apple-touch-icon-57x57.png">
 	<link rel="apple-touch-icon" sizes="60x60" href="/Content/favicon/apple-touch-icon-60x60.png">
@@ -66,7 +67,7 @@
 				<div id="navbar" class="nav nav-sidebar navbar-collapse collapse">
 					<ul class="menu" id="tiaMenu" role="menu">
 						<li>@Html.ActionLink("TIA Projects", "Index", "Project")</li>
-						<li><a href="/Content/pdf/TIAFactSheet.pdf" target="_blank">Fact Sheet</a></li>
+						<li><a href="/Content/pdf/TIA Fact Sheet (with background).pdf" target="_blank">Fact Sheet</a></li>
 						<li>@Html.ActionLink("TIA Project Photos", "Gallery", "Home")</li>
 						<li class="dropdown">
 							<a href="#infoMenu" data-toggle="collapse" aria-expanded="false" aria-controls="infoMenu">Program Info & Reports <span class="caret"></span></a>

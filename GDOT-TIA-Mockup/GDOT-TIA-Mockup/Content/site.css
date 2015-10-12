@@ -1,7 +1,51 @@
-﻿html {
+﻿/** Web Fonts **/
+@font-face {
+    font-family: 'fira_sansregular';
+    src: url('/Content/fonts/firasans/firasans-regular-webfont.eot');
+    src: url('/Content/fonts/firasans/firasans-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/Content/fonts/firasans/firasans-regular-webfont.woff2') format('woff2'),
+         url('/Content/fonts/firasans/firasans-regular-webfont.woff') format('woff'),
+         url('/Content/fonts/firasans/firasans-regular-webfont.ttf') format('truetype'),
+         url('/Content/fonts/firasans/firasans-regular-webfont.svg#fira_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* slightly bold, use to bold regular text */
+@font-face {
+    font-family: 'fira_sansbook';
+    src: url('/Content/fonts/firabook/firasans-book-webfont.eot');
+    src: url('/Content/fonts/firabook/firasans-book-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/Content/fonts/firabook/firasans-book-webfont.woff2') format('woff2'),
+         url('/Content/fonts/firabook/firasans-book-webfont.woff') format('woff'),
+         url('/Content/fonts/firabook/firasans-book-webfont.ttf') format('truetype'),
+         url('/Content/fonts/firabook/firasans-book-webfont.svg#fira_sansbook') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/* bold, use to bold titles */
+@font-face {
+    font-family: 'fira_sansbold';
+    src: url('/Content/fonts/firabold/firasans-bold-webfont.eot');
+    src: url('/Content/fonts/firabold/firasans-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/Content/fonts/firabold/firasans-bold-webfont.woff2') format('woff2'),
+         url('/Content/fonts/firabold/firasans-bold-webfont.woff') format('woff'),
+         url('/Content/fonts/firabold/firasans-bold-webfont.ttf') format('truetype'),
+         url('/Content/fonts/firabold/firasans-bold-webfont.svg#fira_sansbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/** Web Fonts End **/
+
+html {
   position: relative;
   min-height: 100%;
 }
+
 body {
   /* Margin bottom by footer height */
   margin-bottom: 600px;
@@ -79,6 +123,7 @@ footer {
 h1, h2, h3, h4, h5, h6, .menu-header {
 	color: #125687;
 	font-weight: bold;
+	font-family: fira_sansbold, Arial, sans-serif;
 }
 
 	h4 img {
@@ -92,9 +137,6 @@ h1, .subtitle {
 	text-transform: uppercase;
 }
 
-	h1, h1.subtitle {
-		font-weight: 700;
-	}
 .subtitle {
 	color: #5086b0;
 	font-size: 0.75em;
@@ -462,7 +504,7 @@ ul.menu-blue > li {
   margin: 0px;
   color: #ffffff;
   text-align: left;
-  font-size: 0.8em;
+  font-size: 1em;
   text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.6);
   background-color: rgba(80, 80, 80, 0.75);
   right: 0px;
@@ -650,7 +692,7 @@ div.indent {
 		.carousel-caption {
 		  width: 55vw;
 		  height: 8vh;
-		  font-size: 1.1em;
+		  font-size: 1.25em;
 		}
 		.carousel-caption .description {
 			color: #f1d54d;
@@ -679,8 +721,8 @@ div.indent {
 		.carousel-caption {
 		  width: 35vw;
 		  height: 6vh;
-		  font-size: 1.1em;
-		  padding-top: 5px;
+		  font-size: 1.25em;
+		  padding-top: 1px;
 		  line-height: 1.5em;
 		}
 		.carousel-caption .description {
