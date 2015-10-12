@@ -537,7 +537,6 @@
     <Content Include="Content\pdf\Robert Toombs Avenue Press Release 7_7_15.pdf" />
     <Content Include="Content\pdf\South Lumpkin MultiUse Path Final.pdf" />
     <Content Include="Content\pdf\TIA - Georgia DOT and Appling County Officials Celebrate Completion of Zoar Road Upgrades and Bridge Replacements  7_31_15.pdf" />
-    <Content Include="Content\pdf\TIAFactSheet.pdf" />
     <Content Include="Content\pdf\Press Release_TIA HOGA 7_30_15.pdf" />
     <Content Include="Content\pdf\08.17.2015 _ TIA Award Release.pdf" />
     <Content Include="Content\pdf\9.18.2015 _ GDOT TIA Mullins Release.pdf" />
@@ -608,7 +607,6 @@
     <Content Include="Scripts\jquery-1.9.1.min.map" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Gallery.cshtml" />
-    <Content Include="Views\Home\FactSheet.cshtml" />
     <Content Include="Views\Home\SlideShow.cshtml" />
     <Content Include="Views\Project\Index.cshtml" />
     <Content Include="Views\Project\CSRA.cshtml" />
