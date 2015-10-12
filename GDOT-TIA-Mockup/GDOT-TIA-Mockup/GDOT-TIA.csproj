@@ -120,6 +120,7 @@
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\favicon\android-chrome-144x144.png" />
     <Content Include="Content\favicon\android-chrome-192x192.png" />
@@ -559,6 +560,9 @@
     <Content Include="Content\fonts\firasans\firasans-regular-webfont.ttf" />
     <Content Include="Content\fonts\firasans\firasans-regular-webfont.woff" />
     <Content Include="Content\fonts\firasans\firasans-regular-webfont.woff2" />
+    <Content Include="Content\pdf\9.21.2015 _ Richmond-Columbia TIA Construction Release %282%29.pdf" />
+    <Content Include="Content\pdf\TIA Fact Sheet %28with background%29.pdf" />
+    <Content Include="Content\bootstrap.css.map" />
     <None Include="Properties\PublishProfiles\Default.pubxml" />
     <None Include="Properties\PublishProfiles\PublishToC-Temp.pubxml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
