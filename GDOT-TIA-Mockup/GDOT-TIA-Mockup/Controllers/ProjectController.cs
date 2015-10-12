@@ -62,48 +62,10 @@ namespace GDOT_TIA.Controllers
 			Region csra = new Region(Region.CSRAId);
 			ppm.totals = csra.totals;
 
-			List<County> theCounties = pcCSRA.GetCounties("csra").ToList();
-			List<Band> theBands = pcCSRA.GetBands().ToList();
-            List<ProjectTypes> theProjectTypes = pcCSRA.GetProjectTypes().ToList();
-            List<ProjectStatus> theProjectStatus = pcCSRA.GetProjectStatus().ToList();
-
 			ppm.AllBands = pcCSRA.GetBands().ToList();
 			ppm.AllCounties = pcCSRA.GetCounties("csra").ToList();
 			ppm.AllProjectTypes = pcCSRA.GetProjectTypes().ToList();
 			ppm.AllProjectStatuses = pcCSRA.GetProjectStatus().ToList();
-
-			/*ViewBag.counties = theCounties;
-			ViewBag.bands = theBands;
-			ViewBag.types = theProjectTypes;
-			ViewBag.statuses = theProjectStatus;*/
-
-			theData = pcCSRA.GetPreProjectList();
-			/*RepeaterProjectList.DataSource = theData;
-			RepeaterProjectList.DataBind();
-
-			foreach (County cty in theCounties)
-			{
-				ListItem li = new ListItem { Enabled = true, Text = cty.Description, Value = cty.FullCode };
-				this.DropDownListCounty.Items.Add(li);
-			}
-			
-			foreach (Band bnd in theBands)
-            {
-                ListItem li = new ListItem { Enabled = true, Text = bnd.Description, Value = bnd.FullCode };
-                this.DropDownListBand.Items.Add(li);
-            }
-
-            foreach (ProjectTypes pt in theProjectTypes)
-            {
-                ListItem li = new ListItem { Enabled = true, Text = pt.Description, Value = pt.FullCode };
-                this.DropDownListProjectType.Items.Add(li);
-            }
-
-            foreach (ProjectStatus st in theProjectStatus)
-            {
-                ListItem li = new ListItem { Enabled = true, Text = st.Description, Value = st.FullCode };
-                this.DropDownListProjectStatus.Items.Add(li);
-            }*/
 
 			theData = pcCSRA.GetPreProjectList();
 			if (theData != null && theData.Tables[0].Rows.Count > 0)
@@ -128,20 +90,9 @@ namespace GDOT_TIA.Controllers
 					p.regionalCommission = "Central Savannah";
 
 					ppm.AllProjects.Add(p);
-					/*totalProjects++;
-					originalBudget += p.originalBudget;
-					if (p.projectStatus == "Construction") constructionProjects++;
-					if (p.projectStatus == "Project Complete") finishedProjects++;*/
 
 				}
 			}
-
-            //Cache["PrjData"] = theData;
-            /*this.RepeaterProjectList.DataSource = theData;
-            this.RepeaterProjectList.DataBind();
-            if (!(theData.Tables[0].Rows.Count > 0))
-                LabelNoProjects.Visible = true;
-			*/
 
 			return View(ppm);
 		}

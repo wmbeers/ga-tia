@@ -87,7 +87,7 @@ namespace GDOT_TIA.Models
                     rtrn.TotalFundsBudgeted = 0;
 					rtrn.TotalFundsSpent = 0;
 
-                    Regex noNumbers = new Regex("[^0-9]");
+                    Regex noNumbers = new Regex("[^0-9,\\.]");
 					// count projects whose status are Complete and Construction
                     // and summarize budged amount from SmallProjectDocument_AddressInfoNote 
                     // (which contains text, such as "$1,868,002 (Blended Project - Total Budget)" or "$11,585,960 ")
@@ -104,7 +104,7 @@ namespace GDOT_TIA.Models
 						String invoiced = dr.IsNull("SmallProjectDocument_ApproximateValueText") ? "" : dr["SmallProjectDocument_ApproximateValueText"].ToString();
 						invoiced = noNumbers.Replace(invoiced, ""); //strip out everything except numbersif (budgeted.Length > 0)
 						{
-							rtrn.TotalFundsSpent += Double.Parse(invoiced);
+                            rtrn.TotalFundsSpent += Double.Parse(invoiced);
 						}
                     }
 				}

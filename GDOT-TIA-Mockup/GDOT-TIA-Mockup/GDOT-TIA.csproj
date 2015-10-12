@@ -529,6 +529,10 @@
     <Content Include="Content\firasans\firasans-regular-webfont.ttf" />
     <Content Include="Content\firasans\firasans-regular-webfont.woff" />
     <Content Include="Content\firasans\firasans-regular-webfont.woff2" />
+    <Content Include="Content\pdf\08.17.2015 _ TIA Award Release.pdf" />
+    <Content Include="Content\pdf\9.18.2015 _ GDOT TIA Mullins Release.pdf" />
+    <Content Include="Content\pdf\9.21.2015 _ Richmond-Columbia TIA Construction Release.pdf" />
+    <Content Include="Content\pdf\9.30.2015_ SGTP Ground Breaking.pdf" />
     <None Include="Properties\PublishProfiles\Default.pubxml" />
     <None Include="Properties\PublishProfiles\PublishToC-Temp.pubxml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
