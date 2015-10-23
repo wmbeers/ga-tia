@@ -28,8 +28,8 @@ namespace GDOT_TIA.Models
                 List<FilterItem> items = new List<FilterItem>();
                 items.Add(new FilterItem(1, "Bike and Pedestrian Projects",
                     new List<string> {
-	                    "01 :  Bike-Ped Fac",
-	                    "11 :  Multi-use Trl",
+	                    "01 :  Bike-Ped Fac", 
+	                    "11 :  Multi-use Trl", 
 	                    "22 :  Sidewalks"}));
                 items.Add(new FilterItem(2, "Bridge Projects",
                     new List<string> {
@@ -37,9 +37,9 @@ namespace GDOT_TIA.Models
                 items.Add(new FilterItem(3, "Resurfacing and Maintenance Projects",
                     new List<string> {
 	                    "03 :  Resurfacing",
-	                    "03a :  GrdDrnBasPv",
-	                    "03b :  Surface Treat",
-	                    "03c :  Grade Adj",
+	                    "03a : GrdDrnBasPv",
+	                    "03b : Surface Treat",
+	                    "03c : Grade Adj",
 	                    "19 :  Minor Widen",
 	                    "20 :  Pvmt Marking"}));
                 items.Add(new FilterItem(4, "Roadway Improvement Projects",
