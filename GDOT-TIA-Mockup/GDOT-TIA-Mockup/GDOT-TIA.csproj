@@ -591,14 +591,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Band.cs" />
-    <Compile Include="Models\County.cs" />
+    <Compile Include="Models\FilterItem.cs" />
     <Compile Include="Models\ProjectModel.cs" />
-    <Compile Include="Models\ProjectPageModel.cs" />
-    <Compile Include="Models\ProjectStatus.cs" />
-    <Compile Include="Models\ProjectTypes.cs" />
     <Compile Include="Models\RegionModel.cs" />
-    <Compile Include="Models\RegionTotals.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -609,10 +604,7 @@
     <Content Include="Views\Home\Gallery.cshtml" />
     <Content Include="Views\Home\SlideShow.cshtml" />
     <Content Include="Views\Project\Index.cshtml" />
-    <Content Include="Views\Project\CSRA.cshtml" />
     <Content Include="Views\Project\_ProjectList.cshtml" />
-    <Content Include="Views\Project\HOGA.cshtml" />
-    <Content Include="Views\Project\RV.cshtml" />
     <Content Include="Views\Home\News.cshtml" />
     <Content Include="Views\Home\Procurement.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
@@ -627,6 +619,7 @@
     <Content Include="Views\Home\Discretionary.cshtml" />
     <Content Include="Views\Home\Investment.cshtml" />
     <Content Include="Views\Shared\_Layout_Index.cshtml" />
+    <Content Include="Views\Project\List.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

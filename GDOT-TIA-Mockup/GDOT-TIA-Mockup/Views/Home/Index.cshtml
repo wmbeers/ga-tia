@@ -1,111 +1,135 @@
 ﻿@{
-	ViewBag.Title = "Transportation Investment Act of 2010";
-	Layout = "~/Views/Shared/_Layout_Index.cshtml";
+    ViewBag.Title = "Transportation Investment Act of 2010";
+    Layout = "~/Views/Shared/_Layout_Index.cshtml";
 }
 
 @section facebook {
-	<!-- Facebook script -->
-	<div id="fb-root"></div>
-	<script>(function (d, s, id) {
-	var js, fjs = d.getElementsByTagName(s)[0];
-	if (d.getElementById(id)) return;
-	js = d.createElement(s); js.id = id;
-	js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4";
-	fjs.parentNode.insertBefore(js, fjs);
+    <!-- Facebook script -->
+    <div id="fb-root"></div>
+    <script>(function (d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4";
+    fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
-	<!-- Facebook script end -->
+    <!-- Facebook script end -->
 }
 
-	
-	<br />
+
+<br />
 
 <div class="well" style="text-align: center">
-                <h2>Program Overview</h2>
-                The Transportation Investment Act (TIA) Referendum was passed by Georgia voters in the regions of Central Savannah River Area, Heart of Georgia - Altamaha and River Valley. These three regions will implement a one percent regional sales tax over a ten year period to fund transportation improvements. Georgia DOT is responsible for the management of the budget, schedule, execution and delivery of all Projects contained in the Approved Investment Lists.</div>
+    <h2>Program Overview</h2>
+    The Transportation Investment Act (TIA) Referendum was passed by Georgia voters in the regions of Central Savannah River Area, Heart of Georgia - Altamaha and River Valley. These three regions will implement a one percent regional sales tax over a ten year period to fund transportation improvements. Georgia DOT is responsible for the management of the budget, schedule, execution and delivery of all Projects contained in the Approved Investment Lists.
+</div>
 
-	<div class="row">
-		<div class="col-lg-6">
-			<div style="max-width: 490px; margin: auto">
-			<h3 style="text-align: center">TIA by Region</h3>
-			<div style="position: relative">
-                <div class="callout callout-rv" onclick="window.open('Project/rv', '_self')">
+<div class="row">
+    <div class="col-lg-6">
+        <div style="max-width: 490px; margin: auto">
+            <h3 style="text-align: center">TIA by Region</h3>
+            <div style="position: relative">
+                <div class="callout callout-rv" onclick="window.open('Project/List/rvly', '_self')">
                     <h4>River Valley</h4>
-                    <p class="withI">TIA Funds Budgeted (2011 Dollars):<br />
-                    @ViewBag.rv.totals.TotalFundsBudgeted.ToString("C")</p>
-                    <p class="withI">TIA Revenue Collected to Date:<br />
-                    @ViewBag.rv.totals.TotalRevenueCollected.ToString("C")</p>
-                    <p>Total Number of TIA Projects = @ViewBag.rv.totals.TotalProjects</p>
+                    <p class="withI">
+                        TIA Funds Budgeted (2011 Dollars):<br />
+                        @ViewBag.rv.TotalFundsBudgeted.ToString("C")
+                    </p>
+                    <p class="withI">
+                        TIA Revenue Collected to Date:<br />
+                        @ViewBag.rv.TotalRevenueCollected.ToString("C")
+                    </p>
+                    <p>Total Number of TIA Projects = @ViewBag.rv.TotalProjects</p>
                 </div>
-                 <div class="callout callout-csra" onclick="window.open('Project/csra', '_self')">
+                <div class="callout callout-csra" onclick="window.open('Project/List/csra', '_self')">
                     <h4>Central Savannah River Area</h4>
-                    <p class="withI">TIA Funds Budgeted (2011 Dollars):<br />
-                    @ViewBag.csra.totals.TotalFundsBudgeted.ToString("C")</p>
-                    <p class="withI">TIA Revenue Collected to Date:<br />
-                    @ViewBag.csra.totals.TotalRevenueCollected.ToString("C")</p>
-                    <p>Total Number of TIA Projects = @ViewBag.csra.totals.TotalProjects</p>
+                    <p class="withI">
+                        TIA Funds Budgeted (2011 Dollars):<br />
+                        @ViewBag.csra.TotalFundsBudgeted.ToString("C")
+                    </p>
+                    <p class="withI">
+                        TIA Revenue Collected to Date:<br />
+                        @ViewBag.csra.TotalRevenueCollected.ToString("C")
+                    </p>
+                    <p>Total Number of TIA Projects = @ViewBag.csra.TotalProjects</p>
                 </div>
-                <div class="callout callout-hoga" onclick="window.open('Project/hoga', '_self')">
+                <div class="callout callout-hoga" onclick="window.open('Project/List/hoga', '_self')">
                     <h4>Heart of Georgia Altamaha</h4>
-                    <p class="withI">TIA Funds Budgeted (2011 Dollars):<br />
-                    @ViewBag.hoga.totals.TotalFundsBudgeted.ToString("C")</p>
-                    <p class="withI">TIA Revenue Collected to Date:<br />
-                    @ViewBag.hoga.totals.TotalRevenueCollected.ToString("C")</p>
-                    <p>Total Number of TIA Projects = @ViewBag.hoga.totals.TotalProjects</p>
+                    <p class="withI">
+                        TIA Funds Budgeted (2011 Dollars):<br />
+                        @ViewBag.hoga.TotalFundsBudgeted.ToString("C")
+                    </p>
+                    <p class="withI">
+                        TIA Revenue Collected to Date:<br />
+                        @ViewBag.hoga.TotalRevenueCollected.ToString("C")
+                    </p>
+                    <p>Total Number of TIA Projects = @ViewBag.hoga.TotalProjects</p>
                 </div>
                 <img id="tia-regions" src="/Content/img/tia_regions_sm.png" alt="State map of Georgia highlighting three regions: River Valley, Central Savannah River Area, and Heart of Georgia Altamaha" usemap="#regions" />
-			<!----></div>
+                <!---->
+            </div>
 
-			<map name="regions" id="regions">
-                <area alt="Link to River Valley project page" title="River Valley" href="/Project/rv" shape="rect" coords="0,175,152,342" />
-                <area alt="Link to Central Savannah River Area project page" title="Central Savannah River Area" href="/Project/csra" shape="poly" coords="247,90,346,184,315,227,287,198,264,197,228,195,206,210,173,164,204,105" />
-                <area alt="Link to Heart of Georgia Altamaha project page" title="Heart of Georgia Altamaha" href="/Project/hoga" shape="poly" coords="154,312,312,372,347,346,322,309,340,280,299,206,284,196,222,196,162,222" />
+            <map name="regions" id="regions">
+                <area alt="Link to River Valley project page" title="River Valley" href="/Project/List/rvly" shape="rect" coords="0,175,152,342" />
+                <area alt="Link to Central Savannah River Area project page" title="Central Savannah River Area" href="/Project/List/csra" shape="poly" coords="247,90,346,184,315,227,287,198,264,197,228,195,206,210,173,164,204,105" />
+                <area alt="Link to Heart of Georgia Altamaha project page" title="Heart of Georgia Altamaha" href="/Project/List/hoga" shape="poly" coords="154,312,312,372,347,346,322,309,340,280,299,206,284,196,222,196,162,222" />
             </map>
-				</div>
-		</div>
+        </div>
+    </div>
 
-		<div class="col-lg-6"><br />
-			<h3 style="text-align: center"><span class="blue">Tax Revenue Collected to Date</span><br />
-				<span class="green">@ViewBag.totalTaxRevenueCollectedString</span>
-			</h3><p style="font-size: 1em; font-weight: bold; max-width: 25em; margin: auto"><span class="blue">Total Projects:</span> <span class="green">@ViewBag.totalProjects</span><br />
-			<span class="blue">Projects Under Construction:</span> <span class="green">@ViewBag.totalConstructionProjects</span><br />
-			<span class="blue">Projects Completed:</span> <span class="green">@ViewBag.totalFinishedProjects</span><br />
-			<span class="blue">TIA Funds Budgeted (2011 Dollars):</span> <span class="green">$1,175,318,463</span><br />
-			<span class="blue">Total Expenditure to Date:</span> <span class="green">@ViewBag.totalExpenditure</span></p><br />
-			<div style="text-align: center; width: 100%;">
-				<div id="thermo1" style="width: 300px; margin: auto"></div>
-			</div>
-			<script>
-				$('#thermo1').thermometer({
-					height: 300,
-					width: 350,
-					startValue: '@ViewBag.totalTaxRevenueCollected',
+    <div class="col-lg-6">
+        <br />
+        <h3 style="text-align: center"><span class="blue">Tax Revenue Collected to Date</span><br />
+            <span class="green">@ViewBag.totalTaxRevenueCollectedString</span>
+        </h3>
+        <p style="font-size: 1em; font-weight: bold; max-width: 25em; margin: auto">
+            <span class="blue">Total Projects:</span> <span class="green">@ViewBag.totalProjects</span><br />
+            <span class="blue">Projects Under Construction:</span> <span class="green">@ViewBag.totalConstructionProjects</span><br />
+            <span class="blue">Projects Completed:</span> <span class="green">@ViewBag.totalFinishedProjects</span><br />
+            <span class="blue">TIA Funds Budgeted (2011 Dollars):</span> <span class="green">$1,175,318,463</span><br />
+            <span class="blue">Total Expenditure to Date:</span> <span class="green">@ViewBag.totalExpenditure</span>
+        </p>
+        <br />
+        <div style="text-align: center; width: 100%;">
+            <div id="thermo1" style="width: 300px; margin: auto"></div>
+        </div>
+        <script>
+            $('#thermo1').thermometer({
+                height: 300,
+                width: 350,
+                startValue: '@ViewBag.totalTaxRevenueCollected',
 					minValue: 0,
 					maxValue: 1200,
 					topText: "$1200",
 					middleText: "$600",
 					bottomText: "$0"
 				});
-				</script>
-			
-		</div>
-	</div>
-	<br /><br />
-	<div class="row well" style="margin-bottom: 0px; padding-top: 20px; padding-bottom: 20px">
-		<div class="col-sm-6 col-md-6">
-			<!-- Twitter Embed Code -->
-			<div style="margin:auto; max-width: 500px">
-			<a class="twitter-timeline"  href="https://twitter.com/TIAatGDOT" data-widget-id="628058046166470657">Tweets by @@TIAatGDOT</a>
-            <script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + "://platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); } }(document, "script", "twitter-wjs");</script>
-          
-          </div>
-			<!-- Twitter Embed Code End-->
-		</div>
+        </script>
 
-		<div class="col-sm-6 col-md-6">
-			<!-- Facebook Embed Code -->
-			<div style="margin: auto; max-width: 500px">
-			<div class="fb-page" data-width="500" data-href="https://www.facebook.com/transportationinvestmentact" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/transportationinvestmentact"><a href="https://www.facebook.com/transportationinvestmentact">Georgia Transportation Investment Act - TIA</a></blockquote></div></div></div>
-			<!-- Facebook Embed Code End -->
-		</div>
-	</div>
-    
+    </div>
+</div>
+<br />
+<br />
+<div class="row well" style="margin-bottom: 0px; padding-top: 20px; padding-bottom: 20px">
+    <div class="col-sm-6 col-md-6">
+        <!-- Twitter Embed Code -->
+        <div style="margin: auto; max-width: 500px">
+            <a class="twitter-timeline" href="https://twitter.com/TIAatGDOT" data-widget-id="628058046166470657">Tweets by @@TIAatGDOT</a>
+            <script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + "://platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); } }(document, "script", "twitter-wjs");</script>
+
+        </div>
+        <!-- Twitter Embed Code End-->
+    </div>
+
+    <div class="col-sm-6 col-md-6">
+        <!-- Facebook Embed Code -->
+        <div style="margin: auto; max-width: 500px">
+            <div class="fb-page" data-width="500" data-href="https://www.facebook.com/transportationinvestmentact" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="true">
+                <div class="fb-xfbml-parse-ignore">
+                    <blockquote cite="https://www.facebook.com/transportationinvestmentact"><a href="https://www.facebook.com/transportationinvestmentact">Georgia Transportation Investment Act - TIA</a></blockquote>
+                </div>
+            </div>
+        </div>
+        <!-- Facebook Embed Code End -->
+    </div>
+</div>

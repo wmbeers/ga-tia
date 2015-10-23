@@ -1,7 +1,7 @@
 ﻿@using GDOT_TIA.Models
-@model GDOT_TIA.Models.ProjectPage
+@model GDOT_TIA.Models.Region
 @{
-    ViewBag.Title = "River Valley Project List";
+    ViewBag.Title = @Model.Name + " Project List";
 }
 @section scripts {
 	<script type="text/javascript">
@@ -12,7 +12,7 @@
 				var s= $('#statusList option:selected').val();
 				var t= $('#typeList option:selected').val();
 				$.ajax({
-					url: "/Project/Filter?bandString=" + b + "&countyString=" + c + "&statusString=" +s + "&typeString=" + t + "&region=" + 2,
+					url: "/Project/Filter?bandString=" + b + "&countyString=" + c + "&status=" + s + "&type=" + t + "&regionCode=@Model.Abbreviation",
 					type: "GET",
 					/**/error: function (response) {
 						alert("error " + response.toString());
@@ -24,44 +24,44 @@
 				});
 			});
 			@{
-				var startValue= Model.totals.TotalRevenueCollected / 1000000;
+				var startValue= Model.TotalRevenueCollected / 1000000;
 			}
-			$('#thermo4').thermometer({
+			$('#thermo3').thermometer({
 				startValue: '@startValue',
 				minValue: 0,
-				maxValue: 600,
-				topText: "$600",
-				middleText: "$300",
+				maxValue: @Model.GetMaxValue ,
+				topText: "$@Model.GetMaxValue",
+				middleText: "$@(Model.GetMaxValue / 2)",
 				bottomText: 0,
-				liquidColour: '#f79646'
+				liquidColour: '@Model.GetColor'
 			});
 		});
 
 	</script>
 }
 
-<h2>River Valley Project List</h2>
+<h2>@Model.Name Project List</h2>
 
 <div class="row">
 	<div class="col-md-4">
-		<p style="font-size: 0.85em; font-weight: bold"><span class="blue">Total Projects:</span> <span class="rv">@Model.totals.TotalProjects</span><br />
-			<span class="blue">Projects Under Construction:</span> <span class="rv">@Model.totals.TotalConstructionProjects</span><br />
-			<span class="blue">Projects Completed:</span> <span class="rv">@Model.totals.TotalFinishedProjects</span><br />
-			<span class="blue">TIA Funds Budgeted (2011 Dollars):</span> <span class="rv">@Model.totals.TotalFundsBudgeted.ToString("C2")</span><br />
-			<span class="blue">Total Expenditure to Date: </span> <span class="rv">@Model.totals.TotalFundsSpent.ToString("C2")</span>
-		</p><br />
+		<p style="font-size: 0.85em; font-weight: bold"><span class="blue">Total Projects:</span> <span class="@Model.Abbreviation">@Model.TotalProjects</span><br />
+			<span class="blue">Projects Under Construction:</span> <span class="@Model.Abbreviation">@Model.TotalConstructionProjects</span><br />
+			<span class="blue">Projects Completed:</span> <span class="@Model.Abbreviation">@Model.TotalFinishedProjects</span><br />
+			<span class="blue">TIA Funds Budgeted (2011 Dollars):</span>  <span class="@Model.Abbreviation">@Model.TotalFundsBudgeted.ToString("C2")</span><br />
+			<span class="blue">Total Expenditure to Date: </span> <span class="@Model.Abbreviation">@Model.TotalFundsSpent.ToString("C2")</span></p>
 	</div>
 	<div class="col-md-3">
 		<div style="text-align: center; width: 100%;">
-			<div id="thermo4" style="width: 80px; margin: auto"></div>
+			<div id="thermo3" style="width: 80px; margin: auto"></div>
 		</div>
 		<p style="text-align: center; font-weight: bold"><span class="blue">Tax Revenue Collected to Date</span><br />
-			<span class="rv">@Model.totals.TotalRevenueCollected.ToString("C2")</span>
+			<span class="@Model.Abbreviation">@Model.TotalRevenueCollected.ToString("C2")</span>
 		</p>
 	</div>
 	
 	<div class="col-md-5"></div>
 </div>
+
 
 <p>Filter projects by:</p>
 
@@ -72,9 +72,9 @@
 			<select id="countyList" class="form-control">
 				<option value="">All</option>
 				@{
-					foreach (County c in Model.AllCounties)
+					foreach (string c in Model.Counties)
 					{
-						<option value="@c.Code">@c.Description</option>
+						<option value="@c">@c County</option>
 					}
 				
 				}
@@ -86,29 +86,21 @@
 			<label for="bandList">Band</label><br />
 			<select id="bandList" class="form-control" onchange="test(); FilterSelectionChanged($('#countyList option:selected').val(), $('#bandList option:selected').val(), $('#statusList option:selected').val(), $('#typeList option:selected').val())">
 				<option value="">All</option>
-				@{
-
-					foreach (Band b in Model.AllBands)
-					{
-						<option value="@b.Code">@b.Description</option>
-					}
-				}
-
+                <option value="01">Band 1:2013 to 2015</option>
+                <option value="02">Band 2:2016 to 2019</option>
+                <option value="03">Band 3:2020 to 2022</option>
+                <option value="Multiple">Multi-Band</option>
 			</select>
 		</div>
 	</div>
 	<div class="col-md-3 col-sm-6">
 		<div class="form-group">
 			<label for="typeList">Project Type</label><br />
-			<select id="typeList" class="form-control" onchange="FilterSelectionChanged($('#countyList option:selected').val(), $('#bandList option:selected').val(), $('#statusList option:selected').val(), $('#typeList option:selected').val())">
-			
+            <select id="typeList" class="form-control" onchange="FilterSelectionChanged($('#countyList option:selected').val(), $('#bandList option:selected').val(), $('#statusList option:selected').val(), $('#typeList option:selected').val())">
 				<option value="">All</option>
-				@{
-
-					foreach (ProjectTypes t in Model.AllProjectTypes)
-					{
-						<option value="@t.FullCode">@t.Description</option>
-					}
+				@foreach (FilterItem filterItem in FilterItem.GetProjectTypes)
+				{
+					<option value="@filterItem.Id">@filterItem.Display</option>
 				}
 			</select>
 		</div>
@@ -117,18 +109,18 @@
 		<div class="form-group">
 			<label for="statusList">Status</label><br />
 			<select id="statusList" class="form-control" onchange="FilterSelectionChanged($('#countyList option:selected').val(), $('#bandList option:selected').val(), $('#statusList option:selected').val(), $('#typeList option:selected').val())">
-			
 				<option value="">All</option>
-				@{
-
-					foreach (ProjectStatus s in Model.AllProjectStatuses)
-					{
-						<option value="@s.Code">@s.Description</option>
-					}
+				@foreach (FilterItem filterItem in FilterItem.GetStatuses)
+				{
+					<option value="@filterItem.Id">@filterItem.Display</option>
 				}
 			</select>
 		</div>
 	</div>
 </div>
+
 <br />
-<div id="plist">@Html.Partial("_ProjectList", Model)</div>
+<div id="plist">@Html.Partial("_ProjectList", Model.GetProjects("","",null,null))</div>
+
+
+

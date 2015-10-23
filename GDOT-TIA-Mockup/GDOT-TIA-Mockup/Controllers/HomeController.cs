@@ -20,28 +20,28 @@ namespace GDOT_TIA.Controllers
         // GET: /Home/
         public ActionResult Index()
         {
-			Region csra = new Region(Region.CSRAId);
-			Region hoga = new Region(Region.HOGAId);
-			Region rv = new Region(Region.RVId);
+			Region csra = new Region(Region.RegionAbbrs.csra);
+			Region hoga = new Region(Region.RegionAbbrs.hoga);
+			Region rv = new Region(Region.RegionAbbrs.rvly);
 
-			ViewBag.csraTaxCollected = csra.totals.TotalRevenueCollected.ToString("C2");
-			ViewBag.hogaTaxCollected = hoga.totals.TotalRevenueCollected.ToString("C2");
-			ViewBag.rvTaxCollected = rv.totals.TotalRevenueCollected.ToString("C2");
-			ViewBag.csraTotalProjects = csra.totals.TotalProjects;
-			ViewBag.hogaTotalProjects = hoga.totals.TotalProjects;
-			ViewBag.rvTotalProjects = rv.totals.TotalProjects;
+			ViewBag.csraTaxCollected = csra.TotalRevenueCollected.ToString("C2");
+			ViewBag.hogaTaxCollected = hoga.TotalRevenueCollected.ToString("C2");
+			ViewBag.rvTaxCollected = rv.TotalRevenueCollected.ToString("C2");
+			ViewBag.csraTotalProjects = csra.TotalProjects;
+			ViewBag.hogaTotalProjects = hoga.TotalProjects;
+			ViewBag.rvTotalProjects = rv.TotalProjects;
 
-			ViewBag.totalTaxRevenueCollected = (csra.totals.TotalRevenueCollected + hoga.totals.TotalRevenueCollected + rv.totals.TotalRevenueCollected) / 1000000;
-			ViewBag.totalTaxRevenueCollectedString = (csra.totals.TotalRevenueCollected + hoga.totals.TotalRevenueCollected + rv.totals.TotalRevenueCollected).ToString("C2");
-			ViewBag.totalProjects = csra.totals.TotalProjects + hoga.totals.TotalProjects + rv.totals.TotalProjects;
-			ViewBag.totalFinishedProjects = csra.totals.TotalFinishedProjects + hoga.totals.TotalFinishedProjects + rv.totals.TotalFinishedProjects;
-			ViewBag.totalConstructionProjects = csra.totals.TotalConstructionProjects + hoga.totals.TotalConstructionProjects + rv.totals.TotalConstructionProjects;
+			ViewBag.totalTaxRevenueCollected = (csra.TotalRevenueCollected + hoga.TotalRevenueCollected + rv.TotalRevenueCollected) / 1000000;
+			ViewBag.totalTaxRevenueCollectedString = (csra.TotalRevenueCollected + hoga.TotalRevenueCollected + rv.TotalRevenueCollected).ToString("C2");
+			ViewBag.totalProjects = csra.TotalProjects + hoga.TotalProjects + rv.TotalProjects;
+			ViewBag.totalFinishedProjects = csra.TotalFinishedProjects + hoga.TotalFinishedProjects + rv.TotalFinishedProjects;
+			ViewBag.totalConstructionProjects = csra.TotalConstructionProjects + hoga.TotalConstructionProjects + rv.TotalConstructionProjects;
 
             ViewBag.csra = csra;
             ViewBag.hoga = hoga;
             ViewBag.rv = rv;
 
-			ViewBag.totalExpenditure = ((csra.totals.TotalFundsSpent + hoga.totals.TotalFundsSpent + rv.totals.TotalFundsSpent)).ToString("C2");
+			ViewBag.totalExpenditure = ((csra.TotalFundsSpent + hoga.TotalFundsSpent + rv.TotalFundsSpent)).ToString("C2");
 			
             return View();
         }

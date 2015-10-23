@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using MeridianSystems.Solutions.Proliance.ServiceActivator.Gateway.DocumentDataService;
 using MeridianSystems.Solutions.Proliance.ServiceActivator.Gateway;
 using MeridianSystems.Solutions.Proliance.ServiceActivator.Connection;
 using MeridianSystems.Solutions.Proliance.ServiceActivator.Platform.Lookups;
@@ -17,10 +18,6 @@ namespace GDOT_TIA.Controllers
 		private ProlianceConnection connection = new ProlianceConnection("https://na2.agpmis.com", "na", "admin", "?aecom");
 		private string account = "";
 
-		public const string CSRA_ACCOUNT= "pgmprj://na/tia/csra";
-		public const string RV_ACCOUNT = "pgmprj://na/tia/rvly";
-		public const string HOGA_ACCOUNT = "pgmprj://na/tia/hoga";
-
 		public ProlianceController(string prjAccount)
 		{
 			account = prjAccount;
@@ -28,122 +25,7 @@ namespace GDOT_TIA.Controllers
 
 		public ProlianceController() { }
 
-		public IQueryable<County> GetCounties(string attrib)
-		{
-			//CurrentUser = (ProlianceUser)CurrentContext.Session["user"];
-			using (var proliance = new LookupProxy(connection, account))
-			{
-				try
-				{
-					var ver = proliance.GetLookupVersionByType("ProjectOfficeUnitType");
-
-					var query = from item in ver.Items.AsEnumerable()
-								where item.Attributes[0].Value.ToString() == attrib
-								select new County
-								{
-									Code = item.Code,
-									FullCode = item.FullCode,
-									Description = item.Description,
-									level = item.Level,
-									Display = item.Code + " : " + item.Description,
-									SortValue = item.SortValue
-								};
-					return query.AsQueryable();
-				}
-				catch (Exception ex)
-				{
-					throw new Exception("Error occured reading lookup: ", ex);
-				}
-			}
-		}
-
-		public IQueryable<Band> GetBands()
-		{
-			//CurrentUser = (ProlianceUser)CurrentContext.Session["user"];
-			using (var proliance = new LookupProxy(connection, account))
-			{
-				try
-				{
-					var ver = proliance.GetLookupVersionByType("ProjectServiceType");
-
-					var query = from item in ver.Items.AsEnumerable()
-								where item.Level == 0
-								select new Band
-								{
-									Code = item.Code,
-									FullCode = item.FullCode,
-									Description = item.Description,
-									level = item.Level,
-									Display = item.Code + " : " + item.Description,
-									SortValue = item.SortValue
-								};
-					return query.AsQueryable();
-				}
-				catch (Exception ex)
-				{
-					throw new Exception("Error occured reading lookup: ", ex);
-				}
-			}
-		}
-
-		public IQueryable<ProjectTypes> GetProjectTypes()
-		{
-			//CurrentUser = (ProlianceUser)CurrentContext.Session["user"];
-			using (var proliance = new LookupProxy(connection, account))
-			{
-				try
-				{
-					var ver = proliance.GetLookupVersionByType("ProjectMarketSectorType");
-
-					var query = from item in ver.Items.AsEnumerable()
-								where item.Level == 0
-								select new ProjectTypes
-								{
-									Code = item.Code,
-									FullCode = item.FullCode,
-									Description = item.Description,
-									level = item.Level,
-									Display = item.Code + " : " + item.Description,
-									SortValue = item.SortValue
-								};
-					return query.AsQueryable();
-				}
-				catch (Exception ex)
-				{
-					throw new Exception("Error occured reading lookup: ", ex);
-				}
-			}
-		}
-
-		public IQueryable<ProjectStatus> GetProjectStatus()
-		{
-			//CurrentUser = (ProlianceUser)CurrentContext.Session["user"];
-			using (var proliance = new LookupProxy(connection, account))
-			{
-				try
-				{
-					var ver = proliance.GetLookupVersionByType("ProjectSecuredStatusType");
-
-					var query = from item in ver.Items.AsEnumerable()
-								where item.Level == 0
-								select new ProjectStatus
-								{
-									Code = item.Code,
-									FullCode = item.FullCode,
-									Description = item.Description,
-									level = item.Level,
-									Display = item.Code + " : " + item.Description,
-									SortValue = item.SortValue
-								};
-					return query.AsQueryable();
-				}
-				catch (Exception ex)
-				{
-					throw new Exception("Error occured reading lookup: ", ex);
-				}
-			}
-		}
-
+		
 		public DataSet GetProjectApproxValues()
 		{
 			DataSet nData = new DataSet();
@@ -175,14 +57,15 @@ namespace GDOT_TIA.Controllers
 
 		public DataSet GetPreProjectList()
 		{
-			DataSet nData = new DataSet();
+            DataSet nData = new DataSet();
+            //var foo = "SmallProjectDocument_PlannedFinishDate"; //TODO: this is for getting the currently shelved planned finish date
 			using (var proliance = new GatewayProxy(connection, account))
 			{
 				try
 				{
 					var pageInfo = new PageInfo();
-					pageInfo.SelectFields = new List<OutputField>
-					{
+                    pageInfo.SelectFields = new List<OutputField>
+                    {
                         new OutputField("SmallProjectDocument_DocumentGuid"),
                         new OutputField("SmallProjectDocument_DocVisualId"),
                         new OutputField("SmallProjectDocument_DocTitle"),
@@ -207,16 +90,25 @@ namespace GDOT_TIA.Controllers
                         new OutputField("SmallProjectDocument_WorkflowStateUID"),
                         new OutputField("SmallProjectDocument_AddressInfoNote"),
                         new OutputField("SmallProjectDocument_SiteFaxInfoNote"),
-                        new OutputField("SmallProjectDocument_PhoneInfoNote")
-					};
+                        new OutputField("SmallProjectDocument_PhoneInfoNote")//,
+                        //new OutputField(foo)
+                    };
 
 					pageInfo.Filters.Add(new FilterField("SmallProjectDocument_WorkflowStateDisplayName", QueryFilterOperation.NotEqual, "Cancelled", QueryFieldType.DataField, false));
 					pageInfo.Filters.Add(new FilterField("SmallProjectDocument_DocTitle", QueryFilterOperation.NotEqual, "Program Administration", QueryFieldType.DataField, false));
 					pageInfo.Filters.FilterRelations = (" 0 & 1 ");
 					pageInfo.PagedOrderFields.Add(new OrderField("SmallProjectDocument_DocVisualId", QueryFieldType.DataField, QueryOrderAttribute.Ascending));
-					var ds = proliance.ListDocumentDataSet(DocumentTypeNames.SmallProjectDocument, pageInfo);
+					DataSet ds = null;
 
-					if (ds != null && ds.Tables[0].Rows.Count > 0)
+
+                    try
+                    {
+                        ds = proliance.ListDocumentDataSet(DocumentTypeNames.SmallProjectDocument, pageInfo);
+                    } catch (Exception e) {
+                        System.Diagnostics.Debug.Print(e.ToString());
+                    }
+                    
+                    if (ds != null && ds.Tables[0].Rows.Count > 0)
 					{
 						nData = ds;
 						foreach (DataRow r in nData.Tables[0].Rows)
@@ -239,138 +131,7 @@ namespace GDOT_TIA.Controllers
 
 		}
 
-		/*private DataSet GetPrjCache()
-		{
-			string cacheKey = "PRjData";
-			object cacheItem = Cache[cacheKey] as DataSet;
-			if ((cacheItem == null))
-			{
-				cacheItem = GetPreProjectList(connection, account);
-			}
-			return (DataSet)cacheItem;
-		}*/
-
-
-		/* Older functions that require a connection and account string be passed to them */
-		/* Older functions that require a connection and account string be passed to them */
-		/* Older functions that require a connection and account string be passed to them */
-        public IQueryable<County> GetCounties(ProlianceConnection conn, string prjAccount, string attrib)
-        {
-            //CurrentUser = (ProlianceUser)CurrentContext.Session["user"];
-            using (var proliance = new LookupProxy(conn, prjAccount))
-            {
-                try
-                {
-                    var ver = proliance.GetLookupVersionByType("ProjectOfficeUnitType");
-
-                    var query = from item in ver.Items.AsEnumerable()
-                                where item.Attributes[0].Value.ToString() == attrib
-                                select new County
-                                {
-                                    Code = item.Code,
-                                    FullCode = item.FullCode,
-                                    Description = item.Description,
-                                    level = item.Level,
-                                    Display = item.Code + " : " + item.Description,
-                                    SortValue = item.SortValue
-                                };
-                    return query.AsQueryable();
-                }
-                catch (Exception ex)
-                {
-                    throw new Exception("Error occured reading lookup: ", ex);
-                }
-			}
-		}
-        
-        public IQueryable<Band> GetBands(ProlianceConnection conn, string prjAccount)
-        {
-            //CurrentUser = (ProlianceUser)CurrentContext.Session["user"];
-            using (var proliance = new LookupProxy(conn, prjAccount))
-            {
-                try
-                {
-                    var ver = proliance.GetLookupVersionByType("ProjectServiceType");
-
-                    var query = from item in ver.Items.AsEnumerable()
-                                where item.Level == 0
-                                select new Band
-                                {
-                                    Code = item.Code,
-                                    FullCode = item.FullCode,
-                                    Description = item.Description,
-                                    level = item.Level,
-                                    Display = item.Code + " : " + item.Description,
-                                    SortValue = item.SortValue
-                                };
-                    return query.AsQueryable();
-                }
-                catch (Exception ex)
-                {
-                    throw new Exception("Error occured reading lookup: ", ex);
-                }
-            }
-        }
-
-        public IQueryable<ProjectTypes> GetProjectTypes(ProlianceConnection conn, string prjAccount)
-        {
-            //CurrentUser = (ProlianceUser)CurrentContext.Session["user"];
-            using (var proliance = new LookupProxy(conn, prjAccount))
-            {
-                try
-                {
-                    var ver = proliance.GetLookupVersionByType("ProjectMarketSectorType");
-
-                    var query = from item in ver.Items.AsEnumerable()
-                                where item.Level == 0
-                                select new ProjectTypes
-                                {
-                                    Code = item.Code,
-                                    FullCode = item.FullCode,
-                                    Description = item.Description,
-                                    level = item.Level,
-                                    Display = item.Code + " : " + item.Description,
-                                    SortValue = item.SortValue
-                                };
-                    return query.AsQueryable();
-                }
-                catch (Exception ex)
-                {
-                    throw new Exception("Error occured reading lookup: ", ex);
-                }
-            }
-        }
-
-        public IQueryable<ProjectStatus> GetProjectStatus(ProlianceConnection conn, string prjAccount)
-        {
-            //CurrentUser = (ProlianceUser)CurrentContext.Session["user"];
-            using (var proliance = new LookupProxy(conn, prjAccount))
-            {
-                try
-                {
-                    var ver = proliance.GetLookupVersionByType("ProjectSecuredStatusType");
-
-                    var query = from item in ver.Items.AsEnumerable()
-                                where item.Level == 0
-                                select new ProjectStatus
-                                {
-                                    Code = item.Code,
-                                    FullCode = item.FullCode,
-                                    Description = item.Description,
-                                    level = item.Level,
-                                    Display = item.Code + " : " + item.Description,
-                                    SortValue = item.SortValue
-                                };
-                    return query.AsQueryable();
-                }
-                catch (Exception ex)
-                {
-                    throw new Exception("Error occured reading lookup: ", ex);
-                }
-            }
-        }
-
-        public DataSet GetProjectApproxValues(ProlianceConnection conn, string prjAccount)
+	    public DataSet GetProjectApproxValues(ProlianceConnection conn, string prjAccount)
         {
             DataSet nData = new DataSet();
             

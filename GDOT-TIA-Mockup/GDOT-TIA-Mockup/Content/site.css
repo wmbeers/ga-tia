@@ -159,7 +159,7 @@ h1, .subtitle {
 	color: #608bb4;
 }
 
-.rv {
+.rvly {
 	color: #f79646;
 }
 
@@ -196,7 +196,7 @@ h1, .subtitle {
     font-size: 1.1em;
 }
 
-.callout-rv {
+.callout-rvly {
 	left: -40px;
 	top: 60px;
 }
@@ -238,7 +238,7 @@ p.withI {
 }
 
 
-.panel-csra > .panel-heading, .panel-hoga > .panel-heading, .panel-rv > .panel-heading {
+.panel-csra > .panel-heading, .panel-hoga > .panel-heading, .panel-rvly > .panel-heading {
   color: #FFFFFF;
   font-weight: bold;
   text-shadow: 1px 1px 5px #222;
@@ -260,7 +260,7 @@ p.withI {
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffd9edf7', endColorstr='#ffc4e3f3', GradientType=0);
 }
-.panel-rv > .panel-heading {
+.panel-rvly > .panel-heading {
   background-image: -webkit-linear-gradient(top, #f79646 0%, #faf2cc 100%);
   background-image: -o-linear-gradient(top, #f79646 0%, #faf2cc 100%);
   background-image: -webkit-gradient(linear, left top, left bottom, from(#f79646), to(#faf2cc));
@@ -303,21 +303,21 @@ p.withI {
 .panel-hoga > .panel-footer + .panel-collapse > .panel-body {
   border-bottom-color: #608bb4;
 }
-.panel-rv {
+.panel-rvly {
   border-color: #f79646;
 }
-.panel-rv > .panel-heading {
+.panel-rvly > .panel-heading {
   background-color: #f79646;
   border-color: #f79646;
 }
-.panel-rv > .panel-heading + .panel-collapse > .panel-body {
+.panel-rvly > .panel-heading + .panel-collapse > .panel-body {
   border-top-color: #f79646;
 }
-.panel-rv > .panel-heading .badge {
+.panel-rvly > .panel-heading .badge {
   color: #FFFFFF;
   background-color: #f79646;
 }
-.panel-rv > .panel-footer + .panel-collapse > .panel-body {
+.panel-rvly > .panel-footer + .panel-collapse > .panel-body {
   border-bottom-color: #f79646;
 }
 
