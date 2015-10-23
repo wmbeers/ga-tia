@@ -31,7 +31,7 @@ namespace GDOT_TIA.Models
         {
             get
             {
-                string[] colors = new string[] { "#608bb4", "#f79646", "#BB598C" };
+                string[] colors = new string[] { "#1B69B4", "#bf7436", "#BB598C" };
                 return colors[(int)this.Abbreviation];
             }
         }

@@ -156,11 +156,13 @@ h1, .subtitle {
 }
 
 .hoga {
-	color: #608bb4;
+	/*color: #608bb4;*/
+	color: #1b69b4;
 }
 
 .rvly {
-	color: #f79646;
+	/*color: #f79646;*/
+	color: #bf7436;
 }
 
 #csrainfo, #rvinfo {
@@ -253,20 +255,32 @@ p.withI {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#B3608B', endColorstr='#ffB3608B', GradientType=0);
 }
 .panel-hoga > .panel-heading {
-  background-image: -webkit-linear-gradient(top, #608bb4 0%, #c4e3f3 100%);
+  /*background-image: -webkit-linear-gradient(top, #608bb4 0%, #c4e3f3 100%);
   background-image: -o-linear-gradient(top, #608bb4 0%, #c4e3f3 100%);
   background-image: -webkit-gradient(linear, left top, left bottom, from(#608bb4), to(#c4e3f3));
   background-image: linear-gradient(to bottom, #608bb4 0%, #c4e3f3 100%);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffd9edf7', endColorstr='#ffc4e3f3', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffd9edf7', endColorstr='#ffc4e3f3', GradientType=0);*/
+  background-image: -webkit-linear-gradient(top, #1b69b4 0%, #AFD5F7 100%);
+  background-image: -o-linear-gradient(top, #1b69b4 0%, #AFD5F7 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#1b69b4), to(#AFD5F7));
+  background-image: linear-gradient(to bottom, #1b69b4 0%, #AFD5F7 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1b69b4', endColorstr='#AFD5F7', GradientType=0);
 }
 .panel-rvly > .panel-heading {
-  background-image: -webkit-linear-gradient(top, #f79646 0%, #faf2cc 100%);
+  /*background-image: -webkit-linear-gradient(top, #f79646 0%, #faf2cc 100%);
   background-image: -o-linear-gradient(top, #f79646 0%, #faf2cc 100%);
   background-image: -webkit-gradient(linear, left top, left bottom, from(#f79646), to(#faf2cc));
   background-image: linear-gradient(to bottom, #f79646 0%, #faf2cc 100%);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fffcf8e3', endColorstr='#fffaf2cc', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fffcf8e3', endColorstr='#fffaf2cc', GradientType=0);*/
+  background-image: -webkit-linear-gradient(top, #bf7436 0%, #FFDCC1 100%);
+  background-image: -o-linear-gradient(top, #bf7436 0%, #FFDCC1 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#bf7436), to(#FFDCC1));
+  background-image: linear-gradient(to bottom, #bf7436 0%, #FFDCC1 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#bf7436', endColorstr='#FFDCC1', GradientType=0);
 }
 .panel-csra {
   border-color: #B3608B;
@@ -286,39 +300,42 @@ p.withI {
   border-bottom-color: #B3608B;
 }
 .panel-hoga {
-  border-color: #608bb4;
+  border-color: #1b69b4;
 }
 .panel-hoga > .panel-heading {
   color: #FFFFFF;
-  background-color: #608bb4;
-  border-color: #608bb4;
+  background-color: #1b69b4;
+  border-color: #1b69b4;
 }
 .panel-hoga > .panel-heading + .panel-collapse > .panel-body {
-  border-top-color: #608bb4;
+  border-top-color: #1b69b4;
 }
 .panel-hoga > .panel-heading .badge {
   color: #FFFFFF;
-  background-color: #608bb4;
+  background-color: #1b69b4;
 }
 .panel-hoga > .panel-footer + .panel-collapse > .panel-body {
-  border-bottom-color: #608bb4;
+  border-bottom-color: #1b69b4;
 }
 .panel-rvly {
-  border-color: #f79646;
+  /*border-color: #f79646;*/
+  border-color: #bf7436;
 }
 .panel-rvly > .panel-heading {
-  background-color: #f79646;
-  border-color: #f79646;
+  /*background-color: #f79646;
+  border-color: #f79646;*/
+  background-color: #bf7436;
+  border-color: #bf7436;
 }
 .panel-rvly > .panel-heading + .panel-collapse > .panel-body {
-  border-top-color: #f79646;
+  border-top-color: #bf7436;
 }
 .panel-rvly > .panel-heading .badge {
   color: #FFFFFF;
-  background-color: #f79646;
+  background-color: #bf7436;
 }
 .panel-rvly > .panel-footer + .panel-collapse > .panel-body {
-  border-bottom-color: #f79646;
+  border-bottom-color: #bf7436;
 }
 
 .frame-map {
