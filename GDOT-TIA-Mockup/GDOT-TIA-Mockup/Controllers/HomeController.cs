@@ -37,6 +37,8 @@ namespace GDOT_TIA.Controllers
 			ViewBag.totalFinishedProjects = csra.TotalFinishedProjects + hoga.TotalFinishedProjects + rv.TotalFinishedProjects;
 			ViewBag.totalConstructionProjects = csra.TotalConstructionProjects + hoga.TotalConstructionProjects + rv.TotalConstructionProjects;
 
+            ViewBag.totalFundsBudgeted = (csra.TotalFundsBudgeted + hoga.TotalFundsBudgeted + rv.TotalFundsBudgeted).ToString("C");
+
             ViewBag.csra = csra;
             ViewBag.hoga = hoga;
             ViewBag.rv = rv;

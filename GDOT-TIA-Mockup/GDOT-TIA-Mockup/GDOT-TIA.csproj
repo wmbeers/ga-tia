@@ -150,12 +150,6 @@
     <Content Include="Content\favicon\mstile-310x150.png" />
     <Content Include="Content\favicon\mstile-310x310.png" />
     <Content Include="Content\favicon\mstile-70x70.png" />
-    <Content Include="Content\firasans\firasans-regular-demo.html" />
-    <Content Include="Content\firasans\firasans-regular-webfont.svg" />
-    <Content Include="Content\firasans\generator_config.txt" />
-    <Content Include="Content\firasans\specimen_files\grid_12-825-55-15.css" />
-    <Content Include="Content\firasans\specimen_files\specimen_stylesheet.css" />
-    <Content Include="Content\firasans\stylesheet.css" />
     <Content Include="Content\fonts\firabold\firasans-bold-demo.html" />
     <Content Include="Content\fonts\firabold\firasans-bold-webfont.svg" />
     <Content Include="Content\fonts\firabold\specimen_files\grid_12-825-55-15.css" />
@@ -543,10 +537,6 @@
     <Content Include="Content\pdf\9.21.2015 _ Richmond-Columbia TIA Construction Release.pdf" />
     <Content Include="Content\pdf\9.30.2015_ SGTP Ground Breaking.pdf" />
     <Content Include="Content\favicon\manifest.json" />
-    <Content Include="Content\firasans\firasans-regular-webfont.eot" />
-    <Content Include="Content\firasans\firasans-regular-webfont.ttf" />
-    <Content Include="Content\firasans\firasans-regular-webfont.woff" />
-    <Content Include="Content\firasans\firasans-regular-webfont.woff2" />
     <Content Include="Content\fonts\firabold\firasans-bold-webfont.eot" />
     <Content Include="Content\fonts\firabold\firasans-bold-webfont.ttf" />
     <Content Include="Content\fonts\firabold\firasans-bold-webfont.woff" />
@@ -562,7 +552,6 @@
     <Content Include="Content\pdf\9.21.2015 _ Richmond-Columbia TIA Construction Release %282%29.pdf" />
     <Content Include="Content\pdf\TIA Fact Sheet %28with background%29.pdf" />
     <Content Include="Content\bootstrap.css.map" />
-    <None Include="Properties\PublishProfiles\Default.pubxml" />
     <None Include="Properties\PublishProfiles\PublishToC-Temp.pubxml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.min.js" />
