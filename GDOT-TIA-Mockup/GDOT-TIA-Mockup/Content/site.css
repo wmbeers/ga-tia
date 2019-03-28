@@ -165,6 +165,10 @@ h1, .subtitle {
 	color: #bf7436;
 }
 
+.soga {
+    /*color: #3E89C9;*/
+    color: #3E89C9;
+}
 #csrainfo, #rvinfo {
 	display:none;
 }
@@ -213,6 +217,10 @@ h1, .subtitle {
 	top: 355px;
 }
 
+.callout-soga {
+    left: 300px;
+    top: 200px;
+}
 p.withI {
     margin-bottom: 4px;
     background-image: url('/Content/img/i.png');
@@ -240,10 +248,10 @@ p.withI {
 }
 
 
-.panel-csra > .panel-heading, .panel-hoga > .panel-heading, .panel-rvly > .panel-heading {
-  color: #FFFFFF;
-  font-weight: bold;
-  text-shadow: 1px 1px 5px #222;
+.panel-csra > .panel-heading, .panel-hoga > .panel-heading, .panel-rvly > .panel-heading, .panel-soga > .panel-heading {
+    color: #FFFFFF;
+    font-weight: bold;
+    text-shadow: 1px 1px 5px #222;
 }
 
 .panel-csra > .panel-heading {
@@ -281,6 +289,14 @@ p.withI {
   background-image: linear-gradient(to bottom, #bf7436 0%, #FFDCC1 100%);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#bf7436', endColorstr='#FFDCC1', GradientType=0);
+}
+.panel-soga > .panel-heading {
+    background-image: -webkit-linear-gradient(top, #003362 0%, #3EC1C3 100%);
+    background-image: -o-linear-gradient(top, #003362 0%, #3EC1C3 100%);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#003362), to(#3EC1C3));
+    background-image: linear-gradient(to bottom, #003362 0%, #3EC1C3 100%);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#003362', endColorstr='#3EC1C3', GradientType=0);
 }
 .panel-csra {
   border-color: #B3608B;
@@ -336,6 +352,24 @@ p.withI {
 }
 .panel-rvly > .panel-footer + .panel-collapse > .panel-body {
   border-bottom-color: #bf7436;
+}
+.panel-soga {
+    border-color: #3EC1C3;
+}
+.panel-soga > .panel-heading {
+    color: #FFFFFF;
+    background-color: #3EC1C3;
+    border-color: #3EC1C3;
+}
+.panel-soga > .panel-heading + .panel-collapse > .panel-body {
+    border-top-color: #3EC1C3;
+}
+.panel-soga > .panel-heading .badge {
+    color: #FFFFFF;
+    background-color: #3EC1C3;
+}
+.panel-soga > .panel-footer + .panel-collapse > .panel-body {
+    border-bottom-color: #3EC1C3;
 }
 
 .frame-map {

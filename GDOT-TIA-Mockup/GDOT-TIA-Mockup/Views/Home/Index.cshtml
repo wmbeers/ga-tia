@@ -65,6 +65,18 @@
                     </p>
                     <p>Total Number of TIA Projects = @ViewBag.hoga.TotalProjects</p>
                 </div>
+                <div class="callout callout-soga" onclick="window.open('/Project/List/soga', '_self')">
+                    <h4>Southern Georgia</h4>
+                    <p class="withI">
+                        TIA Funds Budgeted (2011 Dollars):<br />
+                        @ViewBag.soga.TotalFundsBudgeted.ToString("C")
+                    </p>
+                    <p class="withI">
+                        TIA Revenue Collected to Date:<br />
+                        @ViewBag.soga.TotalRevenueCollected.ToString("C")
+                    </p>
+                    <p>Total Number of TIA Projects = @ViewBag.soga.TotalProjects</p>
+                </div>
                 <img id="tia-regions" src="/Content/img/tia_regions_sm.png" alt="State map of Georgia highlighting three regions: River Valley, Central Savannah River Area, and Heart of Georgia Altamaha" usemap="#regions" />
                 <!---->
             </div>
@@ -73,6 +85,7 @@
                 <area alt="Link to River Valley project page" title="River Valley" href="/Project/List/rvly" shape="rect" coords="0,175,152,342" />
                 <area alt="Link to Central Savannah River Area project page" title="Central Savannah River Area" href="/Project/List/csra" shape="poly" coords="247,90,346,184,315,227,287,198,264,197,228,195,206,210,173,164,204,105" />
                 <area alt="Link to Heart of Georgia Altamaha project page" title="Heart of Georgia Altamaha" href="/Project/List/hoga" shape="poly" coords="154,312,312,372,347,346,322,309,340,280,299,206,284,196,222,196,162,222" />
+                <area alt="Link to Southern Georgia project page" title="Southern Georgia" href="/Project/List/soga" shape="poly" coords="0, 0, 0, 100, 100, 100, 100, 0" />
             </map>
         </div>
     </div>

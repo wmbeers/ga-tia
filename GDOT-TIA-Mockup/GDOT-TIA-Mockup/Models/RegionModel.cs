@@ -15,7 +15,7 @@ namespace GDOT_TIA.Models
     {
         public enum RegionAbbrs
         {
-            hoga, rvly, csra
+            hoga, rvly, csra, soga
         }
 
         public Int16 GetMaxValue
@@ -31,7 +31,7 @@ namespace GDOT_TIA.Models
         {
             get
             {
-                string[] colors = new string[] { "#1B69B4", "#bf7436", "#BB598C" };
+                string[] colors = new string[] { "#1B69B4", "#bf7436", "#BB598C", "#3E89C9" };
                 return colors[(int)this.Abbreviation];
             }
         }
@@ -42,7 +42,7 @@ namespace GDOT_TIA.Models
         {
             get
             {
-                string[] names = new string[] { "Heart of Georgia Altamaha", "River Valley", "Central Savannah River" };
+                string[] names = new string[] { "Heart of Georgia Altamaha", "River Valley", "Central Savannah River", "Southern Georgia" };
                 return names[(int)this.Abbreviation];
             }
         }
@@ -126,11 +126,34 @@ namespace GDOT_TIA.Models
                         "Webster"
                     };
                     break;
+                case RegionAbbrs.soga:
+                    this.Counties = new List<string>
+                    {
+                        "Atkinson",
+                        "Bacon",
+                        "Ben Hill",
+                        "Berrien",
+                        "Brantley",
+                        "Brooks",
+                        "Charlton",
+                        "Clinch",
+                        "Cook",
+                        "Coffee",
+                        "Echols",
+                        "Irwin",
+                        "Lanier",
+                        "Lowndes",
+                        "Pierce",
+                        "Tift",
+                        "Turner",
+                        "Ware"
+                    };
+                    break;
             }
 
             string prjAccount = "pgmprj://na/tia/" + this.Abbreviation.ToString();
             this.ProlianceController = new ProlianceController(prjAccount);
-            ProlianceConnection conn = new ProlianceConnection("https://na2.agpmis.com", "na", "admin", "?aecom");
+            ProlianceConnection conn = new ProlianceConnection("https://projects.goamps.com", "na", "sandsc", "GAtiaWeb2019");
 
 
             DataSet data = ProlianceController.GetPreProjectList(conn, prjAccount);
