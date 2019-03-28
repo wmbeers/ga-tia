@@ -20,6 +20,8 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <TargetFrameworkProfile />
+    <Use64BitIISExpress />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -199,6 +201,7 @@
     <Content Include="Content\jquery-ui.min.css" />
     <Content Include="Content\jquery-ui.structure.min.css" />
     <Content Include="Content\jquery-ui.theme.min.css" />
+    <Content Include="Content\pdf\220680_VERG_Rendering.jpg" />
     <Content Include="Content\photos\banner1.png" />
     <Content Include="Content\photos\banner2.png" />
     <Content Include="Content\photos\banner3.png" />
@@ -511,7 +514,6 @@
     <Content Include="Content\pdf\PressRelease-TIA_Lettings_7-6-15.pdf" />
     <Content Include="Content\pdf\Robert Toombs Avenue Press Release 7_7_15.pdf" />
     <Content Include="Content\pdf\South Lumpkin MultiUse Path Final.pdf" />
-    <Content Include="Content\pdf\TIA - Georgia DOT and Appling County Officials Celebrate Completion of Zoar Road Upgrades and Bridge Replacements  7_31_15.pdf" />
     <Content Include="Content\pdf\Press Release_TIA HOGA 7_30_15.pdf" />
     <Content Include="Content\pdf\08.17.2015 _ TIA Award Release.pdf" />
     <Content Include="Content\pdf\9.18.2015 _ GDOT TIA Mullins Release.pdf" />
@@ -533,6 +535,64 @@
     <Content Include="Content\pdf\9.21.2015 _ Richmond-Columbia TIA Construction Release %282%29.pdf" />
     <Content Include="Content\pdf\TIA Fact Sheet %28with background%29.pdf" />
     <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\pdf\03.11.17 US 27 Complete.pdf" />
+    <Content Include="Content\pdf\0008016_PIOH Layout.pdf" />
+    <Content Include="Content\pdf\2015 Central Savannah River Area Citizen Review Panel Report.pdf" />
+    <Content Include="Content\pdf\2015 HOGA TIA CRP Report.pdf" />
+    <Content Include="Content\pdf\2015 River Valley TIA CRP Report.pdf" />
+    <Content Include="Content\pdf\2015 TIA DOR Report.pdf" />
+    <Content Include="Content\pdf\2016 Central Savannah River Area Citizen Review Panel Report.pdf" />
+    <Content Include="Content\pdf\2016 TIA DOR Report.pdf" />
+    <Content Include="Content\pdf\2016 TIA HOGA Report.pdf" />
+    <Content Include="Content\pdf\2016 TIA River Valley CRP Report.pdf" />
+    <Content Include="Content\pdf\2017 TIA DOR Report.pdf" />
+    <Content Include="Content\pdf\Bridge Design Certification %28Local Let%29.pdf" />
+    <Content Include="Content\pdf\Construction Manager Closeout Checklist.pdf" />
+    <Content Include="Content\pdf\County T-SPLOST Use.pdf" />
+    <Content Include="Content\pdf\CSRA CRP Lt Gov Final Report 2017.pdf" />
+    <Content Include="Content\pdf\CSRA-222460-Final.pdf" />
+    <Content Include="Content\pdf\December 10 2015 TIA Citizen Review Panel  Mtg.pdf" />
+    <Content Include="Content\pdf\Environmental Certification %28Local Let%29.pdf" />
+    <Content Include="Content\pdf\Environmental Certification Form.docx" />
+    <Content Include="Content\pdf\Government Final Acceptance %28Local Let%29.pdf" />
+    <Content Include="Content\pdf\HOGA CRP Lt Gov Final Report 2017.pdf" />
+    <Content Include="Content\pdf\Local Bridge Design Certification Template.docx" />
+    <Content Include="Content\pdf\Local Managed - Auth to Adv - Band 2 - 01Aug18.pdf" />
+    <Content Include="Content\pdf\Local Managed - Auth to Adv - Band 2 - 01Feb18.pdf" />
+    <Content Include="Content\pdf\Local Managed - Auth to Adv - Band 2 - 04Sep18.pdf" />
+    <Content Include="Content\pdf\Local Managed - Auth to Adv - Band 2 - 06Sep17.pdf" />
+    <Content Include="Content\pdf\Local Managed - Auth to Adv - Band 2 - 2Apr18.pdf" />
+    <Content Include="Content\pdf\Local Managed - Auth to Adv - Band 2 - 2Jan18.pdf" />
+    <Content Include="Content\pdf\Local Managed - Auth to Adv - Band 2 - 2Mar18.pdf" />
+    <Content Include="Content\pdf\Local Managed - Auth to Adv - Band 2 - 2May17.pdf" />
+    <Content Include="Content\pdf\Local Managed - Auth to Adv - Band 2 - 30Apr18.pdf" />
+    <Content Include="Content\pdf\Local Managed - Auth to Adv - Band 2 - 30Oct17.pdf" />
+    <Content Include="Content\pdf\Local Managed - Auth to Adv - Band 2 - 3Jul18.pdf" />
+    <Content Include="Content\pdf\Local Managed - Auth to Adv - Band 2 - 6Jul17.pdf" />
+    <Content Include="Content\pdf\Local Managed - Auth to Adv - Band 2 - 7Aug17.pdf" />
+    <Content Include="Content\pdf\LocalProjectMgmt-Application.old.pdf" />
+    <Content Include="Content\pdf\Materials Quality Assurance %28Local Let%29.pdf" />
+    <Content Include="Content\pdf\PI 422470-RV-Crisp-TIA PIOH Ad_Final_10.26.2017.pdf" />
+    <Content Include="Content\pdf\ProjectSheet-222460.pdf" />
+    <Content Include="Content\pdf\Public Involvement_Draft_Handout for PIOH v2.docx" />
+    <Content Include="Content\pdf\Right-of-Way Certification.pdf" />
+    <Content Include="Content\pdf\RV CRP Lt Gov Final Report 2017.PDF" />
+    <Content Include="Content\pdf\TIA Admin FAQs.pdf" />
+    <Content Include="Content\pdf\TIA Concept Report.pdf" />
+    <Content Include="Content\pdf\TIA Local Let - Project Certification Checklist.docx" />
+    <Content Include="Content\pdf\TIA Local Let - Utility Certification Request.pdf" />
+    <Content Include="Content\pdf\TIA Manual 2018.pdf" />
+    <Content Include="Content\pdf\TIA Preliminary Right-of-Way Cost Estimate.pdf" />
+    <Content Include="Content\pdf\TIA Program Local Let - Materials Quality Assurance.docx" />
+    <Content Include="Content\pdf\TIA Project Certification Checklist %28Local Let%29.pdf" />
+    <Content Include="Content\pdf\TIA ROW Certification Form.pdf" />
+    <Content Include="Content\pdf\TIA+ROW+Certification.docx" />
+    <Content Include="Content\pdf\Utilities Certification.pdf" />
+    <Content Include="Content\pdf\Utilities Letter - First Submission Existing Facilities.pdf" />
+    <Content Include="Content\pdf\Utilities Letter - Second Submission Existing and Proposed.pdf" />
+    <Content Include="Content\pdf\Utility Certfication %28Local Let%29.pdf" />
+    <Content Include="Content\pdf\Utility+Certification.doc" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Properties\PublishProfiles\PublishToC-Temp.pubxml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.min.js" />
