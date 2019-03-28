@@ -208,11 +208,6 @@
     <Content Include="Content\site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="FlickrNet.chm" />
     <Content Include="Content\pdf\0000833_RC09-000041_HOG.pdf" />
     <Content Include="Content\pdf\0001216_RC09-000003_HOG.pdf" />
@@ -534,7 +529,6 @@
     <Content Include="Content\fonts\firasans\firasans-regular-webfont.woff2" />
     <Content Include="Content\pdf\9.21.2015 _ Richmond-Columbia TIA Construction Release %282%29.pdf" />
     <Content Include="Content\pdf\TIA Fact Sheet %28with background%29.pdf" />
-    <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\pdf\03.11.17 US 27 Complete.pdf" />
     <Content Include="Content\pdf\0008016_PIOH Layout.pdf" />
     <Content Include="Content\pdf\2015 Central Savannah River Area Citizen Review Panel Report.pdf" />
@@ -592,6 +586,14 @@
     <Content Include="Content\pdf\Utilities Letter - Second Submission Existing and Proposed.pdf" />
     <Content Include="Content\pdf\Utility Certfication %28Local Let%29.pdf" />
     <Content Include="Content\pdf\Utility+Certification.doc" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Properties\PublishProfiles\PublishToC-Temp.pubxml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
@@ -611,7 +613,9 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />

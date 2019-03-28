@@ -153,7 +153,7 @@ namespace GDOT_TIA.Models
 
             string prjAccount = "pgmprj://na/tia/" + this.Abbreviation.ToString();
             this.ProlianceController = new ProlianceController(prjAccount);
-            ProlianceConnection conn = new ProlianceConnection("https://projects.goamps.com", "na", "sandsc", "GAtiaWeb2019");
+            ProlianceConnection conn = ProlianceController.GetProlianceConnection();
 
 
             DataSet data = ProlianceController.GetPreProjectList(conn, prjAccount);

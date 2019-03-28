@@ -9,13 +9,25 @@ using MeridianSystems.Solutions.Proliance.ServiceActivator.Platform.Lookups;
 using GDOT_TIA.Models;
 using MeridianSystems.Solutions.Proliance.ServiceActivator.FoundationTypes;
 using System.Data;
+using System.Configuration;
+using System.Collections.Specialized;
 
 namespace GDOT_TIA.Controllers
 {
     public class ProlianceController
 	{
+        public static ProlianceConnection GetProlianceConnection()
+        {
+            NameValueCollection prolianceSettings = (NameValueCollection)ConfigurationManager.GetSection("prolianceSettings");
+            String host = prolianceSettings["host"];
+            String org = prolianceSettings["org"];
+            String user = prolianceSettings["user"];
+            String password = prolianceSettings["password"];
+            return new ProlianceConnection(host, org, user, password);
+        }
 
-		private ProlianceConnection connection = new ProlianceConnection("https://na2.agpmis.com", "na", "admin", "?aecom");
+
+        private ProlianceConnection connection = GetProlianceConnection();
 		private string account = "";
 
 		public ProlianceController(string prjAccount)
