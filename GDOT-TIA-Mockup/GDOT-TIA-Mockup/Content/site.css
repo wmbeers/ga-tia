@@ -166,8 +166,8 @@ h1, .subtitle {
 }
 
 .soga {
-    /*color: #3E89C9;*/
-    color: #3E89C9;
+    /*color: #007A47;*/
+    color: #007A47;
 }
 #csrainfo, #rvinfo {
 	display:none;
@@ -213,13 +213,13 @@ h1, .subtitle {
 }
 
 .callout-hoga {
-	left: 190px;
-	top: 355px;
+	left: 320px;
+	top: 220px;
 }
 
 .callout-soga {
-    left: 300px;
-    top: 200px;
+    left: 120px;
+    top: 400px;
 }
 p.withI {
     margin-bottom: 4px;
@@ -291,10 +291,10 @@ p.withI {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#bf7436', endColorstr='#FFDCC1', GradientType=0);
 }
 .panel-soga > .panel-heading {
-    background-image: -webkit-linear-gradient(top, #003362 0%, #3EC1C3 100%);
-    background-image: -o-linear-gradient(top, #003362 0%, #3EC1C3 100%);
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#003362), to(#3EC1C3));
-    background-image: linear-gradient(to bottom, #003362 0%, #3EC1C3 100%);
+    background-image: -webkit-linear-gradient(top, #007A47 0%, #3EC1C3 100%);
+    background-image: -o-linear-gradient(top, #007A47 0%, #3EC1C3 100%);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#007A47), to(#3EC1C3));
+    background-image: linear-gradient(to bottom, #007A47 0%, #3EC1C3 100%);
     background-repeat: repeat-x;
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#003362', endColorstr='#3EC1C3', GradientType=0);
 }
@@ -354,22 +354,22 @@ p.withI {
   border-bottom-color: #bf7436;
 }
 .panel-soga {
-    border-color: #3EC1C3;
+    border-color: #007A47;
 }
 .panel-soga > .panel-heading {
     color: #FFFFFF;
-    background-color: #3EC1C3;
-    border-color: #3EC1C3;
+    background-color: #007A47;
+    border-color: #007A47;
 }
 .panel-soga > .panel-heading + .panel-collapse > .panel-body {
-    border-top-color: #3EC1C3;
+    border-top-color: #007A47;
 }
 .panel-soga > .panel-heading .badge {
     color: #FFFFFF;
-    background-color: #3EC1C3;
+    background-color: #007A47;
 }
 .panel-soga > .panel-footer + .panel-collapse > .panel-body {
-    border-bottom-color: #3EC1C3;
+    border-bottom-color: #007A47;
 }
 
 .frame-map {

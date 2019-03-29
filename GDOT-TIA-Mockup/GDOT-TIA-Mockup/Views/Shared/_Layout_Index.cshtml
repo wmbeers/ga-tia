@@ -6,7 +6,7 @@
     <title>@ViewBag.Title</title>
 	<link href="/Content/bootstrap.min.css" rel="stylesheet">
 	<link href="/Content/site.css" rel="stylesheet">
-	<link href='/Content/firasans/stylesheet.css' rel='stylesheet' type='text/css'>
+	<link href='/Content/fonts/firasans/stylesheet.css' rel='stylesheet' type='text/css'>
 	@RenderSection("css", required: false)
 	<script type="text/javascript" src="/Scripts/jquery-1.9.1.min.js"></script>
 	<script type="text/javascript" src="/Scripts/bootstrap.min.js"></script>
@@ -65,26 +65,27 @@
 				<!-- Side nav column-->
 				<br />
 				<div id="navbar" class="nav nav-sidebar navbar-collapse collapse">
-					<ul class="menu" id="tiaMenu" role="menu">
-						<li>@Html.ActionLink("TIA Projects", "Index", "Project")</li>
-						<li><a href="/Content/pdf/TIA Admin FAQs.pdf" target="_blank">Fact Sheet</a></li>
-						<li>@Html.ActionLink("TIA Project Photos", "Gallery", "Home")</li>
-						<li class="dropdown">
-							<a href="#infoMenu" data-toggle="collapse" aria-expanded="false" aria-controls="infoMenu">Program Info & Reports <span class="caret"></span></a>
-							<ul id="infoMenu" role="menu" class="dropdown-menu">
-								<li>@Html.ActionLink("TIA Program Annual Reports", "AnnualReport", "Home")</li>
-								<li>@Html.ActionLink("Citizens Review Panels", "CitizenReview", "Home")</li>
-								<li>@Html.ActionLink("Final Investment Reports by Region", "Investment", "Home")</li>
-								<li><a href="http://gsfic.georgia.gov/transportation-investment-act" target="_blank">TIA Collections Reports</a></li>
-								<li>@Html.ActionLink("Regional Discretionary Funding Estimates", "Discretionary", "Home")</li>
-								<li>@Html.ActionLink("Meeting Presentations", "MeetingPresentations", "Home")</li>
-							</ul>
-						</li>
-						<li>@Html.ActionLink("Press Room", "News", "Home")</li>
-						<li>@Html.ActionLink("Manuals & Forms", "Manuals", "Home")</li>
-						<li>@Html.ActionLink("Procurement & Contracting", "Procurement", "Home")</li>
-						<li>@Html.ActionLink("Frequently Asked Questions", "FAQ", "Home")</li>
-					  </ul>
+                    <ul class="menu" id="tiaMenu" role="menu">
+                        <li>@Html.ActionLink("TIA Projects", "Index", "Project")</li>
+                        <li><a href="/Content/pdf/TIA Admin FAQs.pdf" target="_blank">Fact Sheet</a></li>
+                        <li>@Html.ActionLink("TIA Project Photos", "Gallery", "Home")</li>
+                        <li class="dropdown">
+                            <a href="#infoMenu" data-toggle="collapse" aria-expanded="false" aria-controls="infoMenu">Program Info & Reports <span class="caret"></span></a>
+                            <ul id="infoMenu" role="menu" class="dropdown-menu">
+                                <li>@Html.ActionLink("TIA Program Annual Reports", "AnnualReport", "Home")</li>
+                                <li>@Html.ActionLink("Citizens Review Panels", "CitizenReview", "Home")</li>
+                                <li>@Html.ActionLink("Final Investment Reports by Region", "Investment", "Home")</li>
+                                <li><a href="http://gsfic.georgia.gov/transportation-investment-act" target="_blank">TIA Collections Reports</a></li>
+                                <li>@Html.ActionLink("Regional Discretionary Funding Estimates", "Discretionary", "Home")</li>
+                                <li>@Html.ActionLink("Meeting Presentations", "MeetingPresentations", "Home")</li>
+                            </ul>
+                        </li>
+                        <li>@Html.ActionLink("Press Room", "News", "Home")</li>
+                        <li>@Html.ActionLink("Manuals & Forms", "Manuals", "Home")</li>
+                        <li>@Html.ActionLink("Procurement & Contracting", "Procurement", "Home")</li>
+                        <li>@Html.ActionLink("Frequently Asked Questions", "FAQ", "Home")</li>
+                        <li>@Html.ActionLink("Contact Our Staff", "Staff", "Home")</li>
+                    </ul>
 				  </div>
 				<!-- Side nav column End-->
 				<br />
@@ -100,20 +101,20 @@
 			  <!-- Wrapper for slides -->
 			  <div class="carousel-inner" role="listbox">
 				<div class="item active">
-				  <a href="http://www.sgrc.us/southerngeorgiatia.html" target="_blank"><img src="/Content/photos/banner1.jpg" alt="carosel banner" /></a>
+				  <a href="http://www.sgrc.us/southerngeorgiatia.html" target="_blank"><img src="/Content/photos/banner1.jpg" alt="carousel banner" /></a>
 				  <div class="carousel-caption"><a href="https://bit.ly/2OFrnwK" target="_blank">Download a list of all SG TIA Projects</a><br />
 					<span class="description"></span>
 				  </div>
 				</div>
 				<div class="item">
-				  <a href="http://ga-tia.com/Home/Procurement" target="_blank"><img src="/Content/photos/banner2.png" alt="carosel banner" /></a>
+				  <a href="http://ga-tia.com/Home/Procurement" target="_blank"><img src="/Content/photos/banner2.png" alt="carousel banner" /></a>
 				  <div class="carousel-caption"><a href="http://ga-tia.com/Home/Procurement" target="_blank">Contractors – get all the latest TIA bid/letting information here</a>
 					<br />
 					  <span class="description"></span>
 				  </div>
 				</div>
 				<div class="item">
-				  <a href="/Project/Index"><img src="/Content/photos/banner3.png" alt="carosel banner" /></a>
+				  <a href="/Project/Index"><img src="/Content/photos/banner3.png" alt="carousel banner" /></a>
 				  <div class="carousel-caption">@Html.ActionLink("Learn more about the all of the TIA projects in your region", "Index", "Project")
 					<br />
 					  <span class="description"></span>

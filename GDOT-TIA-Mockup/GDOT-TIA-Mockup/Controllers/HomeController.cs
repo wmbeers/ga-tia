@@ -62,16 +62,22 @@ namespace GDOT_TIA.Controllers
 		public ActionResult FactSheet()
 		{
 			return View();
-		}
+        }
 
-		// GET: /FAQ/
-		public ActionResult FAQ()
-		{
-			return View();
-		}
+        // GET: /FAQ/
+        public ActionResult FAQ()
+        {
+            return View();
+        }
 
-		// GET: /News/
-		public ActionResult News()
+        // GET: /Staff/
+        public ActionResult Staff()
+        {
+            return View();
+        }
+
+        // GET: /News/
+        public ActionResult News()
 		{
 			return View();
 		}
