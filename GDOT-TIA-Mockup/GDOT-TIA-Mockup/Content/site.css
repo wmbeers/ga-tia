@@ -166,8 +166,8 @@ h1, .subtitle {
 }
 
 .soga {
-    /*color: #007A47;*/
-    color: #007A47;
+    /*color: #A4BF4F;*/
+    color: #A4BF4F;
 }
 #csrainfo, #rvinfo {
 	display:none;
@@ -260,7 +260,7 @@ p.withI {
   background-image: -webkit-gradient(linear, left top, left bottom, from(#B3608B), to(#ffddef));
   background-image: linear-gradient(to bottom, #B3608B 0%, #ffddef 100%);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#B3608B', endColorstr='#ffB3608B', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#B3608B', endColorstr='#ffddef', GradientType=0);
 }
 .panel-hoga > .panel-heading {
   /*background-image: -webkit-linear-gradient(top, #608bb4 0%, #c4e3f3 100%);
@@ -291,12 +291,12 @@ p.withI {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#bf7436', endColorstr='#FFDCC1', GradientType=0);
 }
 .panel-soga > .panel-heading {
-    background-image: -webkit-linear-gradient(top, #007A47 0%, #3EC1C3 100%);
-    background-image: -o-linear-gradient(top, #007A47 0%, #3EC1C3 100%);
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#007A47), to(#3EC1C3));
-    background-image: linear-gradient(to bottom, #007A47 0%, #3EC1C3 100%);
+    background-image: -webkit-linear-gradient(top, #A4BF4F 0%, #BCEA96 100%);
+    background-image: -o-linear-gradient(top, #A4BF4F 0%, #BCEA96 100%);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#A4BF4F), to(#BCEA96));
+    background-image: linear-gradient(to bottom, #A4BF4F 0%, #BCEA96 100%);
     background-repeat: repeat-x;
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#003362', endColorstr='#3EC1C3', GradientType=0);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#A4BF4F', endColorstr='#BCEA96', GradientType=0);
 }
 .panel-csra {
   border-color: #B3608B;
@@ -354,11 +354,11 @@ p.withI {
   border-bottom-color: #bf7436;
 }
 .panel-soga {
-    border-color: #007A47;
+    border-color: #A4BF4F;
 }
 .panel-soga > .panel-heading {
     color: #FFFFFF;
-    background-color: #007A47;
+    background-color: #A4BF4F;
     border-color: #007A47;
 }
 .panel-soga > .panel-heading + .panel-collapse > .panel-body {

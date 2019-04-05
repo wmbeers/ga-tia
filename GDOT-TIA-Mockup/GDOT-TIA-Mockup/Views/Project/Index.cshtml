@@ -45,7 +45,7 @@
 				$('#thermo').thermometer('setMaxValue', parseInt('@ViewBag.sogaTotalFundsBudgetedNum'));
 				$('#thermo').thermometer('setTopText', '$' + '@ViewBag.sogaTotalFundsBudgetedNum');
 				$('#thermo').thermometer('setMiddleText', '$' + parseInt('@ViewBag.sogaTotalFundsBudgetedNum' / 2));
-                $('#thermo').thermometer('setLiquidColour', '#007A47');
+                $('#thermo').thermometer('setLiquidColour', '#A4BF4F');
 				$('#datapanel').attr('class', 'panel panel-soga');
 				$("#sogatitle").show();
 				console.log("----------------");
@@ -88,13 +88,13 @@
 <br />
 <div class="row">
 	<div class="col-lg-6 col-md-12">
-		<p><img id="tiaregions" src="/Content/img/tia_regions.png" border="0" width="500" height="590" usemap="#regionmap" alt="" /></p>
+		<p><img id="tiaregions" src="/Content/img/GA_Regions.png" border="0" width="500" height="590" usemap="#regionmap" alt="" /></p>
 
         <map name="regionmap" id="regionmap">
-            <area id="rvly" alt="River Valley" title="River Valley" data-toggle="tooltip" data-placement="left" href="/Project/List/rvly" shape="rect" coords="2,229,201,449" onmouseover="showInfo('rvinfo');" />
-            <area id="csra" alt="Central Savannah River Area" title="Central Savannah River Area" href="/Project/List/csra" shape="poly" coords="302,256,288,261,274,275,236,226,283,129,331,122,440,241,427,295,407,297,384,261" onmouseover="showInfo('csrainfo');" />
-            <area id="hoga" alt="Heart of Georgia Altamaha" title="Heart of Georgia Altamaha" href="/Project/List/hoga" shape="poly" coords="201,346,203,412,294,420,384,479,440,480,439,355,409,297,389,266,362,260,292,258,227,292" onmouseover="showInfo('hogainfo');" />
-            <area id="soga" alt="Southern Georgia" title="Southern Georgia" href="/Project/List/soga" shape="poly" coords="195, 405, 216, 405, 445, 508, 400, 590, 200, 590" onmouseover="showInfo('sogainfo');" />
+            <area id="rvly" alt="River Valley" title="River Valley" data-toggle="tooltip" data-placement="left" href="/Project/List/rvly" shape="poly" coords="192,295,192,387,90,390,55,435,0,435,0,225,125,225" onmouseover="showInfo('rvinfo');" />
+            <area id="csra" alt="Central Savannah River Area" title="Central Savannah River Area" href="/Project/List/csra" shape="poly" coords="270,170,300,120,330,130,440,240,430,280,405,300,385,255,320,255,295,250,270,210" onmouseover="showInfo('csrainfo');" />
+            <area id="hoga" alt="Heart of Georgia Altamaha" title="Heart of Georgia Altamaha" href="/Project/List/hoga" shape="poly" coords="225,310,230,297,294,258,363,257,389,264,436,367,405,405,444,452,427,477,385,473,318,416,203,391,203,344,225,340" onmouseover="showInfo('hogainfo');" />
+            <area id="soga" alt="Southern Georgia" title="Southern Georgia" href="/Project/List/soga" shape="poly" coords="150,397,250,405,355,455,320,590,290,590,290,570,140,555,130,410" onmouseover="showInfo('sogainfo');" />
         </map>
 	</div>
 	<div class="col-lg-6 col-md-12">
