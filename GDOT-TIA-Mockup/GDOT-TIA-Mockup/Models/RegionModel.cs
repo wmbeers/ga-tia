@@ -23,6 +23,7 @@ namespace GDOT_TIA.Models
             get
             {
                 if (this.Abbreviation == RegionAbbrs.hoga) return 300;
+                if (this.Abbreviation == RegionAbbrs.soga) return 300;
                 return 600;
             }
         }
