@@ -46,13 +46,15 @@ namespace GDOT_TIA.Controllers
 			{
 				try
 				{
-					var pageInfo = new PageInfo();
-					pageInfo.SelectFields = new List<OutputField>
-					{
-						new OutputField("ProjectDocument_DocumentGuid"),
-					};
+                    var pageInfo = new PageInfo
+                    {
+                        SelectFields = new List<OutputField>
+                        {
+                            new OutputField("ProjectDocument_DocumentGuid"),
+                        }
+                    };
 
-					var ds = proliance.ListDocumentDataSet(DocumentTypeNames.ProjectDocument, pageInfo);
+                    var ds = proliance.ListDocumentDataSet(DocumentTypeNames.ProjectDocument, pageInfo);
 
 					if (ds != null && ds.Tables[0].Rows.Count > 0)
 					{
@@ -75,38 +77,40 @@ namespace GDOT_TIA.Controllers
 			{
 				try
 				{
-					var pageInfo = new PageInfo();
-                    pageInfo.SelectFields = new List<OutputField>
+                    var pageInfo = new PageInfo
                     {
-                        new OutputField("SmallProjectDocument_DocumentGuid"),
-                        new OutputField("SmallProjectDocument_DocVisualId"),
-                        new OutputField("SmallProjectDocument_DocTitle"),
-                        new OutputField("SmallProjectDocument_DocSubTypeName"),
-                        new OutputField("SmallProjectDocument_WorkflowStateDisplayName"),
-                        new OutputField("SmallProjectDocument_MarketSector_FullCode"),
-                        new OutputField("SmallProjectDocument_ManagerCode_Description"),
-                        new OutputField("SmallProjectDocument_MarketSector_Description"),
-                        new OutputField("SmallProjectDocument_PlannedStartDate"),
-                        new OutputField("SmallProjectDocument_AlternateNumber1"),
-                        new OutputField("SmallProjectDocument_OfficeUnit_FullCode"),
-                        new OutputField("SmallProjectDocument_OfficeUnit_Description"),
-                        new OutputField("SmallProjectDocument_SecuredStatus_FullCode"),
-                        new OutputField("SmallProjectDocument_SecuredStatus_Description"),                                           
-                        new OutputField("SmallProjectDocument_ServiceType_FullCode"),
-                        new OutputField("SmallProjectDocument_ServiceType_Description"),
-                        new OutputField("SmallProjectDocument_Status_FullCode"),
-                        new OutputField("SmallProjectDocument_Status_Description"),  
-                        new OutputField("SmallProjectDocument_DocDescription"),
-                        new OutputField("SmallProjectDocument_DocDescriptionFull"),                                       
-                        new OutputField("SmallProjectDocument_ApproximateValueText"),
-                        new OutputField("SmallProjectDocument_WorkflowStateUID"),
-                        new OutputField("SmallProjectDocument_AddressInfoNote"),
-                        new OutputField("SmallProjectDocument_SiteFaxInfoNote"),
-                        new OutputField("SmallProjectDocument_PhoneInfoNote")//,
-                        //new OutputField(foo)
+                        SelectFields = new List<OutputField>
+                        {
+                            new OutputField("SmallProjectDocument_DocumentGuid"),
+                            new OutputField("SmallProjectDocument_DocVisualId"),
+                            new OutputField("SmallProjectDocument_DocTitle"),
+                            new OutputField("SmallProjectDocument_DocSubTypeName"),
+                            new OutputField("SmallProjectDocument_WorkflowStateDisplayName"),
+                            new OutputField("SmallProjectDocument_MarketSector_FullCode"),
+                            new OutputField("SmallProjectDocument_ManagerCode_Description"),
+                            new OutputField("SmallProjectDocument_MarketSector_Description"),
+                            new OutputField("SmallProjectDocument_PlannedStartDate"),
+                            new OutputField("SmallProjectDocument_AlternateNumber1"),
+                            new OutputField("SmallProjectDocument_OfficeUnit_FullCode"),
+                            new OutputField("SmallProjectDocument_OfficeUnit_Description"),
+                            new OutputField("SmallProjectDocument_SecuredStatus_FullCode"),
+                            new OutputField("SmallProjectDocument_SecuredStatus_Description"),
+                            new OutputField("SmallProjectDocument_ServiceType_FullCode"),
+                            new OutputField("SmallProjectDocument_ServiceType_Description"),
+                            new OutputField("SmallProjectDocument_Status_FullCode"),
+                            new OutputField("SmallProjectDocument_Status_Description"),
+                            new OutputField("SmallProjectDocument_DocDescription"),
+                            new OutputField("SmallProjectDocument_DocDescriptionFull"),
+                            new OutputField("SmallProjectDocument_ApproximateValueText"),
+                            new OutputField("SmallProjectDocument_WorkflowStateUID"),
+                            new OutputField("SmallProjectDocument_AddressInfoNote"),
+                            new OutputField("SmallProjectDocument_SiteFaxInfoNote"),
+                            new OutputField("SmallProjectDocument_PhoneInfoNote")//,
+                            //new OutputField(foo)
+                        }
                     };
 
-					pageInfo.Filters.Add(new FilterField("SmallProjectDocument_WorkflowStateDisplayName", QueryFilterOperation.NotEqual, "Cancelled", QueryFieldType.DataField, false));
+                    pageInfo.Filters.Add(new FilterField("SmallProjectDocument_WorkflowStateDisplayName", QueryFilterOperation.NotEqual, "Cancelled", QueryFieldType.DataField, false));
 					pageInfo.Filters.Add(new FilterField("SmallProjectDocument_DocTitle", QueryFilterOperation.NotEqual, "Program Administration", QueryFieldType.DataField, false));
 					pageInfo.Filters.FilterRelations = (" 0 & 1 ");
 					pageInfo.PagedOrderFields.Add(new OrderField("SmallProjectDocument_DocVisualId", QueryFieldType.DataField, QueryOrderAttribute.Ascending));
@@ -151,12 +155,14 @@ namespace GDOT_TIA.Controllers
             {
                 try
                 {
-                    var pageInfo = new PageInfo();
-                    pageInfo.SelectFields = new List<OutputField>
-                                       {
-                                           new OutputField("ProjectDocument_DocumentGuid"),
-                                           new OutputField("ProjectDocument_ProjectApproximateValueText")
-                                       };
+                    var pageInfo = new PageInfo
+                    {
+                        SelectFields = new List<OutputField>
+                        {
+                            new OutputField("ProjectDocument_DocumentGuid"),
+                            new OutputField("ProjectDocument_ProjectApproximateValueText")
+                        }
+                    };
 
                     //pageInfo.Filters.Add(new FilterField("SmallProjectDocument_WorkflowStateDisplayName", QueryFilterOperation.NotEqual, "Cancelled", QueryFieldType.DataField, false));
                     //pageInfo.Filters.Add(new FilterField("SmallProjectDocument_DocTitle", QueryFilterOperation.NotEqual, "Program Administration", QueryFieldType.DataField, false));
@@ -195,35 +201,37 @@ namespace GDOT_TIA.Controllers
             {
                 try
                 {
-                    var pageInfo = new PageInfo();
-                    pageInfo.SelectFields = new List<OutputField>
-                                       {
-                                           new OutputField("SmallProjectDocument_DocumentGuid"),
-                                           new OutputField("SmallProjectDocument_DocVisualId"),
-                                           new OutputField("SmallProjectDocument_DocTitle"),
-                                           new OutputField("SmallProjectDocument_DocSubTypeName"),
-                                           new OutputField("SmallProjectDocument_WorkflowStateDisplayName"),
-                                           new OutputField("SmallProjectDocument_MarketSector_FullCode"),
-                                           new OutputField("SmallProjectDocument_ManagerCode_Description"),
-                                           new OutputField("SmallProjectDocument_MarketSector_Description"),
-                                           new OutputField("SmallProjectDocument_PlannedStartDate"),
-                                           new OutputField("SmallProjectDocument_AlternateNumber1"),
-                                           new OutputField("SmallProjectDocument_OfficeUnit_FullCode"),
-                                           new OutputField("SmallProjectDocument_OfficeUnit_Description"),
-                                           new OutputField("SmallProjectDocument_SecuredStatus_FullCode"),
-                                           new OutputField("SmallProjectDocument_SecuredStatus_Description"),                                           
-                                           new OutputField("SmallProjectDocument_ServiceType_FullCode"),
-                                           new OutputField("SmallProjectDocument_ServiceType_Description"),
-                                           new OutputField("SmallProjectDocument_Status_FullCode"),
-                                           new OutputField("SmallProjectDocument_Status_Description"),  
-                                           new OutputField("SmallProjectDocument_DocDescription"),
-                                           new OutputField("SmallProjectDocument_DocDescriptionFull"),                                       
-                                           new OutputField("SmallProjectDocument_ApproximateValueText"),
-                                           new OutputField("SmallProjectDocument_WorkflowStateUID"),
-                                           new OutputField("SmallProjectDocument_AddressInfoNote"),
-                                           new OutputField("SmallProjectDocument_SiteFaxInfoNote"),
-                                           new OutputField("SmallProjectDocument_PhoneInfoNote")
-                                       };
+                    var pageInfo = new PageInfo
+                    {
+                        SelectFields = new List<OutputField>
+                        {
+                            new OutputField("SmallProjectDocument_DocumentGuid"),
+                            new OutputField("SmallProjectDocument_DocVisualId"),
+                            new OutputField("SmallProjectDocument_DocTitle"),
+                            new OutputField("SmallProjectDocument_DocSubTypeName"),
+                            new OutputField("SmallProjectDocument_WorkflowStateDisplayName"),
+                            new OutputField("SmallProjectDocument_MarketSector_FullCode"),
+                            new OutputField("SmallProjectDocument_ManagerCode_Description"),
+                            new OutputField("SmallProjectDocument_MarketSector_Description"),
+                            new OutputField("SmallProjectDocument_PlannedStartDate"),
+                            new OutputField("SmallProjectDocument_AlternateNumber1"),
+                            new OutputField("SmallProjectDocument_OfficeUnit_FullCode"),
+                            new OutputField("SmallProjectDocument_OfficeUnit_Description"),
+                            new OutputField("SmallProjectDocument_SecuredStatus_FullCode"),
+                            new OutputField("SmallProjectDocument_SecuredStatus_Description"),
+                            new OutputField("SmallProjectDocument_ServiceType_FullCode"),
+                            new OutputField("SmallProjectDocument_ServiceType_Description"),
+                            new OutputField("SmallProjectDocument_Status_FullCode"),
+                            new OutputField("SmallProjectDocument_Status_Description"),
+                            new OutputField("SmallProjectDocument_DocDescription"),
+                            new OutputField("SmallProjectDocument_DocDescriptionFull"),
+                            new OutputField("SmallProjectDocument_ApproximateValueText"),
+                            new OutputField("SmallProjectDocument_WorkflowStateUID"),
+                            new OutputField("SmallProjectDocument_AddressInfoNote"),
+                            new OutputField("SmallProjectDocument_SiteFaxInfoNote"),
+                            new OutputField("SmallProjectDocument_PhoneInfoNote")
+                        }
+                    };
 
                     pageInfo.Filters.Add(new FilterField("SmallProjectDocument_WorkflowStateDisplayName", QueryFilterOperation.NotEqual, "Cancelled", QueryFieldType.DataField, false));
                     pageInfo.Filters.Add(new FilterField("SmallProjectDocument_DocTitle", QueryFilterOperation.NotEqual, "Program Administration", QueryFieldType.DataField, false));

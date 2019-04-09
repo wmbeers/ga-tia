@@ -50,9 +50,6 @@ namespace GDOT_TIA.Models
 
         public List<String> Counties { get; private set; }
 
-        [Required]
-        public string url { get; set; }
-
         public string ApproximateRevenueCollected { get; private set; }
         public string ProjectAccount { get; private set; }
         public int TotalProjects { get; private set; }
@@ -175,8 +172,7 @@ namespace GDOT_TIA.Models
                     MatchCollection mc = Regex.Matches(appVal, "\\d+");
                     if (mc.Count > 0)
                     {
-                        Double val = 0d;
-                        if (Double.TryParse(mc[0].Value, out val))
+                        if (Double.TryParse(mc[0].Value, out double val))
                             this.TotalRevenueCollected = val;
                     }
                 }
@@ -276,10 +272,12 @@ namespace GDOT_TIA.Models
 			{
 				foreach (DataRow r in FilteredView.Tables[0].Rows)
 				{
-					Project p = new Project(r);
-                    p.regionalCommission = this.Name;
+                    Project p = new Project(r)
+                    {
+                        regionalCommission = this.Name
+                    };
 
-					projects.Add(p);
+                    projects.Add(p);
 				}
 			}
             return projects;
