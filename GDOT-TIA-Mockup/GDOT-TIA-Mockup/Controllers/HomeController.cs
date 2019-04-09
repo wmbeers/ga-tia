@@ -5,17 +5,13 @@ using System.Web;
 using System.Web.Mvc;
 using GDOT_TIA.Models;
 using FlickrNet;
+using System.Collections.Specialized;
+using System.Configuration;
 
 namespace GDOT_TIA.Controllers
 {
     public class HomeController : Controller
     {
-		private const string _myAPIKey = "8f69ca7e3ad465173e52b244198ec521";
-		private const string _myId = "135336406@N07";
-		
-		private string myApiKey { get { return _myAPIKey; } }
-		private string myId { get { return _myId; } }
-
         //
         // GET: /Home/
         public ActionResult Index()
@@ -131,26 +127,29 @@ namespace GDOT_TIA.Controllers
 		// GET: /Gallery/
 		public ActionResult Gallery()
 		{
-			Flickr flickr = new Flickr(myApiKey);
+            NameValueCollection flickrSettings = (NameValueCollection)ConfigurationManager.GetSection("flickrSettings");
+            Flickr flickr = new Flickr(flickrSettings["apiKey"]);
 
-			/*IOrderedEnumerable<FlickrNet.Photoset> photoCollection = flickr.PhotosetsGetList(myId, PhotoSearchExtras.DateTaken).OrderByDescending(d => d.PrimaryPhoto.DateTaken);
+            /*IOrderedEnumerable<FlickrNet.Photoset> photoCollection = flickr.PhotosetsGetList(myId, PhotoSearchExtras.DateTaken).OrderByDescending(d => d.PrimaryPhoto.DateTaken);
 			IOrderedEnumerable<FlickrNet.Photo> photoList;
 
 			foreach (Photoset ps in photoCollection)
 			{
 				ps.PrimaryPhoto.
 			}*/
+            var photosetList = flickr.PhotosetsGetList(flickrSettings["userId"], PhotoSearchExtras.DateTaken | PhotoSearchExtras.MediumUrl).OrderByDescending(d => d.PrimaryPhoto.DateTaken);
 
-			ViewBag.albumList = flickr.PhotosetsGetList(myId, PhotoSearchExtras.DateTaken | PhotoSearchExtras.MediumUrl).OrderByDescending(d => d.PrimaryPhoto.DateTaken);
+            ViewBag.albumList = photosetList;
 
-			return View();
+            return View();
 		}
 
 
 		// GET: /SlideShow/
 		public ActionResult SlideShow(string id)
 		{
-			Flickr flickr = new Flickr(myApiKey);
+            NameValueCollection flickrSettings = (NameValueCollection)ConfigurationManager.GetSection("flickrSettings");
+            Flickr flickr = new Flickr(flickrSettings["apiKey"]);
 			Photoset ps= flickr.PhotosetsGetInfo(id);
 
 			if (ps != null)
