@@ -207,6 +207,7 @@
     <Content Include="Content\jquery-ui.structure.min.css" />
     <Content Include="Content\jquery-ui.theme.min.css" />
     <Content Include="Content\pdf\220680_VERG_Rendering.jpg" />
+    <Content Include="Content\photos\banner1.jpg" />
     <Content Include="Content\photos\banner1.png" />
     <Content Include="Content\photos\banner2.png" />
     <Content Include="Content\photos\banner3.png" />
