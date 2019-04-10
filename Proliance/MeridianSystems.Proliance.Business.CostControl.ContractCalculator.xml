@@ -1,0 +1,130 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+MeridianSystems.Proliance.Business.CostControl.ContractCalculator
+</name>
+</assembly>
+<members>
+<member name="M:MeridianSystems.Proliance.Business.CostControl.ContractCalculator.PreCommitInvoiceRetainageCalculations.CalculateTargetRetainageReleaseFields(MeridianSystems.Proliance.Business.CostControl.ContractCalculator.PreCommitInvoiceData,MeridianSystems.Proliance.Business.CostControl.ContractCalculator.RetainageReleaseFields,System.Decimal)">
+	<summary>
+ Calculate the Target Retainage Release fields that can be changed by user, and return entire summary info back
+ </summary>
+	<param name="invoice"></param>
+	<param name="modifiedField"></param>
+	<param name="modifiedValue"></param>
+	<returns></returns>
+	<remarks>InvoiceSummary here represents the s</remarks>
+</member><member name="M:MeridianSystems.Proliance.Business.CostControl.ContractCalculator.PreCommitInvoiceRetainageCalculations.UpdateLineItemsByReleaseAllRetainageExcludingStoredMaterial(MeridianSystems.Proliance.Business.CostControl.ContractCalculator.PreCommitInvoiceData,MeridianSystems.Proliance.Business.CostControl.ContractCalculator.ContractBillingRule,System.Int32)">
+	<summary>
+ Release all todate's general retainage amount , but keep stored retaiange amount
+ </summary>
+	<param name="invoice"></param>
+	<param name="billingRule"></param>
+	<param name="currencyPrecision"></param>
+	<remarks></remarks>
+</member><member name="M:MeridianSystems.Proliance.Business.CostControl.ContractCalculator.PreCommitInvoiceRetainageCalculations.UpdateLineItemsByReleaseAllRetainage(MeridianSystems.Proliance.Business.CostControl.ContractCalculator.PreCommitInvoiceData,MeridianSystems.Proliance.Business.CostControl.ContractCalculator.ContractBillingRule,System.Int32)">
+	<summary>
+ Release all general and stored retainage by changing  todate retainage pct as zero
+ </summary>
+	<param name="invoice"></param>
+	<param name="billingRule"></param>
+	<param name="currencyPrecision"></param>
+	<remarks></remarks>
+</member><member name="M:MeridianSystems.Proliance.Business.CostControl.ContractCalculator.PreCommitInvoiceRetainageCalculations.UpdateLineItemsByManualSetGeneralRetainage(MeridianSystems.Proliance.Business.CostControl.ContractCalculator.PreCommitInvoiceData,MeridianSystems.Proliance.Business.CostControl.ContractCalculator.RetainageReleaseFields,System.Decimal,MeridianSystems.Proliance.Business.CostControl.ContractCalculator.ContractBillingRule,System.Int32)">
+	<summary>
+ Manually Set retainage by changing three different retainage fields specified by user
+ </summary>
+	<param name="invoice"></param>
+	<param name="modifiedField"></param>
+	<param name="modifiedValue"></param>
+	<param name="billingRule"></param>
+	<param name="currencyPrecision"></param>
+	<remarks></remarks>
+</member><member name="M:MeridianSystems.Proliance.Business.CostControl.ContractCalculator.PreCommitInvoiceRetainageCalculations.UpdateLineItemsByThisInvoiceRetainageGeneralPct(MeridianSystems.Proliance.Business.CostControl.ContractCalculator.PreCommitInvoiceData,System.Double,MeridianSystems.Proliance.Business.CostControl.ContractCalculator.ContractBillingRule,System.Int32)">
+	<summary>
+ Update all invoice line items by changing the seed retainage pct field which is ThisInvoiceRetainageGeneralPct
+ </summary>
+	<param name="invoice"></param>
+	<param name="billingRule"></param>
+	<param name="currencyPrecision"></param>
+	<param name="newThisInvoiceRetainageGeneralPct"></param>
+	<remarks>This is a manual override by chnaging the retaiange pct directly</remarks>
+</member><member name="M:MeridianSystems.Proliance.Business.CostControl.ContractCalculator.PreCommitInvoiceRetainageCalculations.ResetRetainagePctToContractSettings(MeridianSystems.Proliance.Business.CostControl.ContractCalculator.PreCommitInvoiceData,MeridianSystems.Proliance.Business.CostControl.ContractCalculator.ContractBillingRule,System.Int32)">
+	<summary>
+ This will reset the retainage pct value to be same as original contract sov retainage pct value
+ </summary>
+	<param name="invoice"></param>
+	<param name="billingRule"></param>
+	<param name="currencyPrecision"></param>
+	<remarks></remarks>
+</member><member name="T:MeridianSystems.Proliance.Business.CostControl.ContractCalculator.PreCommitInvoiceRetainageCalculations">
+	<summary>
+ PreCommitInvoiceRetainageCalculations calculations that can be used in both Proliance Cost Control and Service Activator. 
+ These API methods are being used by both UI (PreCommitInvoiceLineItemPageBase.vb) and ExpensePrecommitInvoiceBuilder in Service activator
+ </summary>
+	<remarks></remarks>
+</member><member name="T:MeridianSystems.Proliance.Business.CostControl.ContractCalculator.PreCommitInvoiceLineItemFieldNames">
+	<summary>
+ The purpose of this module is to expose field names to Service Activator functionality where reflection cannot be used.
+ </summary>
+	<remarks>Values in this module should be synchronized with field names in PreCommitInvoiceLineItem. 
+ This is ensured through unit tests.</remarks>
+</member><member name="T:MeridianSystems.Proliance.Business.CostControl.ContractCalculator.PreCommitInvoiceLineItemCalculations">
+	<summary>
+ PreCommitInvoiceLineItem calculations that can be used in both Proliance Cost Control and Service Activator
+ </summary>
+	<remarks></remarks>
+</member><member name="F:MeridianSystems.Proliance.Business.CostControl.ContractCalculator.PreCommitInvoiceLineItemData._myThisInvoiceGeneralAmt">
+PIV77059: The extension class has the ThisInvoiceGeneralAmtOldValue set by GetSafeOldValue, in some situations, ThisInvoiceGeneralAmt is changed indirectly by ToDateProgressGeneralAmt or TodateProgressAmt
+ because ThisInvoiceGeneralAmt is anchor field and will be calculated when other fields changed.
+ When ThisInvoiceGeneralAmt is changed we need to retain its old value to perform the retainage calculation which performed by delta. 
+ Because retainage is calculated using the delta of the ThisInvoiceGeneralAmt it can mistakenly recalculate retainage when ThisInvoiceGeneralAmt is unchanged and the old value is zero.  We prevent this by not
+ setting the old value if ThisInvoiceGeneralAmt is unchanged (i.e. If value &gt;&lt; _myThisInvoiceGeneralAmt).
+
+</member><member name="T:MeridianSystems.Proliance.Business.CostControl.ContractCalculator.PreCommitInvoiceLineItemData">
+	<summary>
+ This is a DTO for PreCommitInvoiceLineItem calculations.
+ </summary>
+	<remarks></remarks>
+</member><member name="T:MeridianSystems.Proliance.Business.CostControl.ContractCalculator.RetainageCalculationMethod">
+	<summary>
+ This enum is brought from Proliance CostControl, and should be kept same as 
+ MPS.Prolog.Business.CostControl.Contract.Documents.RetainageCalculationMethod.
+ This is ensured through unit tests.
+ </summary>
+	<remarks></remarks>
+</member><member name="P:MeridianSystems.Proliance.Business.CostControl.ContractCalculator.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:MeridianSystems.Proliance.Business.CostControl.ContractCalculator.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:MeridianSystems.Proliance.Business.CostControl.ContractCalculator.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member><member name="T:MeridianSystems.Proliance.Business.CostControl.ContractCalculator.InvoiceRetainageSummary">
+	<summary>
+ This class represent the 15 fields in the Retainage Option Dialog , 
+ it is currently used by ExpensePrecommitInvoice builder of Service Activator
+ </summary>
+	<remarks></remarks>
+</member><member name="T:MeridianSystems.Proliance.Business.CostControl.ContractCalculator.ContractBillingRule">
+	<summary>
+ This enum is brought from Proliance CostControl, and should be kept same as 
+ MPS.Prolog.Business.CostControl.Contract.Documents.ContractBillingRule.
+ This is ensured through unit tests.
+ </summary>
+	<remarks></remarks>
+</member><member name="T:MeridianSystems.Proliance.Business.CostControl.ContractCalculator.InvoiceCalculationSetting">
+	<summary>
+ Represents input factors for calculating values in invoice line item.
+ </summary>
+	<remarks></remarks>
+</member>
+</members>
+</doc>

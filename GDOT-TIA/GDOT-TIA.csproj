@@ -50,27 +50,27 @@
       <HintPath>..\packages\FlickrNet.3.25.0\lib\net20\FlickrNet.dll</HintPath>
     </Reference>
     <Reference Include="MeridianSystems.Proliance.Business.CostControl.ContractCalculator">
-      <HintPath>..\..\TiaWeb2.0\Proliance\MeridianSystems.Proliance.Business.CostControl.ContractCalculator.dll</HintPath>
+      <HintPath>..\Proliance\MeridianSystems.Proliance.Business.CostControl.ContractCalculator.dll</HintPath>
     </Reference>
     <Reference Include="MeridianSystems.Solutions.Proliance.ServiceActivator">
-      <HintPath>..\..\TiaWeb2.0\Proliance\MeridianSystems.Solutions.Proliance.ServiceActivator.dll</HintPath>
+      <HintPath>..\Proliance\MeridianSystems.Solutions.Proliance.ServiceActivator.dll</HintPath>
     </Reference>
     <Reference Include="MeridianSystems.Solutions.Proliance.ServiceActivator.Controls">
-      <HintPath>..\..\TiaWeb2.0\Proliance\MeridianSystems.Solutions.Proliance.ServiceActivator.Controls.dll</HintPath>
+      <HintPath>..\Proliance\MeridianSystems.Solutions.Proliance.ServiceActivator.Controls.dll</HintPath>
     </Reference>
     <Reference Include="MeridianSystems.Solutions.Proliance.ServiceActivator.Parsers.Excel">
-      <HintPath>..\..\TiaWeb2.0\Proliance\MeridianSystems.Solutions.Proliance.ServiceActivator.Parsers.Excel.dll</HintPath>
+      <HintPath>..\Proliance\MeridianSystems.Solutions.Proliance.ServiceActivator.Parsers.Excel.dll</HintPath>
     </Reference>
     <Reference Include="MeridianSystems.Solutions.Proliance.ServiceActivator.Parsers.PDF">
-      <HintPath>..\..\TiaWeb2.0\Proliance\MeridianSystems.Solutions.Proliance.ServiceActivator.Parsers.PDF.dll</HintPath>
+      <HintPath>..\Proliance\MeridianSystems.Solutions.Proliance.ServiceActivator.Parsers.PDF.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="MPS.Proliance.Platform.Apps.Calendaring.Engine">
-      <HintPath>..\..\TiaWeb2.0\Proliance\MPS.Proliance.Platform.Apps.Calendaring.Engine.dll</HintPath>
+      <HintPath>..\Proliance\MPS.Proliance.Platform.Apps.Calendaring.Engine.dll</HintPath>
     </Reference>
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.IdentityModel.Tokens.Jwt">
-      <HintPath>..\..\TiaWeb2.0\Proliance\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+      <HintPath>..\Proliance\System.IdentityModel.Tokens.Jwt.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -105,10 +105,10 @@
     <Reference Include="System.EnterpriseServices" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="Trimble.Proliance.Client.Common">
-      <HintPath>..\..\TiaWeb2.0\Proliance\Trimble.Proliance.Client.Common.dll</HintPath>
+      <HintPath>..\Proliance\Trimble.Proliance.Client.Common.dll</HintPath>
     </Reference>
     <Reference Include="Xceed.Wpf.Toolkit">
-      <HintPath>..\..\TiaWeb2.0\Proliance\Xceed.Wpf.Toolkit.dll</HintPath>
+      <HintPath>..\Proliance\Xceed.Wpf.Toolkit.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
