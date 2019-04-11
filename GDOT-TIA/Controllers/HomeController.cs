@@ -105,13 +105,6 @@ namespace GDOT_TIA.Controllers
             return View();
         }
 
-
-		// GET: /Contact Us/
-		public ActionResult Contact()
-		{
-			return View();
-		}
-
 		// GET: /Regional Discretionary Funding Estimates /
 		public ActionResult Discretionary()
 		{
