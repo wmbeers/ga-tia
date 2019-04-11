@@ -169,12 +169,6 @@ h1, .subtitle {
     /*color: #A4BF4F;*/
     color: #A4BF4F;
 }
-#csrainfo, #rvinfo {
-	display:none;
-}
-#csratitle, #rvtitle {
-	display:none;
-}
 
 .callout {
     font-size: 0.8em;
