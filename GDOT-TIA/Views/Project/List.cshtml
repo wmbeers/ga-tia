@@ -75,8 +75,8 @@
 					foreach (string c in Model.Counties)
 					{
 						<option value="@c">@c County</option>
-					}
-				
+}
+
 				}
 			</select>
 		</div>
@@ -85,10 +85,19 @@
 		<div class="form-group">
 			<label for="bandList">Band</label><br />
 			<select id="bandList" class="form-control" onchange="test(); FilterSelectionChanged($('#countyList option:selected').val(), $('#bandList option:selected').val(), $('#statusList option:selected').val(), $('#typeList option:selected').val())">
-				<option value="">All</option>
-                <option value="01">Band 1:2013 to 2015</option>
-                <option value="02">Band 2:2016 to 2019</option>
-                <option value="03">Band 3:2020 to 2022</option>
+                <option value="">All</option>
+                @if (Model.Abbreviation == Region.RegionAbbrs.soga)
+                {
+                    <option value="01">Band 1: 2018 to 2021</option>
+                    <option value="02">Band 2: 2022 to 2024</option>
+                    <option value="03">Band 3: 2025 to 2028</option>
+                }
+                else
+                {
+                    <option value="01">Band 1: 2013 to 2015</option>
+                    <option value="02">Band 2: 2016 to 2019</option>
+                    <option value="03">Band 3: 2020 to 2022</option>
+                }
                 <option value="Multiple">Multi-Band</option>
 			</select>
 		</div>

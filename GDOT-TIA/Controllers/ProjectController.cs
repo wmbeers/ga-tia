@@ -55,10 +55,21 @@ namespace GDOT_TIA.Controllers
 
 		public ActionResult List(string id)
         {
+            if (String.IsNullOrWhiteSpace(id))
+            {
+                return RedirectToAction("Index", "Project");
+            }
             //specific region
-            Region.RegionAbbrs code = (Region.RegionAbbrs)Enum.Parse(typeof(Region.RegionAbbrs), id.ToLower());
-            Region region = new Region(code);
-            return View(region);
+            try
+            {
+                Region.RegionAbbrs code = (Region.RegionAbbrs)Enum.Parse(typeof(Region.RegionAbbrs), id.ToLower());
+                Region region = new Region(code);
+                return View(region);
+            }
+            catch (System.ArgumentException)
+            {
+                return RedirectToAction("Index", "Project");
+            }
         }
 
 		[HttpGet]
