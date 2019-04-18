@@ -191,7 +191,7 @@ namespace GDOT_TIA.Models
                 // (which contains text, such as "$1,868,002 (Blended Project - Total Budget)" or "$11,585,960 ")
                 foreach (DataRow dr in data.Tables[0].Rows)
                 {
-                    if (dr["SmallProjectDocument_SecuredStatus_FullCode"].ToString().Contains("Complete"))
+                    if (dr["SmallProjectDocument_SecuredStatus_FullCode"].ToString().Contains("Complete") || dr["SmallProjectDocument_SecuredStatus_FullCode"].ToString().Contains("Finance Closed"))
                     {
                         this.TotalFinishedProjects++;
                     }
