@@ -13,7 +13,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>GDOT_TIA</RootNamespace>
-    <AssemblyName>GDOT-TIA-Mockup</AssemblyName>
+    <AssemblyName>GDOT-TIA</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -596,6 +596,10 @@
     <Content Include="Content\pdf\Utility+Certification.doc" />
     <Content Include="Content\pdf\Windsor Spring Rd Groundbreaking Invitation.pdf" />
     <Content Include="Content\pdf\Windsor Spring Road Augusta 9-30-2014.pdf" />
+    <Content Include="Content\pdf\2018 CSRA Annual Report.pdf" />
+    <Content Include="Content\pdf\2018 HOGA Citizen Review Panel Report.pdf" />
+    <Content Include="Content\pdf\2018 RV CRP Annual Report.pdf" />
+    <Content Include="Content\pdf\2018 Southern Georgia Citizen Review Panel Report-.pdf" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Properties\PublishProfiles\GDOTTIA - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\PublishToC-Temp.pubxml" />

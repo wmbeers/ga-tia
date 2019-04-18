@@ -59,6 +59,13 @@ namespace GDOT_TIA.Models
         public Double TotalFundsBudgeted { get; private set; }
         public Double TotalFundsSpent { get; private set; }
 
+        public String DollarYear { get
+            {
+                if (this.Abbreviation == RegionAbbrs.soga) return "2017";
+                return "2011";
+            }
+        }
+
         public ProlianceController ProlianceController { get; private set; }
 
         public Region(RegionAbbrs regionAbbr)

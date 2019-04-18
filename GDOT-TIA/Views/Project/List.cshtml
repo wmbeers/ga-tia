@@ -44,11 +44,13 @@
 
 <div class="row">
 	<div class="col-md-4">
-		<p style="font-size: 0.85em; font-weight: bold"><span class="blue">Total Projects:</span> <span class="@Model.Abbreviation">@Model.TotalProjects</span><br />
+		<p style="font-size: 0.85em; font-weight: bold">
+            <span class="blue">Total Projects:</span> <span class="@Model.Abbreviation">@Model.TotalProjects</span><br />
 			<span class="blue">Projects Under Construction:</span> <span class="@Model.Abbreviation">@Model.TotalConstructionProjects</span><br />
 			<span class="blue">Projects Completed:</span> <span class="@Model.Abbreviation">@Model.TotalFinishedProjects</span><br />
-			<span class="blue">TIA Funds Budgeted (2011 Dollars):</span>  <span class="@Model.Abbreviation">@Model.TotalFundsBudgeted.ToString("C2")</span><br />
-			<span class="blue">Total Expenditure to Date: </span> <span class="@Model.Abbreviation">@Model.TotalFundsSpent.ToString("C2")</span></p>
+			<span class="blue">TIA Funds Budgeted (@Model.DollarYear  Dollars):</span>  <span class="@Model.Abbreviation">@Model.TotalFundsBudgeted.ToString("C2")</span><br />
+			<span class="blue">Total Expenditure to Date: </span> <span class="@Model.Abbreviation">@Model.TotalFundsSpent.ToString("C2")</span>
+        </p>
 	</div>
 	<div class="col-md-3">
 		<div style="text-align: center; width: 100%;">
