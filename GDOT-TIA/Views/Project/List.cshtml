@@ -48,7 +48,7 @@
             <span class="blue">Total Projects:</span> <span class="@Model.Abbreviation">@Model.TotalProjects</span><br />
 			<span class="blue">Projects Under Construction:</span> <span class="@Model.Abbreviation">@Model.TotalConstructionProjects</span><br />
 			<span class="blue">Projects Completed:</span> <span class="@Model.Abbreviation">@Model.TotalFinishedProjects</span><br />
-			<span class="blue">TIA Funds Budgeted (@Model.DollarYear  Dollars):</span>  <span class="@Model.Abbreviation">@Model.TotalFundsBudgeted.ToString("C2")</span><br />
+			<span class="blue">Original Approved Budget (@Model.DollarYear  Dollars):</span>  <span class="@Model.Abbreviation">@Model.TotalFundsBudgeted.ToString("C2")</span><br />
 			<span class="blue">Total Expenditure to Date: </span> <span class="@Model.Abbreviation">@Model.TotalFundsSpent.ToString("C2")</span>
         </p>
 	</div>
@@ -90,8 +90,8 @@
                 <option value="">All</option>
                 @if (Model.Abbreviation == Region.RegionAbbrs.soga)
                 {
-                    <option value="01">Band 1: 2018 to 2021</option>
-                    <option value="02">Band 2: 2022 to 2024</option>
+                    <option value="01">Band 1: 2018 to 2022</option>
+                    <option value="02">Band 2: 2022 to 2025</option>
                     <option value="03">Band 3: 2025 to 2028</option>
                 }
                 else

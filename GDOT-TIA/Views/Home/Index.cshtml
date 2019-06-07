@@ -41,7 +41,7 @@
                 <div class="callout callout-rvly" onclick="window.open('/Project/List/rvly', '_self')">
                     <h4>River Valley</h4>
                     <p class="withI">
-                        TIA Funds Budgeted (2011 Dollars):<br />
+                        Original Approved Budget (2011 Dollars):
                         @ViewBag.rv.TotalFundsBudgeted.ToString("C")
                     </p>
                     <p class="withI">
@@ -53,7 +53,7 @@
                 <div class="callout callout-csra" onclick="window.open('/Project/List/csra', '_self')">
                     <h4>Central Savannah River Area</h4>
                     <p class="withI">
-                        TIA Funds Budgeted (2011 Dollars):<br />
+                        Original Approved Budget (2011 Dollars):
                         @ViewBag.csra.TotalFundsBudgeted.ToString("C")
                     </p>
                     <p class="withI">
@@ -65,7 +65,7 @@
                 <div class="callout callout-hoga" onclick="window.open('/Project/List/hoga', '_self')">
                     <h4>Heart of Georgia Altamaha</h4>
                     <p class="withI">
-                        TIA Funds Budgeted (2011 Dollars):<br />
+                        Original Approved Budget (2011 Dollars):
                         @ViewBag.hoga.TotalFundsBudgeted.ToString("C")
                     </p>
                     <p class="withI">
@@ -77,7 +77,7 @@
                 <div class="callout callout-soga" onclick="window.open('/Project/List/soga', '_self')">
                     <h4>Southern Georgia</h4>
                     <p class="withI">
-                        TIA Funds Budgeted (2011 Dollars):<br />
+                        Original Approved Budget (2017 Dollars):
                         @ViewBag.soga.TotalFundsBudgeted.ToString("C")
                     </p>
                     <p class="withI">
@@ -93,7 +93,7 @@
             <map name="regions" id="regions">
                 <area alt="Link to River Valley project page" title="River Valley" href="/Project/List/rvly" shape="poly" coords="2,169,65,169,104,193,124,217,124,234,144,234,143,292,123,290,111,287,113,278,76,283,53,277,61,309,34,314,34,329,15,328,4,292,11,264,14,249,25,237,17,230,19,221,19,220,14,204" />
                 <area alt="Link to Central Savannah River Area project page" title="Central Savannah River Area" href="/Project/List/csra" shape="poly" coords="256,92,285,103,300,123,319,133,336,160,347,167,334,174,322,198,312,201,298,185,277,188,248,186,231,191,226,157,212,156,218,144,232,134,234,109,240,98" />
-                <area alt="Link to Heart of Georgia Altamaha project page" title="Link to Heart of Georgia Altamaha project page" href="/Projects/List/hoga" shape="poly" coords="297,194,317,239,314,253,322,258,331,276,310,306,338,342,328,358,299,351,300,339,260,316,232,315,232,305,216,306,204,298,164,293,165,265,190,264,179,227,232,204,253,196" />
+                <area alt="Link to Heart of Georgia Altamaha project page" title="Link to Heart of Georgia Altamaha project page" href="/Project/List/hoga" shape="poly" coords="297,194,317,239,314,253,322,258,331,276,310,306,338,342,328,358,299,351,300,339,260,316,232,315,232,305,216,306,204,298,164,293,165,265,190,264,179,227,232,204,253,196" />
                 <area alt="Link to Southern Georgia project page" title="Southern Georgia" href="/Project/List/soga" shape="poly" coords="122,307,158,307,187,312,187,321,213,320,249,344,251,351,273,351,271,373,257,380,259,405,247,414,252,431,250,450,237,449,232,429,115,420,115,385,126,385,131,372,131,360,121,359,121,330,108,329,108,313,124,314" />
             </map>
         </div>
@@ -108,7 +108,7 @@
             <span class="blue">Total Projects:</span> <span class="green">@ViewBag.totalProjects</span><br />
             <span class="blue">Projects Under Construction:</span> <span class="green">@ViewBag.totalConstructionProjects</span><br />
             <span class="blue">Projects Completed:</span> <span class="green">@ViewBag.totalFinishedProjects</span><br />
-            <span class="blue">TIA Funds Budgeted (2011 Dollars):</span> <span class="green">@ViewBag.totalFundsBudgeted</span><br />
+            <span class="blue">Original Approved Budget:</span> <span class="green">@ViewBag.totalFundsBudgeted</span><br />
             <span class="blue">Total Expenditure to Date:</span> <span class="green">@ViewBag.totalExpenditure</span>
         </p>
         <br />
