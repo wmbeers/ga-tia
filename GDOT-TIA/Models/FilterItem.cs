@@ -96,7 +96,7 @@ namespace GDOT_TIA.Models
                         "07 Complete",
                         "08 Finance Closed"}));
 
-                items.Add(new FilterItem(5, "Inactive",
+                items.Add(new FilterItem(6, "Inactive",
                     new List<string> {
                         "00 Inactive"}));
 
